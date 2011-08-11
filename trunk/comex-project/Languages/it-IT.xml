@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>informazioni</about>
+		<thanks>ringraziamenti</thanks>
+		<frmabout>informazioni su ...</frmabout>
+		<description>strumento per inviare comandi alla card mediante lettori di tipo PC/SC e seriale</description>
+		
+		<openact>Apri un file comandi</openact>
+		<infoact>Visualizza la finestra di informazioni</infoact>
+		<exitact>Esci dall'applicazione</exitact>
+		
+		<openlbl>Apri</openlbl>
+		<infolbl>Info</infolbl>
+		<exitlbl>Esci</exitlbl>
+		
+	</language>
+</Settings>

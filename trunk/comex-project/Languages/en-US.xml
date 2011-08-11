@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>about</about>
+		<thanks>thanks</thanks>
+		<frmabout>info about ...</frmabout>
+		<description>card commands exchanger for PC/SC and serial readers</description>
+		
+		<openact>Open command file</openact>
+		<infoact>View information window</infoact>
+		<exitact>Exit from application</exitact>
+
+		<openlbl>Open</openlbl>
+		<infolbl>Info</infolbl>
+		<exitlbl>Exit</exitlbl>
+
+	</language>
+</Settings>
