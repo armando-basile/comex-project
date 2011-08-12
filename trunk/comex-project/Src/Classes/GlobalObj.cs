@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Reflection;
+using Pcsc_Sharp;
 using Gtk;
 
 
@@ -16,6 +17,7 @@ namespace comex
 
 		private static string languageFolder = "";
 		private static string languageTag = "";
+		
 		private static LanguageManager lMan = null;
 		
 		
@@ -26,6 +28,26 @@ namespace comex
 		/// Return language manager object
 		/// </summary>
 		public static LanguageManager LMan { get { return lMan; } }
+		
+		
+		
+		/// <summary>
+		/// PCSC reader manager
+		/// </summary>
+		public static Pcsc PCSC { get; set ;}
+		
+		
+		/// <summary>
+		/// PCSC readers name
+		/// </summary>
+		public static string[] PCSC_Readers { get; set ;}
+		
+		
+		
+		/// <summary>
+		/// Return selected reader name
+		/// </summary>
+		public static string SelectedReader { get; set;	}
 		
 		
 		/// <summary>
@@ -133,6 +155,23 @@ namespace comex
 			lMan = new LanguageManager(languageFolder + Path.DirectorySeparatorChar + languageTag + ".xml");
 			
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		#endregion Public Methods

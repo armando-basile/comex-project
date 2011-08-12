@@ -25,11 +25,17 @@
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="MenuFileOpen">
-                        <property name="label">gtk-open</property>
+                        <property name="label">imagemenuitem</property>
                         <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
+                        <property name="use_stock">False</property>
                         <property name="always_show_image">True</property>
+                        <accelerator key="o" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image3">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-open</property>
+                          </widget>
+                        </child>
                       </widget>
                     </child>
                     <child>
@@ -39,14 +45,32 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="MenuFileExit">
-                        <property name="label">gtk-quit</property>
+                        <property name="label">imagemenuitem</property>
                         <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
+                        <property name="use_stock">False</property>
                         <property name="always_show_image">True</property>
                         <signal name="activate" handler="ActionCancel"/>
+                        <accelerator key="q" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image2">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-quit</property>
+                          </widget>
+                        </child>
                       </widget>
                     </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="MenuReaderItem">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Lettore</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="MenuReader">
+                    <property name="visible">True</property>
                   </widget>
                 </child>
               </widget>
@@ -61,12 +85,17 @@
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="MenuAboutInfo">
-                        <property name="label">gtk-about</property>
+                        <property name="label">imagemenuitem</property>
                         <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
+                        <property name="use_stock">False</property>
                         <property name="always_show_image">True</property>
                         <signal name="activate" handler="ActionAbout"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image1">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-about</property>
+                          </widget>
+                        </child>
                       </widget>
                     </child>
                   </widget>
@@ -82,7 +111,7 @@
         <child>
           <widget class="GtkToolbar" id="TopToolBar">
             <property name="visible">True</property>
-            <property name="toolbar_style">icons</property>
+            <property name="toolbar_style">both-horiz</property>
             <child>
               <widget class="GtkToolButton" id="TbOpen">
                 <property name="visible">True</property>

@@ -1,6 +1,21 @@
 2011-08-12  hmandevteam  <hmandevteam@gmail.com>
 
 	* Src/MainClass.cs:
+	* comex.exe.config:
+	* Src/Classes/Pcsc.cs:
+	* Languages/it-IT.xml:
+	* Languages/en-US.xml:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/clsEncoding.cs:
+	* Src/Glade_Files/MainWindow.glade:
+	* Src/Gui_Classes/MainWindowClass.cs: 
+	- first support for PCSC readers cross platform
+	- improved gui dynamic creation
+
+2011-08-12  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
 	* Languages/en-US.xml:
 	* Languages/it-IT.xml:
 	* comex-project.csproj:

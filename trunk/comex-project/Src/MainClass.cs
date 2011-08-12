@@ -25,6 +25,8 @@ namespace comex
         private static readonly ILog log = LogManager.GetLogger(typeof(MainClass));
 		
 		
+		private static string retStr = "";
+		
 		
 		[STAThread]
         public static void Main(string[] args)
@@ -51,6 +53,7 @@ namespace comex
 			
 			// init Gtk Application
 			Application.Init();
+			
             
 			log.Info("Application Started");
 			
@@ -74,7 +77,16 @@ namespace comex
 			}
 			
 			
+			// Create new PCSC manager
+			GlobalObj.PCSC = new Pcsc_Sharp.Pcsc();
+			retStr = GlobalObj.PCSC.EstablishContext();
 			
+			if (retStr != "")
+			{
+				log.Error(retStr);
+				ShowMessage(MessageType.Error, "Error", retStr);
+				return;
+			}
 			
 			
 			// create new MainWindow and show it
@@ -83,20 +95,7 @@ namespace comex
 			
 			
 
-			
-/*			
-			MessageDialog mdl = new MessageDialog(null, 
-			                                      DialogFlags.Modal, 
-			                                      MessageType.Info, 
-			                                      ButtonsType.Ok,
-			                                      true,
-			                                      "Prova <b>messaggio</b> di testo");
-			mdl.Show();
-			mdl.Title = "DEMO";
-            mdl.Icon = Gdk.Pixbuf.LoadFromResource("comex.Resources.Images.comex_256.png");
-            mdl.Run();
-			mdl.Destroy();                  
-*/
+		
 			
 			
 			
@@ -218,6 +217,28 @@ namespace comex
 			msg += "   --help            show this message\r\n";
 			
 			return msg;
+		}
+		
+		
+		
+		
+		/// <summary>
+		/// Show Message Window
+		/// </summary>
+		private static void ShowMessage(MessageType mt, string title, string message)
+		{
+			MessageDialog mdl = new MessageDialog(null, 
+			                                      DialogFlags.DestroyWithParent, 
+			                                      mt, 
+			                                      ButtonsType.Ok,
+			                                      true,
+			                                      message);
+			mdl.Show();
+			mdl.Title = title;
+            mdl.Icon = Gdk.Pixbuf.LoadFromResource("comex.Resources.Images.comex_256.png");
+            mdl.Run();
+			mdl.Destroy();                  
+
 		}
 		
 		

@@ -17,7 +17,13 @@ namespace comex
 		[Glade.Widget]  Gtk.ToolButton         TbAbout;
 		[Glade.Widget]  Gtk.ToolButton         TbExit;
 		[Glade.Widget]  Gtk.Statusbar          StatusBar;
-		
+		[Glade.Widget]  Gtk.MenuItem       	   MenuFileItem;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileOpen;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileExit;
+		[Glade.Widget]  Gtk.Menu       	       MenuReader;
+		[Glade.Widget]  Gtk.MenuItem       	   MenuReaderItem;
+		[Glade.Widget]  Gtk.MenuItem       	   MenuAboutItem;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuAboutInfo;
 		
 		
 		
@@ -25,6 +31,9 @@ namespace comex
 		// Log4Net object
         private static readonly ILog log = LogManager.GetLogger(typeof(MainWindowClass));
 		
+		
+		
+		private string retStr = "";
 		
 		
 		
@@ -61,8 +70,7 @@ namespace comex
 		/// </summary>
 		public void Show()
 		{
-			MainWindow.Show();
-			StatusBar.Push(1, GlobalObj.AppNameVer);
+			MainWindow.Show();			
 			MainWindow.Title = GlobalObj.AppNameVer;
 		}
 		
@@ -96,6 +104,8 @@ namespace comex
 		/// </summary>
 		public void ActionCancel(object sender, EventArgs args)
 		{
+			GlobalObj.PCSC.ReleaseContext();
+			
 			MainWindow.Destroy();
             MainWindow.Dispose();
 			Application.Quit();
@@ -162,6 +172,8 @@ namespace comex
 		{
 			// Set dialog icon
             MainWindow.Icon = Gdk.Pixbuf.LoadFromResource("comex.Resources.Images.comex_256.png");
+			
+			// Set tool tip text for toolbutton
 			TbOpen.TooltipText = GlobalObj.LMan.GetString("openact");
 			TbOpen.Label = GlobalObj.LMan.GetString("openlbl");
 			
@@ -170,7 +182,43 @@ namespace comex
 			
 			TbExit.TooltipText = GlobalObj.LMan.GetString("exitact");
 			TbExit.Label = GlobalObj.LMan.GetString("exitlbl");
+
+			// Set labels
+			((Label)MenuFileItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("filemenulbl");
+			((Label)MenuFileOpen.Child).TextWithMnemonic = GlobalObj.LMan.GetString("openmenulbl");
+			((Label)MenuFileExit.Child).TextWithMnemonic = GlobalObj.LMan.GetString("exitmenulbl");
+			((Label)MenuReaderItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("readermenulbl");
+			((Label)MenuAboutItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("helpmenulbl");
+			((Label)MenuAboutInfo.Child).TextWithMnemonic = GlobalObj.LMan.GetString("infomenulbl");
 			
+			// retrieve pcsc readers
+			string[] pcsc_readers = new string[0];			
+			retStr = GlobalObj.PCSC.ListReaders(out pcsc_readers);			
+			GlobalObj.PCSC_Readers = pcsc_readers;
+
+			// update gui menu
+			Gtk.RadioMenuItem rmi;
+			for (int n=0; n<pcsc_readers.Length; n++)
+			{				
+				if (n==0)
+				{
+					rmi = new Gtk.RadioMenuItem(pcsc_readers[n]);
+					GlobalObj.SelectedReader = pcsc_readers[n];
+					StatusBar.Push(1, GlobalObj.LMan.GetString("selreader") + ": " + pcsc_readers[n]);
+				}
+				else
+				{
+					rmi = new Gtk.RadioMenuItem((RadioMenuItem)MenuReader.Children[0],pcsc_readers[n]);
+				}
+
+				MenuReader.Add(rmi);
+			}
+			MenuReader.ShowAll();
+
+			if (pcsc_readers.Length == 0)
+			{
+				StatusBar.Push(1, GlobalObj.LMan.GetString("nopcscreader"));
+			}
 			
 		}
 		

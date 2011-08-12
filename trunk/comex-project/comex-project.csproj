@@ -66,6 +66,8 @@
     <Compile Include="Src\Classes\LanguageManager.cs" />
     <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
     <Compile Include="Src\Classes\GlobalConst.cs" />
+    <Compile Include="Src\Classes\Pcsc.cs" />
+    <Compile Include="Src\Classes\clsEncoding.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\comex_16.png" />
@@ -81,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Glade_Files\MainWindow.glade">
       <LogicalName>MainWindow.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comex.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ProjectExtensions>

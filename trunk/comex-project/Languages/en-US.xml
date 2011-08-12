@@ -10,9 +10,20 @@
 		<infoact>View information window</infoact>
 		<exitact>Exit from application</exitact>
 
+		<filemenulbl>_File</filemenulbl>
+		<openmenulbl>_Open</openmenulbl>
+		<exitmenulbl>_Exit</exitmenulbl>
+		<readermenulbl>_Reader</readermenulbl>
+		<helpmenulbl>_Help</helpmenulbl>
+		<infomenulbl>_Informations</infomenulbl>
+		
+		
 		<openlbl>Open</openlbl>
 		<infolbl>Info</infolbl>
 		<exitlbl>Exit</exitlbl>
+
+		<selreader>Selected reader</selreader>
+		<nopcscreader>No PCSC reader found</nopcscreader>
 
 		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader. 
 		- Multilanguage (using xml language files in <i>Language</i> folder)

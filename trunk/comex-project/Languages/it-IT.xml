@@ -10,9 +10,21 @@
 		<infoact>Visualizza la finestra di informazioni</infoact>
 		<exitact>Esci dall'applicazione</exitact>
 		
+		<filemenulbl>_File</filemenulbl>
+		<openmenulbl>_Apri</openmenulbl>
+		<exitmenulbl>_Esci</exitmenulbl>
+		<readermenulbl>_Lettore</readermenulbl>
+		<helpmenulbl>A_iuto</helpmenulbl>
+		<infomenulbl>I_nformazioni</infomenulbl>
+		
+		
 		<openlbl>Apri</openlbl>
 		<infolbl>Info</infolbl>
 		<exitlbl>Esci</exitlbl>
+		
+		<selreader>Lettore selezionato</selreader>
+		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
+		
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.
 		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)
