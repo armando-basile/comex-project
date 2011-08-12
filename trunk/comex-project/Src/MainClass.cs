@@ -49,10 +49,15 @@ namespace comex
 			// config Log4Net
 			ConfigLog4Net();
 			
+			// init Gtk Application
 			Application.Init();
             
 			log.Info("Application Started");
 			
+			if (GlobalObj.LogToFile)
+			{
+				log.Info("Enabled also log in file: " + GlobalObj.LogFilePath);
+			}
 			
 			// set language file
 			try
@@ -159,6 +164,8 @@ namespace comex
 			logfilename += System.IO.Path.DirectorySeparatorChar;
 			logfilename += System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".log";
 
+			GlobalObj.LogFilePath = logfilename;
+			
 			// attach to repository hierarchy
 			log4net.Repository.Hierarchy.Hierarchy repository = LogManager.GetRepository() as log4net.Repository.Hierarchy.Hierarchy; 
 			
@@ -204,7 +211,7 @@ namespace comex
 		/// </summary>
 		private static string GetHelpMsg()
 		{
-			string msg = GlobalObj.AppNameVer + "\r\n\r\n";
+			string msg = GlobalObj.AppNameVer + " - card commands exchanger for PC/SC and serial readers\r\n\r\n";
 			msg += "   usage:\r\n";
 			msg += "   --log-console     enable log into console\r\n";
 			msg += "   --log-file        enable log into file comex.log into home folder\r\n";

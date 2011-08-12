@@ -65,6 +65,12 @@ namespace comex
 		}
 		
 		
+		/// <summary>
+		/// Path of log file used
+		/// </summary>
+		public static string LogFilePath { get; set; }
+		
+		
 		
 		public static bool LogToConsole = false;
 		public static bool LogToFile = false;

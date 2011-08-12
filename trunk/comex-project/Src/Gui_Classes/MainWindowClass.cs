@@ -109,9 +109,9 @@ namespace comex
 		public void ActionAbout(object sender, EventArgs args)
 		{
 			AboutDialogClass adc = new AboutDialogClass();
-			adc.SetParent(ref MainWindow);
-			adc.About = "prova <b>About</b> " + GlobalObj.LanguageTag;
-			adc.Thanks = "prova <b>Thanks</b>";
+			adc.SetParent(ref MainWindow);			
+			adc.About = GlobalObj.LMan.GetString("infodesc").Replace("\t", "");
+			adc.Thanks = GlobalObj.LMan.GetString("thanksdesc").Replace("\t", "") + GlobalConst.ThanksTo;
 			adc.Description = "<b>COMEX Project</b> - " + GlobalObj.LMan.GetString("description") ;
 			adc.Title = GlobalObj.LMan.GetString("frmabout");
 			adc.Show();

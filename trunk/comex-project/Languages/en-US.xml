@@ -14,5 +14,24 @@
 		<infolbl>Info</infolbl>
 		<exitlbl>Exit</exitlbl>
 
+		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader. 
+		- Multilanguage (using xml language files in <i>Language</i> folder)
+		- Gui (using Gtk# binding for Gtk graphic libraries)
+		- Debug/Trace (can be sended to console and also to a log file to read after)
+		
+		<b>author:</b>
+		   Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)
+		
+		<b>website:</b>
+		   <a href="http://comex-project.googlecode.com">comex-project.googlecode.com</a>
+		
+		<b>issue tracker:</b>
+		   <a href="http://code.google.com/p/comex-project/issues/list">code.google.com/p/comex-project/issues/list</a>
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
+		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		]]></thanksdesc>
+		
 	</language>
 </Settings>

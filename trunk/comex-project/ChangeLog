@@ -1,0 +1,14 @@
+2011-08-12  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/GlobalConst.cs:
+	* Properties/AssemblyInfo.cs:
+	* Src/Classes/LanguageManager.cs:
+	* Src/Gui_Classes/MainWindowClass.cs: 
+
+	- improved multi language support
+

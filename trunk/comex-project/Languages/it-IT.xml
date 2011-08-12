@@ -14,5 +14,24 @@
 		<infolbl>Info</infolbl>
 		<exitlbl>Esci</exitlbl>
 		
+		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.
+		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)
+		- Gui (usando il binding Gtk# delle librerie grafiche Gtk)
+		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)
+		
+		<b>autore:</b>
+		   Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)
+		
+		<b>sito web:</b>
+		   <a href="http://comex-project.googlecode.com">comex-project.googlecode.com</a>
+		
+		<b>segnalazioni:</b>
+		   <a href="http://code.google.com/p/comex-project/issues/list">code.google.com/p/comex-project/issues/list</a>
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
+		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		]]></thanksdesc>
+		
 	</language>
 </Settings>

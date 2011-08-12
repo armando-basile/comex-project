@@ -33,7 +33,7 @@ namespace comex
 		public string GetString(string keyName)
 		{
 			XmlNode xmlDocNode = xmlDoc.SelectSingleNode("/Settings/language/" + keyName);				
-			return xmlDocNode.InnerXml;
+			return xmlDocNode.InnerText;
 		}
 		
 		
