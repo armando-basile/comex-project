@@ -24,6 +24,7 @@
 		
 		<selreader>Lettore selezionato</selreader>
 		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
+		<cmdtosend>Inserisci il comando da inviare (scrivi EXIT per uscire)</cmdtosend>
 		
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.

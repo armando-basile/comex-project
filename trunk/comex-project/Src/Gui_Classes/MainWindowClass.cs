@@ -32,9 +32,7 @@ namespace comex
         private static readonly ILog log = LogManager.GetLogger(typeof(MainWindowClass));
 		
 		
-		
-		private string retStr = "";
-		
+				
 		
 		
 		#region Public Methods
@@ -104,7 +102,7 @@ namespace comex
 		/// </summary>
 		public void ActionCancel(object sender, EventArgs args)
 		{
-			GlobalObj.PCSC.ReleaseContext();
+			GlobalObj.ClosePCSC();
 			
 			MainWindow.Destroy();
             MainWindow.Dispose();
@@ -191,31 +189,28 @@ namespace comex
 			((Label)MenuAboutItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("helpmenulbl");
 			((Label)MenuAboutInfo.Child).TextWithMnemonic = GlobalObj.LMan.GetString("infomenulbl");
 			
-			// retrieve pcsc readers
-			string[] pcsc_readers = new string[0];			
-			retStr = GlobalObj.PCSC.ListReaders(out pcsc_readers);			
-			GlobalObj.PCSC_Readers = pcsc_readers;
+
 
 			// update gui menu
 			Gtk.RadioMenuItem rmi;
-			for (int n=0; n<pcsc_readers.Length; n++)
+			for (int n=0; n<GlobalObj.PCSC_Readers.Length; n++)
 			{				
 				if (n==0)
 				{
-					rmi = new Gtk.RadioMenuItem(pcsc_readers[n]);
-					GlobalObj.SelectedReader = pcsc_readers[n];
-					StatusBar.Push(1, GlobalObj.LMan.GetString("selreader") + ": " + pcsc_readers[n]);
+					rmi = new Gtk.RadioMenuItem(GlobalObj.PCSC_Readers[n]);
+					GlobalObj.SelectedReader = GlobalObj.PCSC_Readers[n];
+					StatusBar.Push(1, GlobalObj.LMan.GetString("selreader") + ": " + GlobalObj.PCSC_Readers[n]);
 				}
 				else
 				{
-					rmi = new Gtk.RadioMenuItem((RadioMenuItem)MenuReader.Children[0],pcsc_readers[n]);
+					rmi = new Gtk.RadioMenuItem((RadioMenuItem)MenuReader.Children[0], GlobalObj.PCSC_Readers[n]);
 				}
 
 				MenuReader.Add(rmi);
 			}
 			MenuReader.ShowAll();
 
-			if (pcsc_readers.Length == 0)
+			if (GlobalObj.PCSC_Readers.Length == 0)
 			{
 				StatusBar.Push(1, GlobalObj.LMan.GetString("nopcscreader"));
 			}

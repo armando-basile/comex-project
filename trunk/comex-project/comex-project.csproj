@@ -68,6 +68,7 @@
     <Compile Include="Src\Classes\GlobalConst.cs" />
     <Compile Include="Src\Classes\Pcsc.cs" />
     <Compile Include="Src\Classes\clsEncoding.cs" />
+    <Compile Include="Src\Classes\ConsoleManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\comex_16.png" />

@@ -26,6 +26,7 @@ namespace comex
 		
 		
 		private static string retStr = "";
+		private static bool isConsoleAppReq = false;
 		
 		
 		[STAThread]
@@ -50,10 +51,6 @@ namespace comex
 			
 			// config Log4Net
 			ConfigLog4Net();
-			
-			// init Gtk Application
-			Application.Init();
-			
             
 			log.Info("Application Started");
 			
@@ -76,10 +73,12 @@ namespace comex
 				return;
 			}
 			
+			// init Gtk Application
+			Application.Init();
 			
-			// Create new PCSC manager
-			GlobalObj.PCSC = new Pcsc_Sharp.Pcsc();
-			retStr = GlobalObj.PCSC.EstablishContext();
+			
+			// create new PCSC manager and create context
+			retStr = GlobalObj.InitPCSC();
 			
 			if (retStr != "")
 			{
@@ -89,19 +88,22 @@ namespace comex
 			}
 			
 			
-			// create new MainWindow and show it
-			MainWindowClass mwc = new MainWindowClass();
-			mwc.Show();
 			
+			if (isConsoleAppReq)
+			{
+				// console application required
+				ConsoleManager.StartApp();
+				
+			}
+			else
+			{			
+				// create new Gtk Gui for application and show it
+				MainWindowClass mwc = new MainWindowClass();
+				mwc.Show();
+				Application.Run ();
+			}
 			
 
-		
-			
-			
-			
-			
-			
-			Application.Run ();
 
 		}
 		
@@ -138,6 +140,14 @@ namespace comex
 			{
 				GlobalObj.LogToFile = true;
 			}
+			
+			// check for console application required
+			if (GlobalObj.AppArgs.Contains("--app-console"))
+			{
+				isConsoleAppReq = true;
+			}			
+			
+			
 		}
 		
 		
@@ -212,6 +222,7 @@ namespace comex
 		{
 			string msg = GlobalObj.AppNameVer + " - card commands exchanger for PC/SC and serial readers\r\n\r\n";
 			msg += "   usage:\r\n";
+			msg += "   --app-console     disable gtk gui and use console interface\r\n";
 			msg += "   --log-console     enable log into console\r\n";
 			msg += "   --log-file        enable log into file comex.log into home folder\r\n";
 			msg += "   --help            show this message\r\n";
@@ -227,17 +238,27 @@ namespace comex
 		/// </summary>
 		private static void ShowMessage(MessageType mt, string title, string message)
 		{
-			MessageDialog mdl = new MessageDialog(null, 
-			                                      DialogFlags.DestroyWithParent, 
-			                                      mt, 
-			                                      ButtonsType.Ok,
-			                                      true,
-			                                      message);
-			mdl.Show();
-			mdl.Title = title;
-            mdl.Icon = Gdk.Pixbuf.LoadFromResource("comex.Resources.Images.comex_256.png");
-            mdl.Run();
-			mdl.Destroy();                  
+			
+			if (isConsoleAppReq)
+			{
+				// Console Message
+				Console.WriteLine(title + " - " + message);
+			}
+			else
+			{
+				// Gui Message
+				MessageDialog mdl = new MessageDialog(null, 
+				                                      DialogFlags.DestroyWithParent, 
+				                                      mt, 
+				                                      ButtonsType.Ok,
+				                                      true,
+				                                      message);
+				mdl.Show();
+				mdl.Title = title;
+	            mdl.Icon = Gdk.Pixbuf.LoadFromResource("comex.Resources.Images.comex_256.png");
+	            mdl.Run();
+				mdl.Destroy();                  
+			}
 
 		}
 		

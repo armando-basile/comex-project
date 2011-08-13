@@ -24,6 +24,7 @@
 
 		<selreader>Selected reader</selreader>
 		<nopcscreader>No PCSC reader found</nopcscreader>
+		<cmdtosend>Enter command to send (write EXIT to exit)</cmdtosend>
 
 		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader. 
 		- Multilanguage (using xml language files in <i>Language</i> folder)

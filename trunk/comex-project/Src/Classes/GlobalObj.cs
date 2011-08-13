@@ -160,13 +160,37 @@ namespace comex
 		
 		
 		
+		public static string InitPCSC()
+		{
+			PCSC = new Pcsc();
+			string retStr = PCSC.EstablishContext();
+			
+			if (retStr != "")
+			{
+				return retStr;
+			}
+			
+			// retrieve pcsc readers
+			string[] pcsc_readers = new string[0];
+			retStr = PCSC.ListReaders(out pcsc_readers);			
+			
+			if (retStr != "")
+			{
+				return retStr;
+			}
+			PCSC_Readers = pcsc_readers;
+			
+			return "";
+		}
 		
 		
 		
 		
-		
-		
-		
+		public static void ClosePCSC()
+		{
+			PCSC.Disconnect();
+			PCSC.ReleaseContext();
+		}
 		
 		
 		

@@ -1,3 +1,15 @@
+2011-08-13  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/ConsoleManager.cs:
+	* Src/Gui_Classes/MainWindowClass.cs: - added console
+	interface, so user can use gtk gui or console interface to
+	exchange commands
+
 2011-08-12  hmandevteam  <hmandevteam@gmail.com>
 
 	* Src/MainClass.cs:
