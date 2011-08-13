@@ -76,6 +76,8 @@ namespace comex
 			// init Gtk Application
 			Application.Init();
 			
+			// detect available serial port
+			GlobalObj.FillSerialPorts();
 			
 			// create new PCSC manager and create context
 			retStr = GlobalObj.InitPCSC();
@@ -83,10 +85,28 @@ namespace comex
 			if (retStr != "")
 			{
 				log.Error(retStr);
-				ShowMessage(MessageType.Error, "Error", retStr);
-				return;
+				ShowMessage(MessageType.Warning, "Warning", retStr);
+				//return;
+			}
+			else
+			{
+				// retrieve pcsc readers
+				string[] pcsc_readers = new string[0];
+				GlobalObj.PCSC_Readers = new List<string>();
+				retStr = GlobalObj.PCSC.ListReaders(out pcsc_readers);			
+				
+				if (retStr != "")
+				{
+					log.Error(retStr);
+					ShowMessage(MessageType.Warning, "Warning", retStr);
+				}
+				else
+				{
+					GlobalObj.PCSC_Readers = new List<string>(pcsc_readers);
+				}
 			}
 			
+			GlobalObj.ClosePCSC();
 			
 			
 			if (isConsoleAppReq)

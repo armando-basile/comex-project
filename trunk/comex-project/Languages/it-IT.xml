@@ -24,12 +24,15 @@
 		
 		<selreader>Lettore selezionato</selreader>
 		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
+		<readerslist>Lista dei lettori disponibili</readerslist>
+		<readersel>Inserisci il numero del lettore da usare (scrivi EXIT per uscire)</readersel>
 		<cmdtosend>Inserisci il comando da inviare (scrivi EXIT per uscire)</cmdtosend>
 		
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.
 		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)
 		- Gui (usando il binding Gtk# delle librerie grafiche Gtk)
+		- Supportata anche l'interfaccia Console
 		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)
 		
 		<b>autore:</b>

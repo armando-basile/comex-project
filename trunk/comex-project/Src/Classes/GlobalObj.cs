@@ -17,7 +17,8 @@ namespace comex
 
 		private static string languageFolder = "";
 		private static string languageTag = "";
-		
+		private static string selectedReader = "";
+		private static string ret = "";
 		private static LanguageManager lMan = null;
 		
 		
@@ -38,16 +39,54 @@ namespace comex
 		
 		
 		/// <summary>
+		/// Set/Get if selected reader is a PCSC reader
+		/// </summary>
+		public static bool IsPCSC { get; set; }
+		
+		
+		/// <summary>
+		/// SmartMouse reader manager
+		/// </summary>
+		public static SmartMouse SMouse { get; set ;}
+		
+		
+		
+		
+		/// <summary>
 		/// PCSC readers name
 		/// </summary>
-		public static string[] PCSC_Readers { get; set ;}
+		public static List<string> PCSC_Readers { get; set ;}
 		
+		
+		
+		
+		/// <summary>
+		/// PC serial port
+		/// </summary>
+		public static List<string> SerialPortsName { get; set;}
 		
 		
 		/// <summary>
 		/// Return selected reader name
 		/// </summary>
-		public static string SelectedReader { get; set;	}
+		public static string SelectedReader 
+		{ 
+			get	{	return selectedReader; }
+			set
+			{
+				selectedReader = value;
+				if (PCSC_Readers.Contains(value))
+				{
+					// pcsc reader
+					IsPCSC = true;
+				}
+				else
+				{
+					// serial reader
+					IsPCSC = false;
+				}
+			}
+		}
 		
 		
 		/// <summary>
@@ -170,16 +209,6 @@ namespace comex
 				return retStr;
 			}
 			
-			// retrieve pcsc readers
-			string[] pcsc_readers = new string[0];
-			retStr = PCSC.ListReaders(out pcsc_readers);			
-			
-			if (retStr != "")
-			{
-				return retStr;
-			}
-			PCSC_Readers = pcsc_readers;
-			
 			return "";
 		}
 		
@@ -194,6 +223,87 @@ namespace comex
 		
 		
 		
+		
+		public static void FillSerialPorts()
+		{
+			SerialPortsName = new List<string>(System.IO.Ports.SerialPort.GetPortNames());
+		}
+		
+		
+		
+		
+		public static bool IsWindows()
+        {
+            PlatformID platform = Environment.OSVersion.Platform;           
+            return (platform == PlatformID.Win32NT | platform == PlatformID.Win32Windows |
+                    platform == PlatformID.Win32S | platform == PlatformID.WinCE);    
+        }
+
+			    
+			    
+		
+		/// <summary>
+		/// Power On card
+		/// </summary>
+		public static string AnswerToReset(ref string response)
+		{
+			if (IsPCSC)
+			{
+				ClosePCSC();
+				ret = InitPCSC();
+				
+				if (ret != "")
+				{
+					return ret;
+				}
+				
+				// Connect to smartcard
+				return PCSC.Connect(selectedReader, ref response,
+			                        Pcsc.SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
+			                        Pcsc.SCARD_SHARE.SCARD_SHARE_EXCLUSIVE);
+			}
+			else
+			{
+				return "Not yet implemented";
+			}
+		}
+		
+		
+		
+		
+		
+		/// <summary>
+		/// Exchange data with card
+		/// </summary>
+		public static string SendReceive(string command, ref string response)
+		{
+			if (IsPCSC)
+			{
+				// exchange data with smartcard using PCSC
+				return GlobalObj.PCSC.Transmit(command, ref response);
+			}
+			else
+			{
+				return "Not yet implemented";
+			}
+		}
+		
+		
+		
+		
+		
+		
+		public static void CloseConnection()
+		{
+			if (IsPCSC)
+			{
+				ClosePCSC();				
+			}
+			else
+			{
+				// not yet implemented
+			}
+		}
 		
 		
 		

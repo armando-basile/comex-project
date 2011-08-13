@@ -24,11 +24,14 @@
 
 		<selreader>Selected reader</selreader>
 		<nopcscreader>No PCSC reader found</nopcscreader>
+		<readerslist>Available readers list</readerslist>
+		<readersel>Enter reader number to use (write EXIT to exit)</readersel>
 		<cmdtosend>Enter command to send (write EXIT to exit)</cmdtosend>
 
 		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader. 
 		- Multilanguage (using xml language files in <i>Language</i> folder)
 		- Gui (using Gtk# binding for Gtk graphic libraries)
+		- Console interface also supported
 		- Debug/Trace (can be sended to console and also to a log file to read after)
 		
 		<b>author:</b>

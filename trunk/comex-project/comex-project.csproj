@@ -69,6 +69,7 @@
     <Compile Include="Src\Classes\Pcsc.cs" />
     <Compile Include="Src\Classes\clsEncoding.cs" />
     <Compile Include="Src\Classes\ConsoleManager.cs" />
+    <Compile Include="Src\Classes\SmartMouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\comex_16.png" />

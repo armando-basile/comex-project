@@ -205,5 +205,68 @@ namespace Utility
 		}
 		
 		
+		
+		
+		public string HexToBin(string inData)
+		{
+			string tmpConvert = Convert.ToString(Convert.ToInt32(inData,16), 2);
+			tmpConvert = tmpConvert.PadLeft(8,char.Parse("0"));
+			return tmpConvert;		
+		}
+		
+
+		
+		public string BinToHex(string inData)
+		{
+			string tmpConvert = Convert.ToString(Convert.ToInt32(inData,2), 16);
+			tmpConvert = tmpConvert.PadLeft(2,char.Parse("0"));
+			return tmpConvert;
+		}
+
+		
+		
+		public string swapBytes(string inData)
+		{
+			string tmpData = inData;
+			string tmpConvert = "";
+			
+			for (int j=0; j<tmpData.Length; j++)
+			{	
+				if (tmpData.Substring(j,1) == "0")
+					tmpConvert += "1";
+				else
+					tmpConvert += "0";
+			}
+			
+			return tmpConvert;
+			
+		}
+
+		
+		
+		public string turnBytes(string inData)
+		{
+			string tmpData = inData;
+			string tmpConvert = "";
+
+			for (int j=0; j<tmpData.Length; j++)
+			{
+				tmpConvert = tmpConvert + tmpData.Substring(tmpData.Length - (j+1),1);
+			}
+			
+			return tmpConvert;
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

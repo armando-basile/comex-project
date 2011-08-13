@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 using log4net;
 
 
@@ -29,8 +31,42 @@ namespace comex
 		public static void StartApp()
 		{
 			
+			// create readers list
+			List<string> allreaders = new List<string>();
+			allreaders.AddRange(GlobalObj.PCSC_Readers);
+			allreaders.AddRange(GlobalObj.SerialPortsName);
+			
+			// display available readers
+			Console.WriteLine("\r\n" + GlobalObj.LMan.GetString("readerslist") + ":");
+			for (int n=0; n<allreaders.Count; n++)
+			{
+				Console.WriteLine(n.ToString().PadLeft(3) + ". " + allreaders[n]);
+			}
+			Console.WriteLine("\r\n" + GlobalObj.LMan.GetString("readersel"));
+			Console.Write("> ");
+			command = Console.ReadLine();
+			
+			if (command == "EXIT")
+			{
+				// exit from application
+				return;
+			}
+			
+			try
+			{
+				// set reader to use
+				GlobalObj.SelectedReader = allreaders[int.Parse(command)];
+			}
+			catch (Exception Ex)
+			{
+				// error detected
+				log.Error(Ex.Message);
+				return;
+			}
+			
+/*
 			// check for pcsc reader
-			if (GlobalObj.PCSC_Readers.Length == 0)
+			if (GlobalObj.PCSC_Readers.Count == 0)
 			{
 				// no pcsc reader found
 				Console.WriteLine(GlobalObj.LMan.GetString("nopcscreader"));
@@ -39,12 +75,10 @@ namespace comex
 			
 			GlobalObj.SelectedReader = GlobalObj.PCSC_Readers[0];
 			Console.WriteLine(GlobalObj.LMan.GetString("selreader") + ": " + GlobalObj.SelectedReader);
+*/
 			
 			// Connect to smartcard
-			ret = GlobalObj.PCSC.Connect(GlobalObj.SelectedReader,
-			                             ref ATR,
-			                             Pcsc_Sharp.Pcsc.SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
-			                             Pcsc_Sharp.Pcsc.SCARD_SHARE.SCARD_SHARE_EXCLUSIVE);
+			ret = GlobalObj.AnswerToReset(ref ATR);
 			
 			if (ret != "")
 			{
@@ -56,27 +90,33 @@ namespace comex
 			
 			Console.WriteLine("\r\nAnswer To Reset: " + ATR + "\r\n");
 			
-			Console.WriteLine(GlobalObj.LMan.GetString("cmdtosend"));
-			Console.Write("> ");
-			command = Console.ReadLine();
-			
-			if (command == "EXIT")
-			{
-				GlobalObj.PCSC.Disconnect();
-				return;
+			while (1==1)
+			{			
+				Console.WriteLine(GlobalObj.LMan.GetString("cmdtosend"));
+				Console.Write("> ");
+				command = Console.ReadLine();
+				
+				if (command == "EXIT")
+				{
+					// exit from loop and from application
+					GlobalObj.CloseConnection();
+					break;
+				}
+				
+				ret = GlobalObj.SendReceive(command, ref response);
+				if (ret != "")
+				{
+					// error on send command
+					log.Error(ret);
+					Console.WriteLine("< " + ret);
+				}
+				else
+				{
+					// response returned
+					Console.WriteLine("< " + response + "\r\n");
+				}
+				
 			}
-			
-			ret = GlobalObj.PCSC.Transmit(command, ref response);
-			if (ret != "")
-			{
-				// error on send command
-				log.Error(ret);
-				Console.WriteLine("< " + ret);
-				return;
-			}
-			
-			Console.WriteLine("< " + response + "\r\n");
-			
 			
 		}
 		
