@@ -247,10 +247,19 @@ namespace comex
 		/// </summary>
 		public static string AnswerToReset(ref string response)
 		{
+			// close other context
+			ClosePCSC();
+		
+			// check for serial port opened
+			if (SMouse.IsPortOpen)
+			{
+				// close serial port
+				SMouse.Close();
+			}
+			
 			if (IsPCSC)
 			{
-				// close other context and create new context
-				ClosePCSC();
+				// create new context
 				ret = InitPCSC();
 				
 				if (ret != "")
@@ -286,7 +295,7 @@ namespace comex
 			if (command.Length % 2 != 0)
 			{
 				// wrong command format
-				return GlobalObj.LMan.GetString("wrongcmd");
+				return GlobalObj.LMan.GetString("wrongcmd") + "\r\n";
 			}
 			
 			// parse all digits
@@ -295,7 +304,7 @@ namespace comex
 				if (!Uri.IsHexDigit(digit))
 				{
 					// wrong command format
-					return GlobalObj.LMan.GetString("wrongcmd");					
+					return GlobalObj.LMan.GetString("wrongcmd") + "\r\n";				
 				}
 			}
 			
@@ -324,7 +333,12 @@ namespace comex
 			}
 			else
 			{
-				// not yet implemented
+				// check for serial port opened
+				if (SMouse.IsPortOpen)
+				{
+					// close serial port
+					SMouse.Close();
+				}
 			}
 		}
 		
