@@ -27,6 +27,7 @@
 		<readerslist>Available readers list</readerslist>
 		<readersel>Enter reader number to use (write EXIT to exit)</readersel>
 		<cmdtosend>Enter command to send (write EXIT to exit)</cmdtosend>
+		<wrongcmd>wrong command format (can use: 0x11 0x22 0x33... etc, or 11 22 33.. etc, or 112233)</wrongcmd>
 
 		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader. 
 		- Multilanguage (using xml language files in <i>Language</i> folder)

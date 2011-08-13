@@ -27,7 +27,7 @@
 		<readerslist>Lista dei lettori disponibili</readerslist>
 		<readersel>Inserisci il numero del lettore da usare (scrivi EXIT per uscire)</readersel>
 		<cmdtosend>Inserisci il comando da inviare (scrivi EXIT per uscire)</cmdtosend>
-		
+		<wrongcmd>formato del comando errato (puoi usare: 0x11 0x22 0x33... etc, oppure 11 22 33.. etc, oppure 112233)</wrongcmd>
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.
 		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)

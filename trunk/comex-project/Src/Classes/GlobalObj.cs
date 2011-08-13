@@ -249,6 +249,7 @@ namespace comex
 		{
 			if (IsPCSC)
 			{
+				// close other context and create new context
 				ClosePCSC();
 				ret = InitPCSC();
 				
@@ -277,6 +278,28 @@ namespace comex
 		/// </summary>
 		public static string SendReceive(string command, ref string response)
 		{
+			
+			command = command.Replace("0x", "");
+			command = command.Replace(" ", "");
+			command = command.ToUpper();
+			
+			if (command.Length % 2 != 0)
+			{
+				// wrong command format
+				return GlobalObj.LMan.GetString("wrongcmd");
+			}
+			
+			// parse all digits
+			foreach(char digit in command)
+			{
+				if (!Uri.IsHexDigit(digit))
+				{
+					// wrong command format
+					return GlobalObj.LMan.GetString("wrongcmd");					
+				}
+			}
+			
+			
 			if (IsPCSC)
 			{
 				// exchange data with smartcard using PCSC

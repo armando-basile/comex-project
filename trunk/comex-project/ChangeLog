@@ -1,5 +1,12 @@
 2011-08-13  hmandevteam  <hmandevteam@gmail.com>
 
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml:
+	* Src/Classes/GlobalObj.cs: 
+	- added check for command to send
+
+2011-08-13  hmandevteam  <hmandevteam@gmail.com>
+
 	* Src/MainClass.cs:
 	* Languages/en-US.xml:
 	* Languages/it-IT.xml:
