@@ -64,18 +64,6 @@ namespace comex
 				return;
 			}
 			
-/*
-			// check for pcsc reader
-			if (GlobalObj.PCSC_Readers.Count == 0)
-			{
-				// no pcsc reader found
-				Console.WriteLine(GlobalObj.LMan.GetString("nopcscreader"));
-				return;
-			}
-			
-			GlobalObj.SelectedReader = GlobalObj.PCSC_Readers[0];
-			Console.WriteLine(GlobalObj.LMan.GetString("selreader") + ": " + GlobalObj.SelectedReader);
-*/
 			
 			// Connect to smartcard
 			ret = GlobalObj.AnswerToReset(ref ATR);
