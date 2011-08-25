@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8264E480-3956-4B26-9237-D63A0C856206}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>comexgtk</RootNamespace>
+    <ReleaseVersion>0.1.1.0</ReleaseVersion>
+    <Description>GTK user interface for comex-project</Description>
+    <AssemblyName>comex-gtk</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\comex-project\comex-project.csproj">
+      <Project>{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}</Project>
+      <Name>comex-project</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\resources\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Src\" />
+    <Folder Include="Src\Glade_Files\" />
+    <Folder Include="Src\Gui_Classes\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Src\Glade_Files\AboutDialog.glade">
+      <LogicalName>AboutDialog.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Glade_Files\MainWindow.glade">
+      <LogicalName>MainWindow.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_16.png">
+      <Link>Resources\comex_16.png</Link>
+      <LogicalName>comex_16.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_24.png">
+      <Link>Resources\comex_24.png</Link>
+      <LogicalName>comex_24.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_32.png">
+      <Link>Resources\comex_32.png</Link>
+      <LogicalName>comex_32.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_48.png">
+      <Link>Resources\comex_48.png</Link>
+      <LogicalName>comex_48.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_64.png">
+      <Link>Resources\comex_64.png</Link>
+      <LogicalName>comex_64.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_96.png">
+      <Link>Resources\comex_96.png</Link>
+      <LogicalName>comex_96.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_128.png">
+      <Link>Resources\comex_128.png</Link>
+      <LogicalName>comex_128.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\Images\comex_256.png">
+      <Link>Resources\comex_256.png</Link>
+      <LogicalName>comex_256.png</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
+    <Compile Include="Src\MainClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
