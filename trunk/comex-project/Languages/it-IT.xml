@@ -5,10 +5,12 @@
 		<thanks>ringraziamenti</thanks>
 		<frmabout>informazioni su ...</frmabout>
 		<description>strumento per inviare comandi alla card mediante lettori di tipo PC/SC e seriale</description>
+		<notimplemented>Funzionalità non ancora implementata</notimplemented>
 		
 		<openact>Apri un file comandi</openact>
 		<infoact>Visualizza la finestra di informazioni</infoact>
 		<exitact>Esci dall'applicazione</exitact>
+		<atract>Risposta della card al Power On</atract>
 		
 		<filemenulbl>_File</filemenulbl>
 		<openmenulbl>_Apri</openmenulbl>
@@ -20,7 +22,15 @@
 		
 		<openlbl>Apri</openlbl>
 		<infolbl>Info</infolbl>
-		<exitlbl>Esci</exitlbl>
+		<exitlbl>Esci</exitlbl>		
+		<atrlbl>ATR</atrlbl>
+		<cmdlbl>comando</cmdlbl>
+		<resplbl>risposta</resplbl>
+		<sendlbl>invia</sendlbl>
+		
+		
+		<atrframelbl>Risposta al reset</atrframelbl>
+		<cardframelbl>Comunicazione card</cardframelbl>
 		
 		<selreader>Lettore selezionato</selreader>
 		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
@@ -31,7 +41,7 @@
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.
 		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)
-		- Gui (usando il binding Gtk# delle librerie grafiche Gtk)
+		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)
 		- Supportata anche l'interfaccia Console
 		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)
 		

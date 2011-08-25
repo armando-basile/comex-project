@@ -5,10 +5,12 @@
 		<thanks>thanks</thanks>
 		<frmabout>info about ...</frmabout>
 		<description>card commands exchanger for PC/SC and serial readers</description>
+		<notimplemented>Feature not yet implemented</notimplemented>
 		
 		<openact>Open command file</openact>
 		<infoact>View information window</infoact>
 		<exitact>Exit from application</exitact>
+		<atract>Power On card response</atract>
 
 		<filemenulbl>_File</filemenulbl>
 		<openmenulbl>_Open</openmenulbl>
@@ -21,6 +23,13 @@
 		<openlbl>Open</openlbl>
 		<infolbl>Info</infolbl>
 		<exitlbl>Exit</exitlbl>
+		<atrlbl>ATR</atrlbl>
+		<cmdlbl>command</cmdlbl>
+		<resplbl>response</resplbl>
+		<sendlbl>send</sendlbl>
+		
+		<atrframelbl>Answer to reset</atrframelbl>
+		<cardframelbl>Card communication</cardframelbl>
 
 		<selreader>Selected reader</selreader>
 		<nopcscreader>No PCSC reader found</nopcscreader>
@@ -31,7 +40,7 @@
 
 		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader. 
 		- Multilanguage (using xml language files in <i>Language</i> folder)
-		- Gui (using Gtk# binding for Gtk graphic libraries)
+		- Gui (using GTK# binding for GTK graphic libraries and Qyoto binding for QT graphic libraries)
 		- Console interface also supported
 		- Debug/Trace (can be sended to console and also to a log file to read after)
 		

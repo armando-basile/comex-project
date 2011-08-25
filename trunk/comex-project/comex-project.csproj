@@ -38,7 +38,6 @@
   <ItemGroup>
     <Folder Include="Properties\" />
     <Folder Include="Src\" />
-    <Folder Include="Src\Glade_Files\" />
     <Folder Include="Resources\" />
     <Folder Include="Src\Gui_Classes\" />
     <Folder Include="Src\Classes\" />
@@ -55,16 +54,14 @@
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Resources\log4net.dll</HintPath>
+      <HintPath>..\resources\log4net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
     <Compile Include="Src\Classes\GlobalObj.cs" />
     <Compile Include="Src\Classes\LanguageManager.cs" />
-    <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
     <Compile Include="Src\Classes\GlobalConst.cs" />
     <Compile Include="Src\Classes\Pcsc.cs" />
     <Compile Include="Src\Classes\clsEncoding.cs" />
@@ -72,20 +69,6 @@
     <Compile Include="Src\Classes\SmartMouse.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\comex_16.png" />
-    <EmbeddedResource Include="Resources\Images\comex_24.png" />
-    <EmbeddedResource Include="Resources\Images\comex_32.png" />
-    <EmbeddedResource Include="Resources\Images\comex_48.png" />
-    <EmbeddedResource Include="Resources\Images\comex_64.png" />
-    <EmbeddedResource Include="Resources\Images\comex_96.png" />
-    <EmbeddedResource Include="Resources\Images\comex_128.png" />
-    <EmbeddedResource Include="Resources\Images\comex_256.png" />
-    <EmbeddedResource Include="Src\Glade_Files\AboutDialog.glade">
-      <LogicalName>AboutDialog.glade</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Src\Glade_Files\MainWindow.glade">
-      <LogicalName>MainWindow.glade</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="comex.exe.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
