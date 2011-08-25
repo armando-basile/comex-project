@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>informazioni</about>
+		<thanks>ringraziamenti</thanks>
+		<frmabout>informazioni su ...</frmabout>
+		<description>strumento per inviare comandi alla card mediante lettori di tipo PC/SC e seriale</description>
+		<notimplemented>Funzionalità non ancora implementata</notimplemented>
+		
+		<openact>Apri un file comandi</openact>
+		<infoact>Visualizza la finestra di informazioni</infoact>
+		<exitact>Esci dall'applicazione</exitact>
+		<atract>Risposta della card al Power On</atract>
+		
+		<filemenulbl>_File</filemenulbl>
+		<openmenulbl>_Apri</openmenulbl>
+		<exitmenulbl>_Esci</exitmenulbl>
+		<readermenulbl>_Lettore</readermenulbl>
+		<helpmenulbl>A_iuto</helpmenulbl>
+		<infomenulbl>I_nformazioni</infomenulbl>
+		
+		
+		<openlbl>Apri</openlbl>
+		<infolbl>Info</infolbl>
+		<exitlbl>Esci</exitlbl>		
+		<atrlbl>ATR</atrlbl>
+		<cmdlbl>comando</cmdlbl>
+		<resplbl>risposta</resplbl>
+		<sendlbl>invia</sendlbl>
+		
+		
+		<atrframelbl>Risposta al reset</atrframelbl>
+		<cardframelbl>Comunicazione card</cardframelbl>
+		
+		<selreader>Lettore selezionato</selreader>
+		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
+		<readerslist>Lista dei lettori disponibili</readerslist>
+		<readersel>Inserisci il numero del lettore da usare (scrivi EXIT per uscire)</readersel>
+		<cmdtosend>Inserisci il comando da inviare (scrivi EXIT per uscire)</cmdtosend>
+		<wrongcmd>formato del comando errato (puoi usare: 0x11 0x22 0x33... etc, oppure 11 22 33.. etc, oppure 112233)</wrongcmd>
+		
+		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.
+		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)
+		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)
+		- Supportata anche l'interfaccia Console
+		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)
+		
+		<b>autore:</b>
+		   Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)
+		
+		<b>sito web:</b>
+		   <a href="http://comex-project.googlecode.com">comex-project.googlecode.com</a>
+		
+		<b>segnalazioni:</b>
+		   <a href="http://code.google.com/p/comex-project/issues/list">code.google.com/p/comex-project/issues/list</a>
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
+		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		]]></thanksdesc>
+		
+	</language>
+</Settings>
