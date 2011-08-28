@@ -13,7 +13,8 @@
 		<atract>Power On card response</atract>
 
 		<filemenulbl>_File</filemenulbl>
-		<openmenulbl>_Open</openmenulbl>
+		<openmenulbl>_Open command file</openmenulbl>
+		<closemenulbl>_Close command file</closemenulbl>
 		<exitmenulbl>_Exit</exitmenulbl>
 		<readermenulbl>_Reader</readermenulbl>
 		<helpmenulbl>_Help</helpmenulbl>
@@ -21,6 +22,8 @@
 		
 		
 		<openlbl>Open</openlbl>
+		<cancellbl>Cancel</cancellbl>		
+		<closelbl>Chiudi</closelbl>		
 		<infolbl>Info</infolbl>
 		<exitlbl>Exit</exitlbl>
 		<atrlbl>ATR</atrlbl>
@@ -31,6 +34,7 @@
 		<atrframelbl>Answer to reset</atrframelbl>
 		<cardframelbl>Card communication</cardframelbl>
 		<commandfilelbl>Command file</commandfilelbl>
+		<selectfile>Select command file to open</selectfile>
 
 		<selreader>Selected reader</selreader>
 		<nopcscreader>No PCSC reader found</nopcscreader>
@@ -44,7 +48,12 @@
 		- Gui (using GTK# binding for GTK graphic libraries and Qyoto binding for QT graphic libraries)
 		- Console interface also supported
 		- Debug/Trace (can be sended to console and also to a log file to read after)
-		
+
+		<b>shortcut on command file area row:</b>
+		   F5: copy command from row to command field
+		   F6: send immidiatelly command from selected row
+		   doppio click: same of F5
+
 		<b>author:</b>
 		   Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)
 		
