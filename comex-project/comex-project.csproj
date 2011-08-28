@@ -38,8 +38,6 @@
   <ItemGroup>
     <Folder Include="Properties\" />
     <Folder Include="Src\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Src\Gui_Classes\" />
     <Folder Include="Src\Classes\" />
     <Folder Include="Docs\" />
     <Folder Include="Languages\" />

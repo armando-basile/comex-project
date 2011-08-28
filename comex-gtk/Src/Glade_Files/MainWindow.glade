@@ -231,8 +231,53 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkLayout" id="layout2">
+          <widget class="GtkAlignment" id="alignment11">
             <property name="visible">True</property>
+            <property name="top_padding">4</property>
+            <property name="bottom_padding">6</property>
+            <property name="left_padding">4</property>
+            <property name="right_padding">4</property>
+            <child>
+              <widget class="GtkFrame" id="FrameFile">
+                <property name="visible">True</property>
+                <property name="border_width">1</property>
+                <property name="label_xalign">0</property>
+                <child>
+                  <widget class="GtkAlignment" id="alignment12">
+                    <property name="visible">True</property>
+                    <property name="top_padding">4</property>
+                    <property name="bottom_padding">6</property>
+                    <property name="left_padding">12</property>
+                    <property name="right_padding">6</property>
+                    <child>
+                      <widget class="GtkScrolledWindow" id="scrolledwindow1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="hscrollbar_policy">automatic</property>
+                        <property name="vscrollbar_policy">automatic</property>
+                        <property name="shadow_type">in</property>
+                        <child>
+                          <widget class="GtkTreeView" id="treeview1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="LblFile">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">&lt;b&gt;frame1&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
           </widget>
           <packing>
             <property name="position">3</property>

@@ -273,9 +273,21 @@ namespace comex
 				}
 				
 				// Connect to smartcard
-				return PCSC.Connect(selectedReader, ref response,
-			                        Pcsc.SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
-			                        Pcsc.SCARD_SHARE.SCARD_SHARE_EXCLUSIVE);
+				ret = PCSC.Connect(selectedReader, ref response,
+			                       Pcsc.SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
+			                       Pcsc.SCARD_SHARE.SCARD_SHARE_EXCLUSIVE);
+				
+				string tmp = "";
+				
+				for (int b=0; b<response.Length; b+=2)
+				{
+					tmp += response.Substring(b,2) + " ";
+				}
+				
+				tmp = tmp.Trim();
+				response = tmp;
+				
+				return ret;
 			}
 			else
 			{

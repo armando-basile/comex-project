@@ -31,6 +31,7 @@
 		
 		<atrframelbl>Risposta al reset</atrframelbl>
 		<cardframelbl>Comunicazione card</cardframelbl>
+		<commandfilelbl>File comandi</commandfilelbl>
 		
 		<selreader>Lettore selezionato</selreader>
 		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
