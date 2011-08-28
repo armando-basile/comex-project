@@ -221,7 +221,8 @@ namespace comex
 			
 			if (ret != "")
 			{
-				return ret;
+				// Nothing, can use serial readers
+				// return ret;
 			}
 			
 			return "";
@@ -308,6 +309,13 @@ namespace comex
 			command = command.Replace("0x", "");
 			command = command.Replace(" ", "");
 			command = command.ToUpper();
+			
+			if (command.Length == 0)
+			{
+				// wrong command format
+				return GlobalObj.LMan.GetString("wrongcmd") + "\r\n";
+			}
+			
 			
 			if (command.Length % 2 != 0)
 			{
@@ -508,8 +516,15 @@ namespace comex
 		/// </summary>
 		private static void ClosePCSC()
 		{
-			PCSC.Disconnect();
-			PCSC.ReleaseContext();
+			try
+			{
+				PCSC.Disconnect();
+				PCSC.ReleaseContext();
+			}
+			catch (Exception Ex)
+			{
+				log.Warn(Ex.GetType().ToString() + ": " + Ex.Message);
+			}
 		}
 
 		
@@ -523,11 +538,14 @@ namespace comex
 		private static string InitPCSC()
 		{
 			PCSC = new Pcsc();
-			string retStr = PCSC.EstablishContext();
-			
-			if (retStr != "")
+			try
 			{
-				return retStr;
+				PCSC.EstablishContext();
+			}
+			catch (Exception Ex)
+			{
+			  	log.Warn(Ex.GetType().ToString() + ": " + Ex.Message);
+				return Ex.GetType().ToString() + ": " + Ex.Message;
 			}
 			
 			return "";
@@ -557,6 +575,8 @@ namespace comex
 		/// </summary>
 		private static string FillPcscReaders()
 		{
+			PCSC_Readers = new List<string>();
+			
 			// create new PCSC manager and create context
 			string retStr = InitPCSC();
 			
@@ -570,7 +590,7 @@ namespace comex
 			{
 				// retrieve pcsc readers
 				string[] pcsc_readers = new string[0];
-				PCSC_Readers = new List<string>();
+				
 				retStr = PCSC.ListReaders(out pcsc_readers);			
 				
 				if (retStr != "")

@@ -13,7 +13,8 @@
 		<atract>Risposta della card al Power On</atract>
 		
 		<filemenulbl>_File</filemenulbl>
-		<openmenulbl>_Apri</openmenulbl>
+		<openmenulbl>_Apri file comandi</openmenulbl>
+		<closemenulbl>_Chiudi file comandi</closemenulbl>
 		<exitmenulbl>_Esci</exitmenulbl>
 		<readermenulbl>_Lettore</readermenulbl>
 		<helpmenulbl>A_iuto</helpmenulbl>
@@ -21,6 +22,8 @@
 		
 		
 		<openlbl>Apri</openlbl>
+		<cancellbl>Annulla</cancellbl>
+		<closelbl>Chiudi</closelbl>
 		<infolbl>Info</infolbl>
 		<exitlbl>Esci</exitlbl>		
 		<atrlbl>ATR</atrlbl>
@@ -32,6 +35,7 @@
 		<atrframelbl>Risposta al reset</atrframelbl>
 		<cardframelbl>Comunicazione card</cardframelbl>
 		<commandfilelbl>File comandi</commandfilelbl>
+		<selectfile>Seleziona il file comandi da aprire</selectfile>
 		
 		<selreader>Lettore selezionato</selreader>
 		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
@@ -45,6 +49,11 @@
 		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)
 		- Supportata anche l'interfaccia Console
 		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)
+
+		<b>scelta rapida sulla riga dell'area file comandi:</b>
+		   F5: copia il comando dalla riga selezionata all'apposito campo
+		   F6: invia direttamente il comando contenuto nella riga selezionata
+		   doppio click: stessa cosa di F5
 		
 		<b>autore:</b>
 		   Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)

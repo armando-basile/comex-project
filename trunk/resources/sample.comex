@@ -1,0 +1,12 @@
+# Name       : sample.comex
+# Description: Sample command file for comex project.
+# Author     : Armando Basile
+# Date       : 2011-08-28
+
+
+# ISO IN SAMPLE
+SELECT MF                      00 A4 00 00 02 3F 00
+
+
+# ISO OUT SAMPLE
+GET RESPONSE                   00 C0 00 00 20

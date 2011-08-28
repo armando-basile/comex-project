@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using Glade;
 using Gtk;
 using Gdk;
+using Pango;
 
 using log4net;
 
@@ -16,12 +19,14 @@ namespace comexgtk
 		
 		[Glade.Widget]  Gtk.Window             MainWindow;
 		[Glade.Widget]  Gtk.ToolButton         TbOpen;
+		[Glade.Widget]  Gtk.ToolButton         TbClose;
 		[Glade.Widget]  Gtk.ToolButton         TbATR;
 		[Glade.Widget]  Gtk.ToolButton         TbAbout;
 		[Glade.Widget]  Gtk.ToolButton         TbExit;		
 		[Glade.Widget]  Gtk.Statusbar          StatusBar;
 		[Glade.Widget]  Gtk.MenuItem       	   MenuFileItem;
 		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileOpen;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileClose;
 		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileExit;
 		[Glade.Widget]  Gtk.Menu       	       MenuReader;
 		[Glade.Widget]  Gtk.MenuItem       	   MenuReaderItem;
@@ -37,7 +42,7 @@ namespace comexgtk
 		[Glade.Widget]  Gtk.Entry              TxtCmd;
 		[Glade.Widget]  Gtk.Entry              TxtResp;
 		[Glade.Widget]  Gtk.Button             BtnSend;
-		
+		[Glade.Widget]  Gtk.TreeView           LstCommands;
 		
 		
 		
@@ -50,9 +55,10 @@ namespace comexgtk
 		private string ATR = "";
 		private string command = "";
 		private string response = "";
+		private string commandFileName = "";
+		private string commandFilePath = "";
 		
-		
-		
+		private ListStore lsCommands;
 		
 		
 		
@@ -123,6 +129,7 @@ namespace comexgtk
 		/// <summary>
 		/// Close GtkWindows
 		/// </summary>
+		[GLib.ConnectBefore]
 		public void ActionCancel(object sender, EventArgs args)
 		{
 			GlobalObj.CloseConnection();
@@ -137,6 +144,7 @@ namespace comexgtk
 		/// <summary>
 		/// Open Info about window
 		/// </summary>
+		[GLib.ConnectBefore]
 		public void ActionAbout(object sender, EventArgs args)
 		{
 			AboutDialogClass adc = new AboutDialogClass();
@@ -153,12 +161,36 @@ namespace comexgtk
 		
 		
 		
+		/// <summary>
+		/// Close command file
+		/// </summary>
+		[GLib.ConnectBefore]
+		public void ActionCloseFile(object sender, EventArgs args)
+		{
+			CloseCommandFile();
+		}
+		
+
+		
+		
+		
+		/// <summary>
+		/// Open command file
+		/// </summary>
+		[GLib.ConnectBefore]
+		public void ActionOpenFile(object sender, EventArgs args)
+		{
+			OpenCommandFile();
+		}
+
+		
 		
 		
 		
 		/// <summary>
 		/// ChangeReader
 		/// </summary>
+		[GLib.ConnectBefore]
 		public void ActionChangeReader(object sender, ButtonReleaseEventArgs args)
 		{
 			string newReader = ((AccelLabel)(((RadioMenuItem)(sender)).Children[0])).Text;
@@ -172,6 +204,7 @@ namespace comexgtk
 		/// <summary>
 		/// Perform Power On card
 		/// </summary>
+		[GLib.ConnectBefore]
 		public void ActionATR(object sender, EventArgs args)
 		{
 			GetATR();
@@ -183,13 +216,49 @@ namespace comexgtk
 		/// <summary>
 		/// Perform exchange data with card
 		/// </summary>
+		[GLib.ConnectBefore]
 		public void ActionSendCommand(object sender, EventArgs args)
 		{
+			// Send command and receive response
 			ExchangeData();
 		}
 		
 		
 		
+		/// <summary>
+		/// Perform update of command text from selected command file row
+		/// </summary>
+		[GLib.ConnectBefore]
+		private void ActionAddCommand(object sender, ButtonPressEventArgs e)
+		{
+			if (e.Event.Type == Gdk.EventType.TwoButtonPress)
+		    {
+				// Update text of command
+				GetCommandFromList();
+		    }	
+		}
+		
+		
+		
+		
+		/// <summary>
+		/// Perform exec of command from selected command file row
+		/// </summary>
+		[GLib.ConnectBefore]
+		private void ActionExecCommand(object sender, KeyPressEventArgs e)
+		{
+			if (e.Event.Key == Gdk.Key.F5)
+			{
+				// Update text of command
+				GetCommandFromList();
+			}
+			else if (e.Event.Key == Gdk.Key.F6)
+			{
+				// Update text of command,  send it and receive response
+				GetCommandFromList();
+				ExchangeData();
+			}
+		}
 		
 		
 		
@@ -240,6 +309,8 @@ namespace comexgtk
 			TbOpen.TooltipText = GlobalObj.LMan.GetString("openact");
 			TbOpen.Label = GlobalObj.LMan.GetString("openlbl");
 			
+			TbClose.Label = GlobalObj.LMan.GetString("closelbl");
+			
 			TbAbout.TooltipText = GlobalObj.LMan.GetString("infoact");
 			TbAbout.Label = GlobalObj.LMan.GetString("infolbl");
 			
@@ -252,6 +323,7 @@ namespace comexgtk
 			// Set labels
 			((Label)MenuFileItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("filemenulbl");
 			((Label)MenuFileOpen.Child).TextWithMnemonic = GlobalObj.LMan.GetString("openmenulbl");
+			((Label)MenuFileClose.Child).TextWithMnemonic = GlobalObj.LMan.GetString("closemenulbl");
 			((Label)MenuFileExit.Child).TextWithMnemonic = GlobalObj.LMan.GetString("exitmenulbl");
 			((Label)MenuReaderItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("readermenulbl");
 			((Label)MenuAboutItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("helpmenulbl");
@@ -272,6 +344,28 @@ namespace comexgtk
 			
 			Gdk.Color.Parse("#1F6D20", ref color);
 			TxtCmd.ModifyText(StateType.Normal, color);
+			
+			// TreeView (List) 
+			LstCommands.Selection.Mode = SelectionMode.Single;
+			CellRendererText rendererText = new CellRendererText();
+        	
+			TreeViewColumn column = new TreeViewColumn();
+			column.Title = "Commands";
+			column.Resizable = true;
+			column.PackStart(rendererText, true);
+			column.AddAttribute(rendererText, "text", 0);
+			
+			LstCommands.RulesHint = true;
+        	LstCommands.AppendColumn(column);
+			
+			if (GlobalObj.IsWindows())
+			{
+				LstCommands.ModifyFont(FontDescription.FromString("Courier New Normal 10"));
+			}
+			else
+			{
+				LstCommands.ModifyFont(FontDescription.FromString("Fixed Normal 10"));
+			}
 			
 			
 			// update gui menu
@@ -346,6 +440,8 @@ namespace comexgtk
 		{
 			MainWindow.DeleteEvent += ActionCancel;
 			BtnSend.Clicked += ActionSendCommand;
+			LstCommands.ButtonPressEvent += ActionAddCommand;
+			LstCommands.KeyPressEvent += ActionExecCommand;
 		}
 		
 		
@@ -425,6 +521,218 @@ namespace comexgtk
 		
 		
 		
+		
+		
+		
+		/// <summary>
+		/// Open command file
+		/// </summary>
+		private void OpenCommandFile()
+		{
+                        
+            // New dialog for select contacts file 
+            Gtk.FileChooserDialog FileBox = 
+				new Gtk.FileChooserDialog(GlobalObj.LMan.GetString("selectfile"), 
+                                          MainWindow,
+                                          FileChooserAction.Open,
+				                          GlobalObj.LMan.GetString("cancellbl"),
+                                          Gtk.ResponseType.Cancel,
+				                          GlobalObj.LMan.GetString("openlbl"),
+                                          Gtk.ResponseType.Accept);
+            
+            // Filter to use only comex files
+            Gtk.FileFilter myFilter = new Gtk.FileFilter(); 
+            myFilter.AddPattern("*.comex");
+            myFilter.Name = "comex project files (*.comex)";
+            FileBox.AddFilter(myFilter);
+            
+            // Manage result of dialog box
+            FileBox.Icon = Gdk.Pixbuf.LoadFromResource("comex_256.png");
+            int retFileBox = FileBox.Run();
+            if ((ResponseType)retFileBox == Gtk.ResponseType.Accept)
+            {       
+                // path of a right file returned
+                commandFilePath = FileBox.Filename;				
+				commandFileName = System.IO.Path.GetFileNameWithoutExtension(commandFilePath);
+				log.Debug("file selected: " + commandFilePath);
+				
+				UpdateGuiForCommandFile();
+			
+				
+				
+                FileBox.Destroy();
+                FileBox.Dispose();                              
+            }
+            else
+            {
+                // nothing returned
+                FileBox.Destroy();
+                FileBox.Dispose();
+                return;
+            }
+        
+		}
+		
+
+		
+		
+		
+		/// <summary>
+		/// Close command file
+		/// </summary>
+		private void CloseCommandFile()
+		{
+			commandFileName = "";
+			commandFilePath = "";
+			
+			UpdateGuiForCommandFile();
+		}
+
+		
+		
+		
+		
+		
+		private void UpdateGuiForCommandFile()
+		{
+			if (commandFileName != "")
+			{
+				
+				if (!UpdateFileAreaFromFile(commandFilePath))
+				{
+					// error detected
+					lsCommands.Clear();
+					return;
+				}
+				
+				// Command file selected
+				LblFile.Markup = "<b>" + GlobalObj.LMan.GetString("commandfilelbl") + " " + 
+					"[" + commandFileName + "]</b>";
+				
+				TbOpen.Sensitive = false;
+				TbClose.Sensitive = true;
+				MenuFileOpen.Sensitive = false;
+				MenuFileClose.Sensitive = true;
+				
+			}
+			else
+			{
+				// No commanf dile selected
+				LblFile.Markup = "<b>" + GlobalObj.LMan.GetString("commandfilelbl") + "</b>";
+
+				TbOpen.Sensitive = true;
+				TbClose.Sensitive = false;
+				MenuFileOpen.Sensitive = true;
+				MenuFileClose.Sensitive = false;
+				
+				lsCommands = new ListStore(typeof(string));
+				LstCommands.Model=lsCommands;
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		/// <summary>
+		/// Fill command file area from command file
+		/// </summary>
+		private bool UpdateFileAreaFromFile(string filepath)
+		{
+			StreamReader sr = null;
+			List<string> cmdList = new List<string>();
+			
+			try
+			{
+				sr = new StreamReader(filepath);
+				
+				string line = "";
+				while (!sr.EndOfStream)
+				{
+					line = sr.ReadLine();
+					cmdList.Add(line);
+				}
+				
+				sr.Close();
+				sr.Dispose();
+				sr = null;
+				
+				UpdateTreeView(cmdList);
+				
+				return true;
+			}
+			catch(Exception Ex)
+			{
+				log.Error(Ex.Message);
+				MainClass.ShowMessage("ERROR", Ex.Message, MessageType.Error);
+				return false;
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		private void UpdateTreeView(List<string> rows)
+		{
+			lsCommands = new ListStore(typeof(string));
+			
+			foreach(string row in rows)
+			{
+				
+				lsCommands.AppendValues(row);
+			}
+			
+  			LstCommands.Model = lsCommands;
+			LstCommands.ShowAll();
+		}
+		
+		
+		
+		
+		
+		/// <summary>
+		/// update command from selected row in command file area
+		/// </summary>
+		private void GetCommandFromList()
+		{
+			// clear text
+			TxtCmd.Text = "";
+			MainClass.GtkWait();
+			
+			// obtain row content
+			TreeSelection ts = LstCommands.Selection;
+			TreeIter ti;
+			bool issel = ts.GetSelected(out ti);
+			
+			// if no row selected
+			if (!issel)
+			{
+				return;
+			}
+			
+			string command = (string)lsCommands.GetValue(ti, 0);
+			
+			// check for empty row
+			if (command.Trim() == "")
+			{
+				return;
+			}
+			
+			
+			// check for comments
+			if (command.Trim().IndexOf("#") == 0)
+			{
+				return;
+			}
+
+			
+			TxtCmd.Text = command.Substring(31);
+		}
 		
 		
 		
