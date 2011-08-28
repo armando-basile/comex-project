@@ -345,7 +345,7 @@ namespace comexgtk
 		private void UpdateReactors()
 		{
 			MainWindow.DeleteEvent += ActionCancel;
-			BtnSend.Activated += ActionSendCommand;
+			BtnSend.Clicked += ActionSendCommand;
 		}
 		
 		
@@ -408,6 +408,7 @@ namespace comexgtk
 		{
 			command = TxtCmd.Text;
 			TxtResp.Text = "";
+			TxtResp.Show();
 			MainClass.GtkWait();
 			
 			retStr = GlobalObj.SendReceive(command, ref response);

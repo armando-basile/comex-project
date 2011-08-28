@@ -1,0 +1,5 @@
+2011-08-28  Armando Basile  <hmandevteam@gmail.com>
+
+	* Src/Gui_Classes/MainWindowClass.cs: 
+	- fix: wrong reactor for send button
+
