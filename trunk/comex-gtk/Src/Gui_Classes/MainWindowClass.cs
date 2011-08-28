@@ -28,6 +28,7 @@ namespace comexgtk
 		[Glade.Widget]  Gtk.MenuItem       	   MenuAboutItem;
 		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuAboutInfo;
 		[Glade.Widget]  Gtk.Label              LblATR;
+		[Glade.Widget]  Gtk.Label              LblFile;
 		[Glade.Widget]  Gtk.Entry              TxtATR;
 		[Glade.Widget]  Gtk.Label              LblCommand;
 		[Glade.Widget]  Gtk.Label              LblResponse;
@@ -261,7 +262,17 @@ namespace comexgtk
 			LblResponse.Text = GlobalObj.LMan.GetString("resplbl");
 			LblSend.Text = GlobalObj.LMan.GetString("sendlbl");
 			LblExchange.Markup = "<b>" + GlobalObj.LMan.GetString("cardframelbl") + "</b>";
-
+			LblFile.Markup =  "<b>" + GlobalObj.LMan.GetString("commandfilelbl") + "</b>";
+			
+			Gdk.Color color = new Gdk.Color();
+			Gdk.Color.Parse("#0000FF", ref color);
+			TxtATR.ModifyText(StateType.Normal, color);
+			Gdk.Color.Parse("#0000FF", ref color);
+			TxtResp.ModifyText(StateType.Normal, color);
+			
+			Gdk.Color.Parse("#1F6D20", ref color);
+			TxtCmd.ModifyText(StateType.Normal, color);
+			
 			
 			// update gui menu
 			Gtk.RadioMenuItem rmi;

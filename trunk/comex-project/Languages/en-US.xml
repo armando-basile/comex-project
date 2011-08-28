@@ -30,6 +30,7 @@
 		
 		<atrframelbl>Answer to reset</atrframelbl>
 		<cardframelbl>Card communication</cardframelbl>
+		<commandfilelbl>Command file</commandfilelbl>
 
 		<selreader>Selected reader</selreader>
 		<nopcscreader>No PCSC reader found</nopcscreader>

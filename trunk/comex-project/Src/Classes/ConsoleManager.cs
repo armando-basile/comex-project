@@ -64,7 +64,7 @@ namespace comex
 				return;
 			}
 			
-			
+ 			
 			// Connect to smartcard
 			ret = GlobalObj.AnswerToReset(ref ATR);
 			
