@@ -37,4 +37,23 @@
     <Folder Include="Properties\" />
     <Folder Include="Src\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\MainClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="qt-dotnet, Version=4.5.0.0, Culture=neutral, PublicKeyToken=194a23ba31c08164" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\resources\log4net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\comex-project\comex-project.csproj">
+      <Project>{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}</Project>
+      <Name>comex-project</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
