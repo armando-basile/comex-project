@@ -36,6 +36,7 @@
 		<cardframelbl>Comunicazione card</cardframelbl>
 		<commandfilelbl>File comandi</commandfilelbl>
 		<selectfile>Seleziona il file comandi da aprire</selectfile>
+		<noinitreader>Card nel lettore non inizializzata, eseguire prima ATR</noinitreader>
 		
 		<selreader>Lettore selezionato</selreader>
 		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>

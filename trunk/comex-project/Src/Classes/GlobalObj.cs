@@ -20,6 +20,7 @@ namespace comex
 		private static string languageFolder = "";
 		private static string languageTag = "";
 		private static string selectedReader = "";
+		private static bool isPowered = false;
 		private static string ret = "";
 		private static LanguageManager lMan = null;
 		
@@ -47,6 +48,13 @@ namespace comex
 		/// Set/Get if selected reader is a PCSC reader
 		/// </summary>
 		public static bool IsPCSC { get; set; }
+		
+		
+		/// <summary>
+		/// Return true if selected reader was powered on
+		/// </summary>
+		public static bool IsPowered { get { return isPowered; } }
+		
 		
 		
 		/// <summary>
@@ -254,14 +262,14 @@ namespace comex
 		public static string AnswerToReset(ref string response)
 		{
 			// close other context
-			ClosePCSC();
+			// ClosePCSC();
 		
 			// check for serial port opened
-			if (SMouse.IsPortOpen)
-			{
+			//if (SMouse.IsPortOpen)
+			//{
 				// close serial port
-				SMouse.Close();
-			}
+			//	SMouse.Close();
+			//}
 			
 			if (IsPCSC)
 			{
@@ -287,6 +295,11 @@ namespace comex
 				
 				tmp = tmp.Trim();
 				response = tmp;
+				
+				if (ret == "")
+				{
+					isPowered = true;
+				}
 				
 				return ret;
 			}
@@ -354,9 +367,14 @@ namespace comex
 		/// </summary>
 		public static void CloseConnection()
 		{
+			if (selectedReader == "")
+			{
+				return;
+			}
+			
 			if (IsPCSC)
 			{
-				ClosePCSC();				
+				ClosePCSC();
 			}
 			else
 			{
@@ -367,6 +385,9 @@ namespace comex
 					SMouse.Close();
 				}
 			}
+			
+			selectedReader = "";
+			isPowered = false;
 		}
 		
 		
