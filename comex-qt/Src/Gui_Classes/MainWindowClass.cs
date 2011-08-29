@@ -57,6 +57,7 @@ namespace comexqt
 		/// </summary>
 		private void UpdateSelectedReader(string reader)
 		{
+			GlobalObj.CloseConnection();			
 			GlobalObj.SelectedReader = reader;
 			mainwindow_Ui.statusbar.ShowMessage(GlobalObj.LMan.GetString("selreader") + ": " + reader);
 			mainwindow_Ui.TxtATR.Text = "";
@@ -104,6 +105,12 @@ namespace comexqt
 		/// </summary>
 		private void ExchangeData()
 		{
+			if (!GlobalObj.IsPowered)
+			{
+				MainClass.ShowMessage(this, "WARNING", GlobalObj.LMan.GetString("noinitreader"), MainClass.MessageType.Warning);
+				return;
+			}
+			
 			command = mainwindow_Ui.TxtCmd.Text;
 			mainwindow_Ui.TxtResp.Text = "";
 			mainwindow_Ui.TxtResp.Show();

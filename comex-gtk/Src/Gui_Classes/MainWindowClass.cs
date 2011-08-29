@@ -45,6 +45,7 @@ namespace comexgtk
 		/// </summary>
 		private void UpdateSelectedReader(string reader)
 		{
+			GlobalObj.CloseConnection();
 			GlobalObj.SelectedReader = reader;
 			StatusBar.Push(1, GlobalObj.LMan.GetString("selreader") + ": " + reader);
 			TxtATR.Text = "";
@@ -91,6 +92,13 @@ namespace comexgtk
 		/// </summary>
 		private void ExchangeData()
 		{
+			
+			if (!GlobalObj.IsPowered)
+			{
+				MainClass.ShowMessage("WARNING", GlobalObj.LMan.GetString("noinitreader"), MessageType.Warning);
+				return;
+			}
+
 			command = TxtCmd.Text;
 			TxtResp.Text = "";
 			TxtResp.Show();

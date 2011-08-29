@@ -35,6 +35,7 @@
 		<cardframelbl>Card communication</cardframelbl>
 		<commandfilelbl>Command file</commandfilelbl>
 		<selectfile>Select command file to open</selectfile>
+		<noinitreader>Card in reader not initialized, need ATR</noinitreader>
 
 		<selreader>Selected reader</selreader>
 		<nopcscreader>No PCSC reader found</nopcscreader>
