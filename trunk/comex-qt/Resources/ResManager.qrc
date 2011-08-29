@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="main">
+    <file>../../resources/Images/arrow-right.png</file>
+    <file>../../resources/Images/quickopen.png</file>
+    <file>../../resources/Images/dialog-information.png</file>
+    <file>../../resources/Images/document-close.png</file>
+    <file>../../resources/Images/application-exit.png</file>
+    <file>../../resources/Images/document-open.png</file>
+    <file>../../resources/Images/comex_16.png</file>
+    <file>../../resources/Images/comex_24.png</file>
+    <file>../../resources/Images/comex_32.png</file>
+    <file>../../resources/Images/comex_48.png</file>
+    <file>../../resources/Images/comex_64.png</file>
+    <file>../../resources/Images/comex_96.png</file>
+    <file>../../resources/Images/comex_128.png</file>
+    <file>../../resources/Images/comex_256.png</file>
+  </qresource>
+</RCC>

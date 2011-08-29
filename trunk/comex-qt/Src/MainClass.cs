@@ -84,8 +84,7 @@ namespace comexqt
 			QDesktopWidget qdw = new QDesktopWidget();
 			
 			// Create MainWindow class manager
-			/* 
-			MainWindowClass mwc = new MainWindowClass(args);
+			MainWindowClass mwc = new MainWindowClass();
 			
 			int wWidth = Convert.ToInt32(mwc.Width() / 2);
 			int wHeight = Convert.ToInt32(mwc.Height() / 2);
@@ -93,13 +92,12 @@ namespace comexqt
 			int dHeight = Convert.ToInt32(qdw.Height() / 2);
 			
 			mwc.Move(dWidth - wWidth, dHeight - wHeight - 20);
-			*/
 			
-			//mwc.Show();
+			mwc.Show();
 			
 			
 			// Run Qyoto Application
-			QApplication.Exec();	
+			QApplication.Exec();
 			
 		}
 		
