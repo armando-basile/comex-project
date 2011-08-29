@@ -44,25 +44,25 @@
 		<cmdtosend>Inserisci il comando da inviare (scrivi EXIT per uscire)</cmdtosend>
 		<wrongcmd>formato del comando errato (puoi usare: 0x11 0x22 0x33... etc, oppure 11 22 33.. etc, oppure 112233)</wrongcmd>
 		
-		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.
-		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)
-		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)
-		- Supportata anche l'interfaccia Console
-		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)
-
-		<b>scelta rapida sulla riga dell'area file comandi:</b>
-		   F5: copia il comando dalla riga selezionata all'apposito campo
-		   F6: invia direttamente il comando contenuto nella riga selezionata
-		   doppio click: stessa cosa di F5
-		
-		<b>autore:</b>
-		   Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)
-		
-		<b>sito web:</b>
-		   <a href="http://comex-project.googlecode.com">comex-project.googlecode.com</a>
-		
-		<b>segnalazioni:</b>
-		   <a href="http://code.google.com/p/comex-project/issues/list">code.google.com/p/comex-project/issues/list</a>
+		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.<br> 
+		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)<br> 
+		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)<br> 
+		- Supportata anche l'interfaccia Console<br> 
+		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)<br> 
+<br> 
+		<b>scelta rapida sulla riga dell'area file comandi:</b><br> 
+		&nbsp;&nbsp;&nbsp;F5: copia il comando dalla riga selezionata all'apposito campo<br> 
+		&nbsp;&nbsp;&nbsp;F6: invia direttamente il comando contenuto nella riga selezionata<br> 
+		&nbsp;&nbsp;&nbsp;doppio click: stessa cosa di F5<br> 
+<br> 
+		<b>autore:</b><br> 
+		&nbsp;&nbsp;&nbsp;Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)<br> 
+<br> 		
+		<b>sito web:</b><br> 
+		&nbsp;&nbsp;&nbsp;<a href="http://comex-project.googlecode.com">comex-project.googlecode.com</a><br> 
+<br> 
+		<b>segnalazioni:</b><br> 
+		&nbsp;&nbsp;&nbsp;<a href="http://code.google.com/p/comex-project/issues/list">code.google.com/p/comex-project/issues/list</a><br> 
 		]]></infodesc>
 		
 		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
