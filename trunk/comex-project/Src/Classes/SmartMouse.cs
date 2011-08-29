@@ -146,8 +146,7 @@ namespace comex
 				portObject.DtrEnable=true;
 				portObject.Handshake= Handshake.None;
 				portObject.PortName = portName;				
-				portObject.Open() ;
-				portObject.ReadTimeout = 150;
+				portObject.Open();
 				isPortOpen = true;
 				return "";
 				
@@ -256,6 +255,43 @@ namespace comex
 		
 		
 		
+		
+		/// <summary>
+		/// Power On card
+		/// </summary>
+		public string Connect(out string response)
+		{
+			string outData = "";
+			response = "";
+			
+			try
+			{
+				// Clear all buffers
+				portObject.DiscardInBuffer();
+				portObject.DiscardOutBuffer();
+				
+				// set and reset Reset Line
+				portObject.RtsEnable = true;
+				System.Threading.Thread.Sleep(50);
+				portObject.RtsEnable = false;
+				
+				// read buffer
+				outData = ReadData(800, out response);
+				
+				
+			}
+			catch(Exception e)
+			{
+				log.Error(e.Message);
+				return e.Message;
+			}
+			
+			return outData;
+		}
+		
+		
+		
+		
 		/// <summary>
 		/// Read data from serial port
 		/// </summary>
@@ -266,14 +302,27 @@ namespace comex
 			int BytesToRead = 0;
 			response = "";
 			
-			portObject.ReadTimeout = timeout;
+			
+			DateTime startTime = DateTime.Now;
 			
 			try
 			{
-				BytesToRead = portObject.Read(theBytes,0,theBytes.Length);
-				if (BytesToRead > 0)
+				// loop for polling
+				while(DateTime.Now < (startTime.AddMilliseconds(timeout)))
+				{				
+					BytesToRead = portObject.Read(theBytes,0,theBytes.Length);
+					if (BytesToRead > 0)
+					{
+						// incoming data presence
+						break;
+					}
+				}
+				
+				// loop for read buffer
+				while (BytesToRead > 0)
 				{
-					rxHexString = utils.GetHexFromBytes(theBytes,0,BytesToRead);
+					rxHexString += utils.GetHexFromBytes(theBytes,0,BytesToRead);
+					BytesToRead = portObject.Read(theBytes,0,theBytes.Length);
 				}
 			}
 			catch(Exception e)
@@ -353,6 +402,9 @@ namespace comex
 		
 		
 		#endregion Public Methods
+		
+		
+		
 		
 		
 		
