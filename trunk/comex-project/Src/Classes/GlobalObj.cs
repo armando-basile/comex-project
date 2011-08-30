@@ -261,15 +261,17 @@ namespace comex
 		/// </summary>
 		public static string AnswerToReset(ref string response)
 		{
-			// close other context
-			// ClosePCSC();
-		
-			// check for serial port opened
-			//if (SMouse.IsPortOpen)
-			//{
+			if (IsPCSC)
+			{
+				// close other context
+				ClosePCSC();
+			}
+			else
+			{
 				// close serial port
-			//	SMouse.Close();
-			//}
+				SMouse.Close();	
+			}
+
 			
 			if (IsPCSC)
 			{
@@ -286,6 +288,13 @@ namespace comex
 			                       Pcsc.SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
 			                       Pcsc.SCARD_SHARE.SCARD_SHARE_EXCLUSIVE);
 				
+				if (ret != "")
+				{
+					// error detected
+					log.Error(ret);
+					return ret;
+				}
+				
 				string tmp = "";
 				
 				for (int b=0; b<response.Length; b+=2)
@@ -296,11 +305,7 @@ namespace comex
 				tmp = tmp.Trim();
 				response = tmp;
 				
-				if (ret == "")
-				{
-					isPowered = true;
-				}
-				
+				isPowered = true;				
 				return ret;
 			}
 			else
