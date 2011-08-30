@@ -1,3 +1,12 @@
+2011-08-30  Armando Basile  <armando.basile@st.com>
+
+	* Docs/readme:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/SmartMouse.cs:
+	* Properties/AssemblyInfo.cs: 
+	- first code added to support serial reader
+
 2011-08-29  Armando Basile  <hmandevteam@gmail.com>
 
 	* Src/Classes/SmartMouse.cs: 

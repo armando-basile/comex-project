@@ -15,7 +15,7 @@ namespace comex
 		private cEncoding utils = new cEncoding();
 		
 		private SerialPort portObject;
-		private string portName = "";
+		private string portName = "/dev/ttyS0";
 		private int portSpeed = 9600;
 		private string portParity;
 		private int portStopBit;
@@ -117,6 +117,7 @@ namespace comex
 		public SmartMouse ()
 		{
 			portObject = new SerialPort();
+			portObject.ReadTimeout = 50;			
 		}
 		
 		
@@ -144,6 +145,7 @@ namespace comex
 				}
 				
 				portObject.DtrEnable=true;
+				portObject.RtsEnable=false;
 				portObject.Handshake= Handshake.None;
 				portObject.PortName = portName;				
 				portObject.Open();
@@ -276,7 +278,7 @@ namespace comex
 				portObject.RtsEnable = false;
 				
 				// read buffer
-				outData = ReadData(800, out response);
+				outData = ReadData(1000, out response);
 				
 				
 			}
@@ -305,31 +307,56 @@ namespace comex
 			
 			DateTime startTime = DateTime.Now;
 			
-			try
+			// loop for polling
+			while(DateTime.Now < (startTime.AddMilliseconds(timeout)))
 			{
-				// loop for polling
-				while(DateTime.Now < (startTime.AddMilliseconds(timeout)))
-				{				
-					BytesToRead = portObject.Read(theBytes,0,theBytes.Length);
-					if (BytesToRead > 0)
+				try
+				{
+					// try to read bytes
+					BytesToRead = 0;
+					BytesToRead = portObject.Read(theBytes,0,theBytes.Length);						
+				}
+				catch(Exception Ex)
+				{
+					// check for non timeout exception
+					if (Ex.GetType() != typeof(TimeoutException))
 					{
-						// incoming data presence
-						break;
+						// error detected
+						log.Error(Ex.GetType().ToString() + " " + Ex.Message);
+						return Ex.Message;
 					}
 				}
 				
-				// loop for read buffer
-				while (BytesToRead > 0)
+				if (BytesToRead > 0)
 				{
-					rxHexString += utils.GetHexFromBytes(theBytes,0,BytesToRead);
-					BytesToRead = portObject.Read(theBytes,0,theBytes.Length);
+					// incoming data presence
+					break;
 				}
 			}
-			catch(Exception e)
+			
+			
+			
+			// loop for read buffer
+			while (BytesToRead > 0)
 			{
-				// error detected
-				log.Error(e.Message);
-				return e.Message;
+				// update string from buffer
+				rxHexString += utils.GetHexFromBytes(theBytes,0,BytesToRead);
+				try
+				{
+					// try to read bytes
+					BytesToRead = 0;
+					BytesToRead = portObject.Read(theBytes,0,theBytes.Length);
+				}
+				catch(Exception Ex)
+				{
+					// check for non timeout exception
+					if (Ex.GetType() != typeof(TimeoutException))
+					{
+						// error detected
+						log.Error(Ex.GetType().ToString() + " " + Ex.Message);
+						return Ex.Message;
+					}
+				}
 			}
 			
 			

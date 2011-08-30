@@ -1,0 +1,17 @@
+
+to use pcsc readers need install pcsc-lite
+
+CONSOLE APPLICATION 
+ $ mono comex.exe --help                    (for help message)
+ $ mono comex.exe                           (to run without log)
+
+
+WITH GTK GUI (required gtk-sharp)
+ $ mono comex-gtk.exe --help                (for help message)
+ $ mono comex-gtk.exe                       (to run without log)
+
+
+
+WITH QT GUI (required qyoto)
+ $ mono comex-qt.exe --help                 (for help message)
+ $ mono comex-qt.exe                        (to run without log)
