@@ -1,12 +1,9 @@
 # Name       : sample.comex
 # Description: Sample command file for comex project.
 # Author     : Armando Basile
-# Date       : 2011-08-28
+# Date       : 2011-08-30
 
 
-# ISO IN SAMPLE
-SELECT MF                      00 A4 00 00 02 3F 00
-
-
-# ISO OUT SAMPLE
-GET RESPONSE                   00 C0 00 00 20
+# ISO COMMANDS FOR GSM CARD
+SELECT MF (ISO IN)             A0 A4 00 00 02 3F 00
+GET RESPONSE (ISO OUT)         A0 C0 00 00 16
