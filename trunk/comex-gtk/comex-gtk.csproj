@@ -99,6 +99,7 @@
       <Link>Resources\comex_256.png</Link>
       <LogicalName>comex_256.png</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Src\Glade_Files\SettingsDialog.glade" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
