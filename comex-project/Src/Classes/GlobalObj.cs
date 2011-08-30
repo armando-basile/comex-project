@@ -307,7 +307,7 @@ namespace comex
 			{
 				// SmartMouse serial reader				
 				SMouse.PortDataBit = 8;
-				SMouse.PortName = "/dev/ttyS0";
+				SMouse.PortName = selectedReader;
 				SMouse.PortStopBit = 2;
 				SMouse.PortParity = "O";
 				SMouse.PortSpeed = 9600;
