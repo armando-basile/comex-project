@@ -261,6 +261,9 @@ namespace comex
 		/// </summary>
 		public static string AnswerToReset(ref string response)
 		{
+			
+			response = "";
+			
 			if (IsPCSC)
 			{
 				// close other context
@@ -295,22 +298,37 @@ namespace comex
 					return ret;
 				}
 				
-				string tmp = "";
-				
-				for (int b=0; b<response.Length; b+=2)
-				{
-					tmp += response.Substring(b,2) + " ";
-				}
-				
-				tmp = tmp.Trim();
-				response = tmp;
+				response = AddSpace(response);
 				
 				isPowered = true;				
 				return ret;
 			}
 			else
 			{
-				return lMan.GetString("notimplemented");
+				// SmartMouse serial reader				
+				SMouse.PortDataBit = 8;
+				SMouse.PortName = "/dev/ttyS0";
+				SMouse.PortStopBit = 2;
+				SMouse.PortParity = "O";
+				SMouse.PortSpeed = 9600;
+				
+				ret = SMouse.ApplySettings();
+				ret = SMouse.Open();
+				ret = SMouse.Connect(out response);				
+				
+				log.Debug("response: " + response);
+				
+				if (ret != "")
+				{
+					// error detected
+					return ret;
+				}
+				
+				response = AddSpace(response);
+				
+				isPowered = true;		
+				return ret;
+				
 			}
 		}
 		
@@ -331,14 +349,14 @@ namespace comex
 			if (command.Length == 0)
 			{
 				// wrong command format
-				return GlobalObj.LMan.GetString("wrongcmd") + "\r\n";
+				return LMan.GetString("wrongcmd") + "\r\n";
 			}
 			
 			
 			if (command.Length % 2 != 0)
 			{
 				// wrong command format
-				return GlobalObj.LMan.GetString("wrongcmd") + "\r\n";
+				return LMan.GetString("wrongcmd") + "\r\n";
 			}
 			
 			// parse all digits
@@ -347,7 +365,7 @@ namespace comex
 				if (!Uri.IsHexDigit(digit))
 				{
 					// wrong command format
-					return GlobalObj.LMan.GetString("wrongcmd") + "\r\n";				
+					return LMan.GetString("wrongcmd") + "\r\n";				
 				}
 			}
 			
@@ -355,11 +373,86 @@ namespace comex
 			if (IsPCSC)
 			{
 				// exchange data with smartcard using PCSC
-				return GlobalObj.PCSC.Transmit(command, ref response);
+				return PCSC.Transmit(command, ref response);
 			}
 			else
 			{
-				return lMan.GetString("notimplemented");
+				// Not Yet Stable...
+				return LMan.GetString("notimplemented");
+				
+/*
+				// SmartMouse serial
+				if (command.Length > 10)
+				{
+					// ISO IN
+					
+					// Write header
+					SMouse.FlushBuffers();
+					ret = SMouse.WriteData(command.Substring(0,10));
+					if (ret != "")
+					{
+						// error detected
+						return ret;
+					}
+					
+					// Read knowledge
+					ret = SMouse.ReadData(2000, out response);				
+					if (ret != "")
+					{
+						// error detected
+						return ret;
+					}
+
+					// check for right knowledge
+					if (response != command.Substring(0,10))
+					{
+						// wrong command header
+						return response;
+					}
+					
+					// write command data
+					SMouse.FlushBuffers();
+					ret = SMouse.WriteData(command.Substring(10));
+					
+					if (ret != "")
+					{
+						// error detected
+						return ret;
+					}
+									
+					ret = SMouse.ReadData(2000, out response);				
+					if (ret != "")
+					{
+						// error detected
+						return ret;
+					}
+					
+				}
+				else
+				{
+					// ISO OUT
+					
+					// write command
+					SMouse.FlushBuffers();
+					ret = SMouse.WriteData(command);
+					
+					if (ret != "")
+					{
+						// error detected
+						return ret;
+					}
+									
+					ret = SMouse.ReadData(2000, out response);				
+					if (ret != "")
+					{
+						// error detected
+						return ret;
+					}
+				}
+				
+				return ret;
+*/
+
 			}
 		}
 		
@@ -635,6 +728,23 @@ namespace comex
 			return "";
 		}
 		
+		
+		
+		
+		/// <summary>
+		/// Add space between each bytes
+		/// </summary>
+		private static string AddSpace(string data)
+		{
+			string outStr = "";
+			
+			for (int b=0; b<data.Length; b+=2)
+			{
+				outStr += data.Substring(b,2) + " ";
+			}
+			
+			return outStr.Trim();
+		}
 		
 		
 		

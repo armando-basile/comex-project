@@ -90,5 +90,6 @@
     <None Include="Languages\en-US.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Docs\readme" />
   </ItemGroup>
 </Project>
