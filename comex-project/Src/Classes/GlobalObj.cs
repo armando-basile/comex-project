@@ -276,7 +276,8 @@ namespace comex
 			SerialSettings.DataBits = sMan.ReadInt("SERIAL", "DataBits", 8);
 			SerialSettings.StopBits = sMan.ReadInt("SERIAL", "StopBits", 1);
 			SerialSettings.Parity = sMan.ReadString("SERIAL", "Parity", "Odd");
-			SerialSettings.IsDirectConvention = sMan.ReadBool("SERIAL", "IsDirectConvention", true);				
+			SerialSettings.IsDirectConvention = sMan.ReadBool("SERIAL", "IsDirectConvention", true);
+			SerialSettings.ReadTimeout = sMan.ReadInt("SERIAL", "ReadTimeout", 2000);
 		}
 		
 		
@@ -293,8 +294,9 @@ namespace comex
 			sMan.WriteInt("SERIAL", "PortSpeedReset", SerialSettings.PortSpeedReset);
 			sMan.WriteInt("SERIAL", "DataBits", SerialSettings.DataBits);
 			sMan.WriteInt("SERIAL", "StopBits", SerialSettings.StopBits);
-			sMan.WriteString("SERIAL", "Parity", SerialSettings.Parity);
+			sMan.WriteString("SERIAL", "Parity", SerialSettings.Parity);			
 			sMan.WriteBool("SERIAL", "IsDirectConvention", SerialSettings.IsDirectConvention);
+			sMan.WriteInt("SERIAL", "ReadTimeout", SerialSettings.ReadTimeout);
 			sMan.Flush();
 		}		
 		
