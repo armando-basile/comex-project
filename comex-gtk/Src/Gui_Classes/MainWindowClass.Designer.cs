@@ -20,6 +20,7 @@ namespace comexgtk
 		[Glade.Widget]  Gtk.Window             MainWindow;
 		[Glade.Widget]  Gtk.ToolButton         TbOpen;
 		[Glade.Widget]  Gtk.ToolButton         TbClose;
+		[Glade.Widget]  Gtk.ToolButton         TbSettings;
 		[Glade.Widget]  Gtk.ToolButton         TbATR;
 		[Glade.Widget]  Gtk.ToolButton         TbAbout;
 		[Glade.Widget]  Gtk.ToolButton         TbExit;		
@@ -27,6 +28,7 @@ namespace comexgtk
 		[Glade.Widget]  Gtk.MenuItem       	   MenuFileItem;
 		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileOpen;
 		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileClose;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileSettings;
 		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileExit;
 		[Glade.Widget]  Gtk.Menu       	       MenuReader;
 		[Glade.Widget]  Gtk.MenuItem       	   MenuReaderItem;
@@ -200,6 +202,19 @@ namespace comexgtk
 		
 		
 		/// <summary>
+		/// Open settings dialog
+		/// </summary>
+		[GLib.ConnectBefore]
+		public void ActionSettings(object sender, EventArgs args)
+		{
+			SettingsDialogClass sdc = new SettingsDialogClass();
+			sdc.SetParent(ref MainWindow);
+			sdc.Show();
+		}
+		
+		
+		
+		/// <summary>
 		/// Perform Power On card
 		/// </summary>
 		[GLib.ConnectBefore]
@@ -309,6 +324,9 @@ namespace comexgtk
 			
 			TbClose.Label = GlobalObj.LMan.GetString("closelbl");
 			
+			TbSettings.Label = GlobalObj.LMan.GetString("settingslbl");
+			TbSettings.TooltipText = GlobalObj.LMan.GetString("settingsmenulbl");
+			
 			TbAbout.TooltipText = GlobalObj.LMan.GetString("infoact");
 			TbAbout.Label = GlobalObj.LMan.GetString("infolbl");
 			
@@ -322,6 +340,7 @@ namespace comexgtk
 			((Label)MenuFileItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("filemenulbl");
 			((Label)MenuFileOpen.Child).TextWithMnemonic = GlobalObj.LMan.GetString("openmenulbl");
 			((Label)MenuFileClose.Child).TextWithMnemonic = GlobalObj.LMan.GetString("closemenulbl");
+			((Label)MenuFileSettings.Child).TextWithMnemonic = GlobalObj.LMan.GetString("settingsmenulbl");
 			((Label)MenuFileExit.Child).TextWithMnemonic = GlobalObj.LMan.GetString("exitmenulbl");
 			((Label)MenuReaderItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("readermenulbl");
 			((Label)MenuAboutItem.Child).TextWithMnemonic = GlobalObj.LMan.GetString("helpmenulbl");

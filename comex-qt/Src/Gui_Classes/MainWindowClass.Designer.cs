@@ -89,6 +89,12 @@ namespace comexqt
 		
 		
 		
+		[Q_SLOT]
+		public void ActionSettingsSerial()
+		{
+			OpenSettings();
+		}
+		
 		
 		
 		[Q_SLOT]
@@ -182,11 +188,23 @@ namespace comexqt
 			// Update menu and toolbar 
 			mainwindow_Ui.menu_File.Title = GlobalObj.LMan.GetString("filemenulbl").Replace("_", "&");
 			mainwindow_Ui.action_Open.Text = GlobalObj.LMan.GetString("openmenulbl").Replace("_", "&");
+			mainwindow_Ui.action_Open.IconText = GlobalObj.LMan.GetString("openlbl");
+			
 			mainwindow_Ui.action_Close.Text = GlobalObj.LMan.GetString("closemenulbl").Replace("_", "&");
+			mainwindow_Ui.action_Close.IconText = GlobalObj.LMan.GetString("closelbl");
+			
+			mainwindow_Ui.action_SerialSettings.Text = GlobalObj.LMan.GetString("settingsmenulbl");
+			mainwindow_Ui.action_SerialSettings.IconText = GlobalObj.LMan.GetString("settingslbl");
+			
 			mainwindow_Ui.action_Exit.Text = GlobalObj.LMan.GetString("exitmenulbl").Replace("_", "&");
+			mainwindow_Ui.action_Exit.IconText = GlobalObj.LMan.GetString("exitlbl");
+			
 			mainwindow_Ui.menu_Reader.Title = GlobalObj.LMan.GetString("readermenulbl").Replace("_", "&");
 			mainwindow_Ui.menu_About.Title = GlobalObj.LMan.GetString("helpmenulbl").Replace("_", "&");
 			mainwindow_Ui.action_Info.Text = GlobalObj.LMan.GetString("infomenulbl").Replace("_", "&");
+			mainwindow_Ui.action_Info.IconText = GlobalObj.LMan.GetString("infolbl");
+			
+			mainwindow_Ui.action_ATR.IconText = GlobalObj.LMan.GetString("atrlbl");
 			
 			mainwindow_Ui.FrameATR.Title = GlobalObj.LMan.GetString("atrframelbl");
 			mainwindow_Ui.FrameFile.Title = GlobalObj.LMan.GetString("commandfilelbl");
@@ -272,6 +290,7 @@ namespace comexqt
 			Connect( mainwindow_Ui.action_Open, SIGNAL("activated()"), this, SLOT("ActionOpen()"));			
 			Connect( mainwindow_Ui.action_Close, SIGNAL("activated()"), this, SLOT("ActionClose()"));
 			Connect( mainwindow_Ui.action_Info, SIGNAL("activated()"), this, SLOT("ActionInfo()"));
+			Connect( mainwindow_Ui.action_SerialSettings, SIGNAL("activated()"), this, SLOT("ActionSettingsSerial()"));
 			Connect( mainwindow_Ui.action_ATR, SIGNAL("activated()"), this, SLOT("ActionATR()"));	
 			Connect( mainwindow_Ui.BtnSend, SIGNAL("clicked()"), this, SLOT("ActionSendCommand()"));	
 			Connect( mainwindow_Ui.LstCommands, SIGNAL("itemDoubleClicked(QListWidgetItem*)"),this,SLOT("ActionAddCommand(QListWidgetItem*)"));

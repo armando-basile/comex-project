@@ -140,6 +140,8 @@
     <addaction name="action_Open"/>
     <addaction name="action_Close"/>
     <addaction name="separator"/>
+    <addaction name="action_SerialSettings"/>
+    <addaction name="separator"/>
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menu_Reader">
@@ -166,7 +168,7 @@
     <bool>false</bool>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonIconOnly</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <property name="floatable">
     <bool>false</bool>
@@ -179,6 +181,7 @@
    </attribute>
    <addaction name="action_Open"/>
    <addaction name="action_Close"/>
+   <addaction name="action_SerialSettings"/>
    <addaction name="action_ATR"/>
    <addaction name="action_Info"/>
    <addaction name="separator"/>
@@ -191,6 +194,9 @@
    </property>
    <property name="text">
     <string>&amp;Apri file comandi</string>
+   </property>
+   <property name="iconText">
+    <string>Apri</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
@@ -206,6 +212,9 @@
    </property>
    <property name="text">
     <string>&amp;Chiudi file comandi</string>
+   </property>
+   <property name="iconText">
+    <string>Chiudi</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -231,6 +240,9 @@
    <property name="text">
     <string>&amp;Informazioni</string>
    </property>
+   <property name="iconText">
+    <string>Info</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
    </property>
@@ -243,6 +255,9 @@
    <property name="text">
     <string>Answer To Reset</string>
    </property>
+   <property name="iconText">
+    <string>ATR</string>
+   </property>
    <property name="toolTip">
     <string>Answer To Reset</string>
    </property>
@@ -250,6 +265,18 @@
   <action name="action_Exec_Command">
    <property name="text">
     <string>Exec Command</string>
+   </property>
+  </action>
+  <action name="action_SerialSettings">
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/main/resources/Images/configure.png</normaloff>:/main/resources/Images/configure.png</iconset>
+   </property>
+   <property name="text">
+    <string>SerialSettings</string>
+   </property>
+   <property name="iconText">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

@@ -65,6 +65,9 @@
     <Compile Include="Src\Classes\clsEncoding.cs" />
     <Compile Include="Src\Classes\ConsoleManager.cs" />
     <Compile Include="Src\Classes\SmartMouse.cs" />
+    <Compile Include="Src\Classes\GlobalObj.Readers.cs" />
+    <Compile Include="Src\Classes\SerialSettings.cs" />
+    <Compile Include="Src\Classes\SettingsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="comex.exe.config">

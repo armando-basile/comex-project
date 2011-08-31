@@ -4,6 +4,7 @@
 		<about>informazioni</about>
 		<thanks>ringraziamenti</thanks>
 		<frmabout>informazioni su ...</frmabout>
+		<frmset>Settings porta seriale</frmset>
 		<description>strumento per inviare comandi alla card mediante lettori di tipo PC/SC e seriale</description>
 		<notimplemented>Funzionalità non ancora implementata</notimplemented>
 		
@@ -15,6 +16,7 @@
 		<filemenulbl>_File</filemenulbl>
 		<openmenulbl>_Apri file comandi</openmenulbl>
 		<closemenulbl>_Chiudi file comandi</closemenulbl>
+		<settingsmenulbl>Settings porta seriale</settingsmenulbl>
 		<exitmenulbl>_Esci</exitmenulbl>
 		<readermenulbl>_Lettore</readermenulbl>
 		<helpmenulbl>A_iuto</helpmenulbl>
@@ -25,8 +27,9 @@
 		<cancellbl>Annulla</cancellbl>
 		<closelbl>Chiudi</closelbl>
 		<infolbl>Info</infolbl>
-		<exitlbl>Esci</exitlbl>		
-		<atrlbl>ATR</atrlbl>
+		<exitlbl>Esci</exitlbl>	
+		<settingslbl>Settings</settingslbl>
+		<atrlbl>ATR</atrlbl>		
 		<cmdlbl>comando</cmdlbl>
 		<resplbl>risposta</resplbl>
 		<sendlbl>invia</sendlbl>

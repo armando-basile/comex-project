@@ -62,6 +62,26 @@
                       </widget>
                     </child>
                     <child>
+                      <widget class="GtkImageMenuItem" id="MenuFileSettings">
+                        <property name="label" translatable="yes">imagemenuitem</property>
+                        <property name="visible">True</property>
+                        <property name="use_stock">False</property>
+                        <property name="always_show_image">True</property>
+                        <signal name="activate" handler="ActionSettings"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image6">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-properties</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkSeparatorMenuItem" id="menuitem2">
+                        <property name="visible">True</property>
+                      </widget>
+                    </child>
+                    <child>
                       <widget class="GtkImageMenuItem" id="MenuFileExit">
                         <property name="label">imagemenuitem</property>
                         <property name="visible">True</property>
@@ -154,6 +174,20 @@
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-close</property>
                 <signal name="clicked" handler="ActionCloseFile"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="TbSettings">
+                <property name="visible">True</property>
+                <property name="is_important">True</property>
+                <property name="label" translatable="yes">Settings</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-properties</property>
+                <signal name="clicked" handler="ActionSettings"/>
               </widget>
               <packing>
                 <property name="expand">False</property>

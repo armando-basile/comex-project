@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="main">
+    <file>../../resources/Images/configure.png</file>
     <file>../../resources/Images/arrow-right.png</file>
     <file>../../resources/Images/quickopen.png</file>
     <file>../../resources/Images/dialog-information.png</file>
