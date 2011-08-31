@@ -4,6 +4,7 @@
 		<about>about</about>
 		<thanks>thanks</thanks>
 		<frmabout>info about ...</frmabout>
+		<frmset>Settings serial port</frmset>
 		<description>card commands exchanger for PC/SC and serial readers</description>
 		<notimplemented>Feature not yet implemented</notimplemented>
 		
@@ -15,6 +16,7 @@
 		<filemenulbl>_File</filemenulbl>
 		<openmenulbl>_Open command file</openmenulbl>
 		<closemenulbl>_Close command file</closemenulbl>
+		<settingsmenulbl>Settings serial port</settingsmenulbl>
 		<exitmenulbl>_Exit</exitmenulbl>
 		<readermenulbl>_Reader</readermenulbl>
 		<helpmenulbl>_Help</helpmenulbl>
@@ -26,6 +28,7 @@
 		<closelbl>Chiudi</closelbl>		
 		<infolbl>Info</infolbl>
 		<exitlbl>Exit</exitlbl>
+		<settingslbl>Settings</settingslbl>
 		<atrlbl>ATR</atrlbl>
 		<cmdlbl>command</cmdlbl>
 		<resplbl>response</resplbl>

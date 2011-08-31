@@ -49,6 +49,15 @@ namespace comexqt
 		
 		
 		
+		/// <summary>
+		/// Show settings dialog
+		/// </summary>
+		private void OpenSettings()
+		{
+			SettingsDialogClass sdc = new SettingsDialogClass();
+			sdc.Show();
+		}
+		
 		
 		
 		

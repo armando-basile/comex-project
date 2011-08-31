@@ -14,7 +14,7 @@ namespace comex
 	/// <summary>
 	/// Static global class
 	/// </summary>
-	public static class GlobalObj
+	public static partial class GlobalObj
 	{
 
 		private static string languageFolder = "";
@@ -22,7 +22,9 @@ namespace comex
 		private static string selectedReader = "";
 		private static bool isPowered = false;
 		private static string ret = "";
+		private static string settingsFilePath = "";
 		private static LanguageManager lMan = null;
+		private static SettingsManager sMan = null;
 		
 		// Log4Net object
         private static readonly ILog log = LogManager.GetLogger(typeof(GlobalObj));
@@ -205,7 +207,6 @@ namespace comex
 			}
 			
 			
-			
 			// set language file
 			try
 			{
@@ -222,7 +223,15 @@ namespace comex
 			
 			
 			FillSerialPorts();
+
+			// init settings file
+			settingsFilePath = Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+			settingsFilePath += System.IO.Path.DirectorySeparatorChar;
+			settingsFilePath += "." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".xml";
+			sMan = new SettingsManager(settingsFilePath);
+			ReadSettings();
 			
+
 			SMouse = new SmartMouse();
 			
 			ret = FillPcscReaders();
@@ -253,242 +262,45 @@ namespace comex
         }
 
 		
-			    
-			    
 		
-		/// <summary>
-		/// Power On card
-		/// </summary>
-		public static string AnswerToReset(ref string response)
-		{
-			
-			response = "";
-			
-			if (IsPCSC)
-			{
-				// close other context
-				ClosePCSC();
-			}
-			else
-			{
-				// close serial port
-				SMouse.Close();	
-			}
+		
+		
 
-			
-			if (IsPCSC)
-			{
-				// create new context
-				ret = InitPCSC();
-				
-				if (ret != "")
-				{
-					return ret;
-				}
-				
-				// Connect to smartcard
-				ret = PCSC.Connect(selectedReader, ref response,
-			                       Pcsc.SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
-			                       Pcsc.SCARD_SHARE.SCARD_SHARE_EXCLUSIVE);
-				
-				if (ret != "")
-				{
-					// error detected
-					log.Error(ret);
-					return ret;
-				}
-				
-				response = AddSpace(response);
-				
-				isPowered = true;				
-				return ret;
-			}
-			else
-			{
-				// SmartMouse serial reader				
-				SMouse.PortDataBit = 8;
-				SMouse.PortName = selectedReader;
-				SMouse.PortStopBit = 2;
-				SMouse.PortParity = "O";
-				SMouse.PortSpeed = 9600;
-				
-				ret = SMouse.ApplySettings();
-				ret = SMouse.Open();
-				ret = SMouse.Connect(out response);				
-				
-				log.Debug("response: " + response);
-				
-				if (ret != "")
-				{
-					// error detected
-					return ret;
-				}
-				
-				response = AddSpace(response);
-				
-				isPowered = true;		
-				return ret;
-				
-			}
+		/// <summary>
+		/// Read serial port settings from config xml file or create it
+		/// </summary>
+		public static void ReadSettings()
+		{
+			SerialSettings.PortSpeed = sMan.ReadInt("SERIAL", "PortSpeed", 9600);
+			SerialSettings.PortSpeedReset = sMan.ReadInt("SERIAL", "PortSpeedReset", 9600);
+			SerialSettings.DataBits = sMan.ReadInt("SERIAL", "DataBits", 8);
+			SerialSettings.StopBits = sMan.ReadInt("SERIAL", "StopBits", 1);
+			SerialSettings.Parity = sMan.ReadString("SERIAL", "Parity", "Odd");
+			SerialSettings.IsDirectConvention = sMan.ReadBool("SERIAL", "IsDirectConvention", true);				
 		}
 		
 		
 		
 		
 		
-		/// <summary>
-		/// Exchange data with card
-		/// </summary>
-		public static string SendReceive(string command, ref string response)
-		{
-			
-			command = command.Replace("0x", "");
-			command = command.Replace(" ", "");
-			command = command.ToUpper();
-			
-			if (command.Length == 0)
-			{
-				// wrong command format
-				return LMan.GetString("wrongcmd") + "\r\n";
-			}
-			
-			
-			if (command.Length % 2 != 0)
-			{
-				// wrong command format
-				return LMan.GetString("wrongcmd") + "\r\n";
-			}
-			
-			// parse all digits
-			foreach(char digit in command)
-			{
-				if (!Uri.IsHexDigit(digit))
-				{
-					// wrong command format
-					return LMan.GetString("wrongcmd") + "\r\n";				
-				}
-			}
-			
-			
-			if (IsPCSC)
-			{
-				// exchange data with smartcard using PCSC
-				return PCSC.Transmit(command, ref response);
-			}
-			else
-			{
-				// Not Yet Stable...
-				return LMan.GetString("notimplemented");
-				
-/*
-				// SmartMouse serial
-				if (command.Length > 10)
-				{
-					// ISO IN
-					
-					// Write header
-					SMouse.FlushBuffers();
-					ret = SMouse.WriteData(command.Substring(0,10));
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-					
-					// Read knowledge
-					ret = SMouse.ReadData(2000, out response);				
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-
-					// check for right knowledge
-					if (response != command.Substring(0,10))
-					{
-						// wrong command header
-						return response;
-					}
-					
-					// write command data
-					SMouse.FlushBuffers();
-					ret = SMouse.WriteData(command.Substring(10));
-					
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-									
-					ret = SMouse.ReadData(2000, out response);				
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-					
-				}
-				else
-				{
-					// ISO OUT
-					
-					// write command
-					SMouse.FlushBuffers();
-					ret = SMouse.WriteData(command);
-					
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-									
-					ret = SMouse.ReadData(2000, out response);				
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-				}
-				
-				return ret;
-*/
-
-			}
-		}
-		
-		
-		
-		
 		
 		/// <summary>
-		/// Close connection with reader
+		/// Read serial port settings from config xml file or create it
 		/// </summary>
-		public static void CloseConnection()
+		public static void WriteSettings()
 		{
-			if (selectedReader == "")
-			{
-				return;
-			}
-			
-			if (IsPCSC)
-			{
-				ClosePCSC();
-			}
-			else
-			{
-				// check for serial port opened
-				if (SMouse.IsPortOpen)
-				{
-					// close serial port
-					SMouse.Close();
-				}
-			}
-			
-			selectedReader = "";
-			isPowered = false;
-		}
+			sMan.WriteInt("SERIAL", "PortSpeed", SerialSettings.PortSpeed);
+			sMan.WriteInt("SERIAL", "PortSpeedReset", SerialSettings.PortSpeedReset);
+			sMan.WriteInt("SERIAL", "DataBits", SerialSettings.DataBits);
+			sMan.WriteInt("SERIAL", "StopBits", SerialSettings.StopBits);
+			sMan.WriteString("SERIAL", "Parity", SerialSettings.Parity);
+			sMan.WriteBool("SERIAL", "IsDirectConvention", SerialSettings.IsDirectConvention);
+			sMan.Flush();
+		}		
 		
 		
+		
+
 		
 		
 		#endregion Public Methods
@@ -627,124 +439,6 @@ namespace comex
 		}
 		
 		
-		
-		
-		
-		/// <summary>
-		/// Close PCSC communication
-		/// </summary>
-		private static void ClosePCSC()
-		{
-			try
-			{
-				PCSC.Disconnect();
-				PCSC.ReleaseContext();
-			}
-			catch (Exception Ex)
-			{
-				log.Warn(Ex.GetType().ToString() + ": " + Ex.Message);
-			}
-		}
-
-		
-		
-		
-		
-		
-		/// <summary>
-		/// Create context to use pcsc
-		/// </summary>
-		private static string InitPCSC()
-		{
-			PCSC = new Pcsc();
-			try
-			{
-				PCSC.EstablishContext();
-			}
-			catch (Exception Ex)
-			{
-			  	log.Warn(Ex.GetType().ToString() + ": " + Ex.Message);
-				return Ex.GetType().ToString() + ": " + Ex.Message;
-			}
-			
-			return "";
-		}
-
-		
-		
-		
-		
-		
-		
-
-		/// <summary>
-		/// Detect available serial ports
-		/// </summary>
-		private static void FillSerialPorts()
-		{
-			SerialPortsName = new List<string>(System.IO.Ports.SerialPort.GetPortNames());
-		}
-		
-		
-		
-		
-		
-		/// <summary>
-		/// Detect available pcsc readers
-		/// </summary>
-		private static string FillPcscReaders()
-		{
-			PCSC_Readers = new List<string>();
-			
-			// create new PCSC manager and create context
-			string retStr = InitPCSC();
-			
-			if (retStr != "")
-			{
-				// error detected
-				log.Error(retStr);
-				return retStr;
-			}
-			else
-			{
-				// retrieve pcsc readers
-				string[] pcsc_readers = new string[0];
-				
-				retStr = PCSC.ListReaders(out pcsc_readers);			
-				
-				if (retStr != "")
-				{
-					// error detected
-					log.Error(retStr);
-					return retStr;
-				}
-				else
-				{
-					PCSC_Readers = new List<string>(pcsc_readers);
-				}
-			}
-			
-			ClosePCSC();
-			return "";
-		}
-		
-		
-		
-		
-		/// <summary>
-		/// Add space between each bytes
-		/// </summary>
-		private static string AddSpace(string data)
-		{
-			string outStr = "";
-			
-			for (int b=0; b<data.Length; b+=2)
-			{
-				outStr += data.Substring(b,2) + " ";
-			}
-			
-			return outStr.Trim();
-		}
 		
 		
 		

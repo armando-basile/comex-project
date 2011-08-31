@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'MainWindow.ui'
 **
-** Created: lun ago 29 17:50:43 2011
+** Created: mer ago 31 11:07:08 2011
 **      by: Qt User Interface Compiler for C# version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -18,6 +18,7 @@ public class Ui_MainWindow
     public QAction action_Info;
     public QAction action_ATR;
     public QAction action_Exec_Command;
+    public QAction action_SerialSettings;
     public QWidget centralwidget;
     public QGridLayout gridLayout;
     public QGroupBox FrameATR;
@@ -67,6 +68,9 @@ public class Ui_MainWindow
     action_ATR.icon = new QIcon(":/main/resources/Images/quickopen.png");
     action_Exec_Command = new QAction(MainWindow);
     action_Exec_Command.ObjectName = "action_Exec_Command";
+    action_SerialSettings = new QAction(MainWindow);
+    action_SerialSettings.ObjectName = "action_SerialSettings";
+    action_SerialSettings.icon = new QIcon(":/main/resources/Images/configure.png");
     centralwidget = new QWidget(MainWindow);
     centralwidget.ObjectName = "centralwidget";
     gridLayout = new QGridLayout(centralwidget);
@@ -158,7 +162,7 @@ public class Ui_MainWindow
     toolBar = new QToolBar(MainWindow);
     toolBar.ObjectName = "toolBar";
     toolBar.Movable = false;
-    toolBar.ToolButtonStyle = Qt.ToolButtonStyle.ToolButtonIconOnly;
+    toolBar.ToolButtonStyle = Qt.ToolButtonStyle.ToolButtonTextBesideIcon;
     toolBar.Floatable = false;
     MainWindow.AddToolBar(Qt.ToolBarArea.TopToolBarArea, toolBar);
 
@@ -168,10 +172,13 @@ public class Ui_MainWindow
     menu_File.AddAction(action_Open);
     menu_File.AddAction(action_Close);
     menu_File.AddSeparator();
+    menu_File.AddAction(action_SerialSettings);
+    menu_File.AddSeparator();
     menu_File.AddAction(action_Exit);
     menu_About.AddAction(action_Info);
     toolBar.AddAction(action_Open);
     toolBar.AddAction(action_Close);
+    toolBar.AddAction(action_SerialSettings);
     toolBar.AddAction(action_ATR);
     toolBar.AddAction(action_Info);
     toolBar.AddSeparator();
@@ -186,16 +193,22 @@ public class Ui_MainWindow
     {
     MainWindow.WindowTitle = QApplication.Translate("MainWindow", "MainWindow", null, QApplication.Encoding.UnicodeUTF8);
     action_Open.Text = QApplication.Translate("MainWindow", "&Apri file comandi", null, QApplication.Encoding.UnicodeUTF8);
+    action_Open.IconText = QApplication.Translate("MainWindow", "Apri", null, QApplication.Encoding.UnicodeUTF8);
     action_Open.Shortcut = QApplication.Translate("MainWindow", "Ctrl+O", null, QApplication.Encoding.UnicodeUTF8);
     action_Close.Text = QApplication.Translate("MainWindow", "&Chiudi file comandi", null, QApplication.Encoding.UnicodeUTF8);
+    action_Close.IconText = QApplication.Translate("MainWindow", "Chiudi", null, QApplication.Encoding.UnicodeUTF8);
     action_Close.Shortcut = QApplication.Translate("MainWindow", "Ctrl+C", null, QApplication.Encoding.UnicodeUTF8);
     action_Exit.Text = QApplication.Translate("MainWindow", "&Esci", null, QApplication.Encoding.UnicodeUTF8);
     action_Exit.Shortcut = QApplication.Translate("MainWindow", "Ctrl+Q", null, QApplication.Encoding.UnicodeUTF8);
     action_Info.Text = QApplication.Translate("MainWindow", "&Informazioni", null, QApplication.Encoding.UnicodeUTF8);
+    action_Info.IconText = QApplication.Translate("MainWindow", "Info", null, QApplication.Encoding.UnicodeUTF8);
     action_Info.Shortcut = QApplication.Translate("MainWindow", "Ctrl+I", null, QApplication.Encoding.UnicodeUTF8);
     action_ATR.Text = QApplication.Translate("MainWindow", "Answer To Reset", null, QApplication.Encoding.UnicodeUTF8);
+    action_ATR.IconText = QApplication.Translate("MainWindow", "ATR", null, QApplication.Encoding.UnicodeUTF8);
     action_ATR.ToolTip = QApplication.Translate("MainWindow", "Answer To Reset", null, QApplication.Encoding.UnicodeUTF8);
     action_Exec_Command.Text = QApplication.Translate("MainWindow", "Exec Command", null, QApplication.Encoding.UnicodeUTF8);
+    action_SerialSettings.Text = QApplication.Translate("MainWindow", "SerialSettings", null, QApplication.Encoding.UnicodeUTF8);
+    action_SerialSettings.IconText = QApplication.Translate("MainWindow", "Settings", null, QApplication.Encoding.UnicodeUTF8);
     FrameATR.Title = QApplication.Translate("MainWindow", "GroupBox", null, QApplication.Encoding.UnicodeUTF8);
     FrameFile.Title = QApplication.Translate("MainWindow", "GroupBox", null, QApplication.Encoding.UnicodeUTF8);
     FrameExchange.Title = QApplication.Translate("MainWindow", "GroupBox", null, QApplication.Encoding.UnicodeUTF8);

@@ -48,6 +48,8 @@
     <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
     <Compile Include="Src\Qt_Classes\AboutDialog.cs" />
     <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
+    <Compile Include="Src\Qt_Classes\SettingsDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

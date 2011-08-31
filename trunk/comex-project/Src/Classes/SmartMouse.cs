@@ -207,11 +207,11 @@ namespace comex
 				portObject.DataBits = portDataBit;
 				
 				// Parse Parity value ....
-				if (portParity == "E")
+				if (portParity == "Even")
 				{
 					portObject.Parity = Parity.Even;
 				}
-				else if (portParity == "O")
+				else if (portParity == "Odd")
 				{
 					portObject.Parity = Parity.Odd;
 				}
