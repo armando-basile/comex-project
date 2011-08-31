@@ -77,6 +77,7 @@ namespace comex
 			WriteInt("SERIAL", "StopBits", 2);
 			WriteString("SERIAL", "Parity", "Odd");
 			WriteBool("SERIAL", "IsDirectConvention", true);
+			WriteInt("SERIAL", "ReadTimeout", 4000);
 			
 			Flush();			
 		}

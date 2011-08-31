@@ -10,6 +10,7 @@ namespace comex
 		public static int StopBits {get; set;}
 		public static string Parity {get; set;}		
 		public static bool IsDirectConvention {get; set;}
+		public static int ReadTimeout {get; set;}
 		
 	}
 }

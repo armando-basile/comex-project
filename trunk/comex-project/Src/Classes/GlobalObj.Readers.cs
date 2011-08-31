@@ -158,84 +158,24 @@ namespace comex
 			}
 			else
 			{
-				// Not Yet Stable...
-				return LMan.GetString("notimplemented");
-				
-/*
 				// SmartMouse serial
 				if (command.Length > 10)
 				{
-					// ISO IN
-					
-					// Write header
-					SMouse.FlushBuffers();
-					ret = SMouse.WriteData(command.Substring(0,10));
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-					
-					// Read knowledge
-					ret = SMouse.ReadData(2000, out response);				
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-
-					// check for right knowledge
-					if (response != command.Substring(0,10))
-					{
-						// wrong command header
-						return response;
-					}
-					
-					// write command data
-					SMouse.FlushBuffers();
-					ret = SMouse.WriteData(command.Substring(10));
-					
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-									
-					ret = SMouse.ReadData(2000, out response);				
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
+					// ISO IN for SmartMouse
+					return ISOIN(command, ref response);
 					
 				}
 				else
 				{
 					// ISO OUT
-					
-					// write command
-					SMouse.FlushBuffers();
-					ret = SMouse.WriteData(command);
-					
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
-									
-					ret = SMouse.ReadData(2000, out response);				
-					if (ret != "")
-					{
-						// error detected
-						return ret;
-					}
+					return ISOOUT(command, ref response);
 				}
-				
-				return ret;
-*/
 
 			}
 		}
+		
+		
+		
 		
 		
 		
@@ -406,6 +346,111 @@ namespace comex
 			return outStr.Trim();
 		}
 		
+		
+		
+		
+		
+		/// <summary>
+		/// Perform ISOIN command using SmartMouse reader
+		/// </summary>
+		private static string ISOIN(string command, ref string response)
+		{
+					
+			// Write header
+			SMouse.FlushBuffers();
+			ret = SMouse.WriteData(command.Substring(0,10));
+	
+			if (ret != "")
+			{
+				// error detected						
+				return ret;
+			}
+			
+			
+			// Read knowledge
+			ret = SMouse.ReadData(SerialSettings.ReadTimeout, out response);
+
+			if (ret != "")
+			{
+				// error detected						
+				return ret;
+			}
+	
+			// check for right knowledge			
+			if (response != command.Substring(0,10) + command.Substring(2,2))
+			{
+				// wrong command header			
+				return response;
+			}
+			
+			// write command data
+			SMouse.FlushBuffers();
+			ret = SMouse.WriteData(command.Substring(10));					
+	
+			if (ret != "")
+			{
+				// error detected						
+				return ret;
+			}
+	
+			ret = SMouse.ReadData(SerialSettings.ReadTimeout, out response);				
+	
+			if (ret != "")
+			{
+				// error detected						
+				return ret;
+			}
+			
+			// check for command part in response
+			if (response.IndexOf(command.Substring(10)) == 0)
+			{
+				// remove command part from response
+				response = response.Substring(command.Substring(10).Length);
+			}
+			
+			return "";
+		}
+		
+		
+		
+		
+		
+		
+		/// <summary>
+		/// Perform ISOOUT command using SmartMouse reader
+		/// </summary>
+		private static string ISOOUT(string command, ref string response)
+		{
+					
+			// Write command
+			SMouse.FlushBuffers();
+			ret = SMouse.WriteData(command);
+	
+			if (ret != "")
+			{
+				// error detected						
+				return ret;
+			}
+			
+			
+			// Read response
+			ret = SMouse.ReadData(SerialSettings.ReadTimeout, out response);
+
+			if (ret != "")
+			{
+				// error detected						
+				return ret;
+			}
+			
+			// check for command part in response
+			if (response.IndexOf(command + command.Substring(2,2)) == 0)
+			{
+				// remove command part from response
+				response = response.Substring(command.Length + 2);
+			}
+			
+			return "";
+		}
 		
 		
 		

@@ -26,7 +26,6 @@ namespace comex
 		
 		
 		
-		
 		#region Properties
 		
 		
@@ -81,6 +80,12 @@ namespace comex
 		}
 
 		
+		public int PortDataBit
+		{
+			get	{	return portDataBit;	}
+			set	{	portDataBit = value;	}
+		}
+		
 		/// <summary>
 		/// BaudRate
 		/// </summary>
@@ -91,14 +96,6 @@ namespace comex
 		}
 		
 		
-		/// <summary>
-		/// DataBit of serial communication
-		/// </summary>
-		public int PortDataBit
-		{
-			get	{	return portDataBit;	}
-			set	{	portDataBit = value;	}
-		}
 		
 		
 		#endregion Properties
@@ -278,7 +275,7 @@ namespace comex
 				portObject.RtsEnable = false;
 				
 				// read buffer
-				outData = ReadData(1000, out response);
+				outData = ReadData(2000, out response);
 				
 				
 			}
