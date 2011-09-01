@@ -1,5 +1,9 @@
 2011-09-01  Armando Basile  <hmandevteam@gmail.com>
 
+	* comex-project.csproj: 
+
+2011-09-01  Armando Basile  <hmandevteam@gmail.com>
+
 	* Src/MainClass.cs:
 	* comex-project.csproj: 
 	- remove reference to gtk (unused)
