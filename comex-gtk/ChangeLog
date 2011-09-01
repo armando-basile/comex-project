@@ -1,3 +1,8 @@
+2011-09-01  Armando Basile  <hmandevteam@gmail.com>
+
+	* comex-gtk.csproj:
+	* Resources/comex-gtk.desktop: - cleaning 
+
 2011-08-28  Armando Basile  <hmandevteam@gmail.com>
 
 	* Src/Gui_Classes/MainWindowClass.cs: 

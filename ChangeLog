@@ -1,0 +1,13 @@
+2011-09-01  Armando Basile  <hmandevteam@gmail.com>
+
+	* comex-qt.sln:
+	* comex-gtk.sln:
+	* comex-qt-solution.sln:
+	* comex-gtk-solution.sln:
+	* comex-qt/comex-qt.csproj:
+	* comex-qt/Resources/comex-qt.desktop: - cleaning 
+
+2011-08-12  hmandevteam  <hmandevteam@gmail.com>
+
+	* comex-solution.sln: - improved multi language support
+

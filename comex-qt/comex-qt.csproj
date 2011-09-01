@@ -9,8 +9,9 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>comexqt</RootNamespace>
     <AssemblyName>comex-qt</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <ReleaseVersion>0.1.5.0</ReleaseVersion>
+    <Description>QT user interface for comex-project</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,7 +55,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="qt-dotnet, Version=4.5.0.0, Culture=neutral, PublicKeyToken=194a23ba31c08164" />
+    <Reference Include="qt-dotnet, Version=4.5.0.0, Culture=neutral, PublicKeyToken=194a23ba31c08164">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\resources\log4net.dll</HintPath>
@@ -64,11 +67,18 @@
     <ProjectReference Include="..\comex-project\comex-project.csproj">
       <Project>{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}</Project>
       <Name>comex-project</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Src\Qt_Files\MainWindow.ui" />
     <None Include="Src\Qt_Files\AboutDialog.ui" />
     <None Include="Src\Qt_Files\SettingsDialog.ui" />
+    <None Include="..\resources\Images\comex_128.png">
+      <Link>Resources\comex_128.png</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\comex-qt.desktop" />
   </ItemGroup>
 </Project>
