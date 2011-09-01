@@ -40,7 +40,6 @@
     <Folder Include="Src\Classes\" />
     <Folder Include="Docs\" />
     <Folder Include="Languages\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Xml" />
