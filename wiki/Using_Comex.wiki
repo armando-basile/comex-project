@@ -10,7 +10,7 @@ http://comex-project.googlecode.com/svn/wiki/gtk_4.png
 ----
 
 == STEP 2 - SETTING SERIAL PORT ==
-Only if you choose to use smartmouse, you could need to setup serial port communication using special toolbar button as follow
+*Only if you choose to use smartmouse*, you could need to setup serial port communication using special toolbar button as follow
 
 http://comex-project.googlecode.com/svn/wiki/gtk_8.png
 ----
