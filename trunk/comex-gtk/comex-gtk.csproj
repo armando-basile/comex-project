@@ -96,4 +96,9 @@
   <ItemGroup>
     <Content Include="Resources\comex-gtk.desktop" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\copying.gpl">
+      <Link>copying.gpl</Link>
+    </None>
+  </ItemGroup>
 </Project>
