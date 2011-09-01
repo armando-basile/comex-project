@@ -37,6 +37,7 @@
     <ProjectReference Include="..\comex-project\comex-project.csproj">
       <Project>{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}</Project>
       <Name>comex-project</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -67,29 +68,9 @@
     <EmbeddedResource Include="Src\Glade_Files\MainWindow.glade">
       <LogicalName>MainWindow.glade</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\resources\Images\comex_16.png">
-      <Link>Resources\comex_16.png</Link>
-      <LogicalName>comex_16.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\resources\Images\comex_24.png">
-      <Link>Resources\comex_24.png</Link>
-      <LogicalName>comex_24.png</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\resources\Images\comex_32.png">
       <Link>Resources\comex_32.png</Link>
       <LogicalName>comex_32.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\resources\Images\comex_48.png">
-      <Link>Resources\comex_48.png</Link>
-      <LogicalName>comex_48.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\resources\Images\comex_64.png">
-      <Link>Resources\comex_64.png</Link>
-      <LogicalName>comex_64.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\resources\Images\comex_96.png">
-      <Link>Resources\comex_96.png</Link>
-      <LogicalName>comex_96.png</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\resources\Images\comex_128.png">
       <Link>Resources\comex_128.png</Link>
@@ -112,4 +93,7 @@
     <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="Resources\comex-gtk.desktop" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=comex-gtk
+GenericName=comex-gtk
+Comment=GTK gui for comex core component
+Icon=comex
+Exec=comex-gtk
+Categories=Office;GTK;GNOME;
+Name[it_IT]=comex-gtk
+Comment[it_IT]=GTK gui for comex core component
+Terminal=false
+Type=Application
+StartupNotify=true

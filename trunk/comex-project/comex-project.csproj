@@ -10,7 +10,7 @@
     <RootNamespace>comex</RootNamespace>
     <AssemblyName>comex</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.7.0</ReleaseVersion>
+    <ReleaseVersion>0.1.5.0</ReleaseVersion>
     <Description>card commands exchanger for PCSC smartcard readers and serial readers</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
