@@ -1,5 +1,6 @@
 
 using System;
+using System.Reflection;
 using System.Collections.Generic;
 
 using log4net;
@@ -25,7 +26,7 @@ namespace comex
 		
 		private static string retStr = "";
 		
-		
+		private static string AppNameVer = "";
 		
 		
 		
@@ -38,6 +39,8 @@ namespace comex
 		[STAThread]
         public static void Main(string[] args)
         {
+			AppNameVer = Assembly.GetExecutingAssembly().GetName().Name + " " +
+					     Assembly.GetExecutingAssembly().GetName().Version.ToString();
 			
 			// check for help request
 			if (new List<string>(args).Contains("--help"))
@@ -108,7 +111,8 @@ namespace comex
 		/// </summary>
 		private static string GetHelpMsg()
 		{
-			string msg = GlobalObj.AppNameVer + " - card commands exchanger for PC/SC and serial readers\r\n\r\n";
+			string msg = AppNameVer + " - console interface for comex core component\r\n" + 
+				         GlobalObj.AppNameVer + " - base component\r\n\r\n";
 			msg += "   usage:\r\n";
 			msg += "   --log-console     enable log into console\r\n";
 			msg += "   --log-file        enable log into file comex.log into home folder\r\n";

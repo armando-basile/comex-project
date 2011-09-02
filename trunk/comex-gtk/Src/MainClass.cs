@@ -8,7 +8,7 @@ using log4net.Config;
 using Gtk;
 using Gdk;
 
-using comex;
+using comexbase;
 
 
 
