@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-base", "comex-base/comex-base.csproj", "{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-base", "comex-base\comex-base.csproj", "{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,19 @@ Global
 		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = comex-base/comex-base.csproj
+		StartupItem = comex-base\comex-base.csproj
+		Policies = $0
+		$0.StandardHeader = $1
+		$1.Text = 
+		$1.inheritsSet = Apache2License
+		$0.VersionControlPolicy = $2
+		$2.inheritsSet = Mono
+		$0.ChangeLogPolicy = $3
+		$3.UpdateMode = ProjectRoot
+		$3.MessageStyle = $4
+		$4.LineAlign = 0
+		$3.inheritsSet = Mono
+		description = base component for comex project
+		version = 0.1.7.0
 	EndGlobalSection
 EndGlobal
