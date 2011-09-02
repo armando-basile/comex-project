@@ -1,5 +1,14 @@
 2011-09-02  Armando Basile  <hmandevteam@gmail.com>
 
+	* Languages:
+	* comex.csproj:
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml: 
+
+	* Properties/AssemblyInfo.cs: - added comex-base
+
+2011-09-02  Armando Basile  <hmandevteam@gmail.com>
+
 	* Docs:
 	* Docs/readme:
 	* comex-project.csproj: 

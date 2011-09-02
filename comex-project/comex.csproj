@@ -10,8 +10,8 @@
     <RootNamespace>comex</RootNamespace>
     <AssemblyName>comex</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.1.0</ReleaseVersion>
-    <Description>card commands exchanger for PCSC smartcard readers and serial readers</Description>
+    <ReleaseVersion>0.1.5.0</ReleaseVersion>
+    <Description>console interface for comex project</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,12 +67,6 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <None Include="Languages\it-IT.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\en-US.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
