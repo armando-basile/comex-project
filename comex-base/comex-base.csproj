@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>comexbase</RootNamespace>
+    <AssemblyName>comex-base</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <ReleaseVersion>0.1.7.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\resources\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Docs\" />
+    <Folder Include="Languages\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\Classes\" />
+    <Folder Include="Src\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Docs\readme" />
+    <None Include="Languages\it-IT.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\en-US.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\copying.gpl">
+      <Link>copying.gpl</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Docs\.svn\all-wcprops" />
+    <Compile Include="Docs\.svn\entries" />
+    <Compile Include="Docs\.svn\prop-base\readme.svn-base" />
+    <Compile Include="Docs\.svn\text-base\readme.svn-base" />
+    <Compile Include="Languages\.svn\all-wcprops" />
+    <Compile Include="Languages\.svn\entries" />
+    <Compile Include="Languages\.svn\prop-base\en-US.xml.svn-base" />
+    <Compile Include="Languages\.svn\prop-base\it-IT.xml.svn-base" />
+    <Compile Include="Languages\.svn\text-base\en-US.xml.svn-base" />
+    <Compile Include="Languages\.svn\text-base\it-IT.xml.svn-base" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\Classes\GlobalObj.cs" />
+    <Compile Include="Src\Classes\LanguageManager.cs" />
+    <Compile Include="Src\Classes\GlobalConst.cs" />
+    <Compile Include="Src\Classes\Pcsc.cs" />
+    <Compile Include="Src\Classes\clsEncoding.cs" />
+    <Compile Include="Src\Classes\ConsoleManager.cs" />
+    <Compile Include="Src\Classes\SmartMouse.cs" />
+    <Compile Include="Src\Classes\GlobalObj.Readers.cs" />
+    <Compile Include="Src\Classes\SerialSettings.cs" />
+    <Compile Include="Src\Classes\SettingsManager.cs" />
+    <Compile Include="Src\.svn\all-wcprops" />
+    <Compile Include="Src\.svn\entries" />
+    <Compile Include="Src\.svn\prop-base\MainClass.cs.svn-base" />
+    <Compile Include="Src\.svn\text-base\MainClass.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\all-wcprops" />
+    <Compile Include="Src\Classes\.svn\entries" />
+    <Compile Include="Src\Classes\.svn\prop-base\ConsoleManager.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\GlobalConst.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\GlobalObj.Readers.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\GlobalObj.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\LanguageManager.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\Pcsc.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\SerialSettings.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\SettingsManager.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\SmartMouse.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\prop-base\clsEncoding.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\ConsoleManager.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\GlobalConst.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\GlobalObj.Readers.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\GlobalObj.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\LanguageManager.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\Pcsc.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\SerialSettings.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\SettingsManager.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\SmartMouse.cs.svn-base" />
+    <Compile Include="Src\Classes\.svn\text-base\clsEncoding.cs.svn-base" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="comex-base.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

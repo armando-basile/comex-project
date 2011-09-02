@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>about</about>
+		<thanks>thanks</thanks>
+		<frmabout>info about ...</frmabout>
+		<frmset>Settings serial port</frmset>
+		<description>card commands exchanger for PC/SC and serial readers</description>
+		<notimplemented>Feature not yet implemented</notimplemented>
+		
+		<openact>Open command file</openact>
+		<infoact>View information window</infoact>
+		<exitact>Exit from application</exitact>
+		<atract>Power On card response</atract>
+
+		<filemenulbl>_File</filemenulbl>
+		<openmenulbl>_Open command file</openmenulbl>
+		<closemenulbl>_Close command file</closemenulbl>
+		<settingsmenulbl>Settings serial port</settingsmenulbl>
+		<exitmenulbl>_Exit</exitmenulbl>
+		<readermenulbl>_Reader</readermenulbl>
+		<helpmenulbl>_Help</helpmenulbl>
+		<infomenulbl>_Informations</infomenulbl>
+		
+		
+		<openlbl>Open</openlbl>
+		<cancellbl>Cancel</cancellbl>		
+		<closelbl>Chiudi</closelbl>		
+		<infolbl>Info</infolbl>
+		<exitlbl>Exit</exitlbl>
+		<settingslbl>Settings</settingslbl>
+		<atrlbl>ATR</atrlbl>
+		<cmdlbl>command</cmdlbl>
+		<resplbl>response</resplbl>
+		<sendlbl>send</sendlbl>
+		
+		<atrframelbl>Answer to reset</atrframelbl>
+		<cardframelbl>Card communication</cardframelbl>
+		<commandfilelbl>Command file</commandfilelbl>
+		<selectfile>Select command file to open</selectfile>
+		<noinitreader>Card in reader not initialized, need ATR</noinitreader>
+
+		<selreader>Selected reader</selreader>
+		<nopcscreader>No PCSC reader found</nopcscreader>
+		<readerslist>Available readers list</readerslist>
+		<readersel>Enter reader number to use (write EXIT to exit)</readersel>
+		<cmdtosend>Enter command to send (write EXIT to exit)</cmdtosend>
+		<wrongcmd>wrong command format (can use: 0x11 0x22 0x33... etc, or 11 22 33.. etc, or 112233)</wrongcmd>
+
+		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader.<br> 
+		- Multilanguage (using xml language files in <i>Language</i> folder)<br> 
+		- Gui (using GTK# binding for GTK graphic libraries and Qyoto binding for QT graphic libraries)<br> 
+		- Console interface also supported<br> 
+		- Debug/Trace (can be sended to console and also to a log file to read after)<br> 
+<br> 
+		<b>shortcut on command file area row:</b><br> 
+		&nbsp;&nbsp;&nbsp;F5: copy command from row to command field<br> 
+		&nbsp;&nbsp;&nbsp;F6: send immidiatelly command from selected row<br> 
+		&nbsp;&nbsp;&nbsp;double click: same of F5<br> 
+<br> 
+		<b>author:</b><br> 
+		&nbsp;&nbsp;&nbsp;Armando Basile (<a href="mailto:hmandevteam@gmail.com">hmandevteam@gmail.com</a>)<br> 
+<br> 
+		<b>website:</b><br> 
+		&nbsp;&nbsp;&nbsp;<a href="http://comex-project.googlecode.com">comex-project.googlecode.com</a><br> 
+<br> 
+		<b>issue tracker:</b><br> 
+		&nbsp;&nbsp;&nbsp;<a href="http://code.google.com/p/comex-project/issues/list">code.google.com/p/comex-project/issues/list</a><br> 
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
+		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		]]></thanksdesc>
+		
+	</language>
+</Settings>
