@@ -337,7 +337,8 @@ namespace comexbase
 			{
 				// use share folder to search languages
 				languageFolder = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
-					             "comex" + Path.DirectorySeparatorChar + "Languages";
+					             Path.DirectorySeparatorChar + Assembly.GetExecutingAssembly().GetName().Name +
+						         Path.DirectorySeparatorChar + "Languages";
 				
 				if (!Directory.Exists(languageFolder))
 				{
