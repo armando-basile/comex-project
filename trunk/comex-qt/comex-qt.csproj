@@ -64,10 +64,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\comex-project\comex-project.csproj">
-      <Project>{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}</Project>
-      <Name>comex-project</Name>
-      <Private>False</Private>
+    <ProjectReference Include="..\comex-base\comex-base.csproj">
+      <Project>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</Project>
+      <Name>comex-base</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +75,9 @@
     <None Include="Src\Qt_Files\SettingsDialog.ui" />
     <None Include="..\resources\Images\comex_128.png">
       <Link>Resources\comex_128.png</Link>
+    </None>
+    <None Include="..\copying.gpl">
+      <Link>copying.gpl</Link>
     </None>
   </ItemGroup>
   <ItemGroup>

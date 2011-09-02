@@ -5,7 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Collections.Generic;
 
-using comex;
+using comexbase;
 
 using log4net;
 
@@ -20,7 +20,7 @@ namespace comexqt
 		Ui.SettingsDialog settingsdialog_UI;
 		
 		// Log4Net object
-        private static readonly ILog log = LogManager.GetLogger(typeof(SettingsDialogClass));
+        // private static readonly ILog log = LogManager.GetLogger(typeof(SettingsDialogClass));
 		
 		
 		// CONSTRUCTOR
