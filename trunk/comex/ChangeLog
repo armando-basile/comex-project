@@ -1,0 +1,98 @@
+2011-09-01  Armando Basile  <hmandevteam@gmail.com>
+
+	* comex-project.csproj: - cleaning 
+
+2011-09-01  Armando Basile  <hmandevteam@gmail.com>
+
+	* comex-project.csproj: 
+
+2011-09-01  Armando Basile  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
+	* comex-project.csproj: 
+	- remove reference to gtk (unused)
+
+2011-08-30  Armando Basile  <armando.basile@st.com>
+
+	* Docs/readme:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/SmartMouse.cs:
+	* Properties/AssemblyInfo.cs: 
+	- first code added to support serial reader
+
+2011-08-29  Armando Basile  <hmandevteam@gmail.com>
+
+	* Src/Classes/SmartMouse.cs: 
+	- improve serial reader communication
+
+
+2011-08-13  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/Classes/GlobalObj.cs:
+	* Properties/AssemblyInfo.cs: 
+	- improved close/open reader action
+
+2011-08-13  hmandevteam  <hmandevteam@gmail.com>
+
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml:
+	* Src/Classes/GlobalObj.cs: 
+	- added check for command to send
+
+2011-08-13  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/SmartMouse.cs:
+	* Properties/AssemblyInfo.cs:
+	* Src/Classes/clsEncoding.cs:
+	* Src/Classes/ConsoleManager.cs:
+	* Src/Gui_Classes/MainWindowClass.cs: 
+	- added choice of reader also in console interface
+	- added exchange manager class to perform reader communication (it manage two type of reader)
+
+2011-08-13  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/ConsoleManager.cs:
+	* Src/Gui_Classes/MainWindowClass.cs: - added console
+	interface, so user can use gtk gui or console interface to
+	exchange commands
+
+2011-08-12  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
+	* comex.exe.config:
+	* Src/Classes/Pcsc.cs:
+	* Languages/it-IT.xml:
+	* Languages/en-US.xml:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/clsEncoding.cs:
+	* Src/Glade_Files/MainWindow.glade:
+	* Src/Gui_Classes/MainWindowClass.cs: 
+	- first support for PCSC readers cross platform
+	- improved gui dynamic creation
+
+2011-08-12  hmandevteam  <hmandevteam@gmail.com>
+
+	* Src/MainClass.cs:
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml:
+	* comex-project.csproj:
+	* Src/Classes/GlobalObj.cs:
+	* Src/Classes/GlobalConst.cs:
+	* Properties/AssemblyInfo.cs:
+	* Src/Classes/LanguageManager.cs:
+	* Src/Gui_Classes/MainWindowClass.cs: 
+
+	- improved multi language support
+
