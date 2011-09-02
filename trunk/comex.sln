@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-project", "comex-project\comex-project.csproj", "{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-base", "comex-base\comex-base.csproj", "{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex", "comex\comex.csproj", "{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Debug|x86.Build.0 = Debug|x86
 		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Release|x86.ActiveCfg = Release|x86
 		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Release|x86.Build.0 = Release|x86
-		{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}.Debug|x86.ActiveCfg = Debug|x86
-		{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}.Debug|x86.Build.0 = Debug|x86
-		{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}.Release|x86.ActiveCfg = Release|x86
-		{26E43C13-3B41-4CC9-B98F-5E20D9D502B4}.Release|x86.Build.0 = Release|x86
+		{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}.Debug|x86.ActiveCfg = Debug|x86
+		{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}.Debug|x86.Build.0 = Debug|x86
+		{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}.Release|x86.ActiveCfg = Release|x86
+		{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}.Release|x86.Build.0 = Release|x86
 		{8264E480-3956-4B26-9237-D63A0C856206}.Debug|x86.ActiveCfg = Debug|x86
 		{8264E480-3956-4B26-9237-D63A0C856206}.Debug|x86.Build.0 = Debug|x86
 		{8264E480-3956-4B26-9237-D63A0C856206}.Release|x86.ActiveCfg = Release|x86
@@ -29,7 +29,7 @@ Global
 		{E52A7737-09A0-41F6-AA8A-5952EFAC78DA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = comex-project\comex-project.csproj
+		StartupItem = comex\comex.csproj
 		Policies = $0
 		$0.StandardHeader = $1
 		$1.Text = 
@@ -41,6 +41,7 @@ Global
 		$3.MessageStyle = $4
 		$4.LineAlign = 0
 		$3.inheritsSet = Mono
-		version = 0.1.7.0
+		description = console interface for comex project
+		version = 0.1.5.0
 	EndGlobalSection
 EndGlobal
