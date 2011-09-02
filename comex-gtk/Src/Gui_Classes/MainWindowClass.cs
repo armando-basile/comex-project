@@ -8,7 +8,7 @@ using Pango;
 
 using log4net;
 
-using comex;
+using comexbase;
 
 
 namespace comexgtk

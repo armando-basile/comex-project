@@ -3,7 +3,7 @@ using Glade;
 using Gtk;
 using Gdk;
 
-using comex;
+using comexbase;
 
 namespace comexgtk
 {
