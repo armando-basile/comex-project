@@ -1,0 +1,5 @@
+2011-09-02  Armando Basile  <hmandevteam@gmail.com>
+
+	* Src/Classes/GlobalObj.cs: - fix: search path of languages
+	folder
+
