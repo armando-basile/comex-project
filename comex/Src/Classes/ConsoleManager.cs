@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 using log4net;
-
+using comexbase;
 
 namespace comex
 {

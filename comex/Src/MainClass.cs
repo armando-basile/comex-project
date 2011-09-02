@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using log4net;
 using log4net.Config;
 
-
+using comexbase;
 
 
 namespace comex
