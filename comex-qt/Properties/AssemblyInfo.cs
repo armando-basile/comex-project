@@ -7,9 +7,9 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("comex-qt")]
 [assembly: AssemblyDescription("QT ui for comex core component")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("hmandevteam")]
+[assembly: AssemblyCompany("Armando Basile")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("hmandevteam (c) 2011")]
+[assembly: AssemblyCopyright("Armando Basile (c) 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
