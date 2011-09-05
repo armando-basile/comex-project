@@ -20,6 +20,9 @@
               <widget class="GtkAlignment" id="alignment1">
                 <property name="visible">True</property>
                 <property name="top_padding">3</property>
+                <property name="bottom_padding">3</property>
+                <property name="left_padding">3</property>
+                <property name="right_padding">3</property>
                 <child>
                   <widget class="GtkHBox" id="hbox1">
                     <property name="visible">True</property>
