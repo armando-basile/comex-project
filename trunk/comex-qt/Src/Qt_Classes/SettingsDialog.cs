@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'SettingsDialog.ui'
 **
-** Created: mer ago 31 11:07:08 2011
+** Created: lun set 5 16:52:45 2011
 **      by: Qt User Interface Compiler for C# version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -33,11 +33,10 @@ public class Ui_SettingsDialog
     {
     if (SettingsDialog.ObjectName == "")
         SettingsDialog.ObjectName = "SettingsDialog";
-    QSize Size = new QSize(320, 270);
+    QSize Size = new QSize(320, 280);
     Size = Size.ExpandedTo(SettingsDialog.MinimumSizeHint());
     SettingsDialog.Size = Size;
-    SettingsDialog.MinimumSize = new QSize(320, 270);
-    SettingsDialog.MaximumSize = new QSize(320, 270);
+    SettingsDialog.MinimumSize = new QSize(320, 280);
     SettingsDialog.Modal = true;
     gridLayout = new QGridLayout(SettingsDialog);
     gridLayout.ObjectName = "gridLayout";
