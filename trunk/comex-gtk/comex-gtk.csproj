@@ -34,16 +34,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\comex-base\comex-base.csproj">
-      <Project>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</Project>
-      <Name>comex-base</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\resources\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
@@ -52,6 +42,10 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="comex-base, Version=0.1.7.0, Culture=neutral, PublicKeyToken=10d1fd753689a535">
+      <Package>comex-base</Package>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Src\" />

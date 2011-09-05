@@ -58,16 +58,10 @@
     <Reference Include="qt-dotnet, Version=4.5.0.0, Culture=neutral, PublicKeyToken=194a23ba31c08164">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\resources\log4net.dll</HintPath>
+    <Reference Include="comex-base, Version=0.1.7.0, Culture=neutral, PublicKeyToken=10d1fd753689a535">
+      <Package>comex-base</Package>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\comex-base\comex-base.csproj">
-      <Project>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</Project>
-      <Name>comex-base</Name>
-    </ProjectReference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Src\Qt_Files\MainWindow.ui" />
