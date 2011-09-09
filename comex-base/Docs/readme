@@ -1,17 +1,32 @@
 
-to use pcsc readers need install pcsc-lite
+Comex Project is a cross platform suite to exchange commands 
+with smartcard using PC/SC standard readers and serial reader. 
 
-CONSOLE APPLICATION 
+comex-base - Base component for comex project, suite to exchange commands with smartcard
+========================================================================================
+Copyright (c) 2011, Armando Basile
+
+Thank you for using ( or at least trying out :) ) comex-base
+
+comex-base is distributed under the terms of the GNU General Public License (GPLv2)
+See the file COPYING for more information
+
+
+
+
+
+
+RUN CONSOLE APPLICATION 
  $ mono comex.exe --help                    (for help message)
  $ mono comex.exe                           (to run without log)
 
 
-WITH GTK GUI (required gtk-sharp)
+RUN GTK GUI APPLICATION (required gtk-sharp)
  $ mono comex-gtk.exe --help                (for help message)
  $ mono comex-gtk.exe                       (to run without log)
 
 
 
-WITH QT GUI (required qyoto)
+RUN QT GUI APPLICATION (required qyoto)
  $ mono comex-qt.exe --help                 (for help message)
  $ mono comex-qt.exe                        (to run without log)
