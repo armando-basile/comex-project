@@ -70,31 +70,31 @@ namespace Pcsc_Sharp
 		
 #region DllImport
 		
-		[DllImport("pcsc")]
+		[DllImport("winscard")]
 		private static extern int SCardEstablishContext(uint dwScope, 
 		                                                int nNotUsed1, 
 		                                                int nNotUsed2, 
 		                                            ref IntPtr phContext);
 	
 		
-		[DllImport("pcsc")]
+		[DllImport("winscard")]
 		private static extern int SCardListReaders(IntPtr hContext, 
 		                                           string cGroups,
 			                                       byte[] cReaderLists, 
 			                                   out IntPtr nReaderCount);
 		
 		
-		[DllImport("pcsc")]
+		[DllImport("winscard")]
 		private static extern int SCardReleaseContext(IntPtr phContext);
 	
 		
-		[DllImport("pcsc")]
+		[DllImport("winscard")]
 		private static extern int SCardListReaderGroups(IntPtr hContext, 
 		                                           	    System.Text.StringBuilder cGroups, 
 		                                            out IntPtr nStringSize);
 	
 		
-		[DllImport("pcsc")]
+		[DllImport("winscard")]
 		private static extern int SCardConnect(IntPtr hContext, 
 		                                      string cReaderName,
 			                                  uint dwShareMode, 
@@ -103,13 +103,13 @@ namespace Pcsc_Sharp
 			                              ref IntPtr ActiveProtocol);
 	
 		
-		[DllImport("pcsc")]
+		[DllImport("winscard")]
 		private static extern int SCardDisconnect(IntPtr hCard, 
 		                                         int Disposition);
 	
 		
 	
-		[DllImport("pcsc")]
+		[DllImport("winscard")]
 		private static extern int SCardStatus(IntPtr hCard, 
 		                                      byte[] ReaderName, 
 		                                  ref IntPtr RLen, 
@@ -119,7 +119,7 @@ namespace Pcsc_Sharp
 		                                  ref IntPtr ATRLen);
 	
 		
-		[DllImport("pcsc", SetLastError=true)]
+		[DllImport("winscard", SetLastError=true)]
 		private static extern int SCardTransmit(IntPtr hCard, 
 		                                    ref SCARD_IO_REQUEST pioSendPci,
 		                                        byte[] pbSendBuffer, 
@@ -129,7 +129,7 @@ namespace Pcsc_Sharp
 	                                        out IntPtr pcbRecvLength);
 	
 		
-	    [DllImport("pcsc")]             
+	    [DllImport("winscard")]             
 	    private static extern int SCardGetStatusChange(IntPtr hContext, 
 	                                                   uint dwTimeout, 
 	                                               ref SCARD_READERSTATE rgReaderStates,
