@@ -1,0 +1,9 @@
+2011-09-12  Armando Basile  <hmandevteam@gmail.com>
+
+	* readme:
+	* comex-qt.csproj:
+	* Properties/AssemblyInfo.cs: - added license info in readme
+	file
+	- removed specific version reference to log4net, qt-dotnet and
+	comex-base
+

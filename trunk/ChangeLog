@@ -1,5 +1,11 @@
 2011-09-12  Armando Basile  <hmandevteam@gmail.com>
 
+	* comex-qt.sln: - added license info in readme file
+	- removed specific version reference to log4net, qt-dotnet and
+	comex-base
+
+2011-09-12  Armando Basile  <hmandevteam@gmail.com>
+
 	* comex-gtk.sln: - added license info in readme file
 	- removed specific version reference to log4net and comex-base
 
