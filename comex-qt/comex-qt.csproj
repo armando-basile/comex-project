@@ -10,7 +10,7 @@
     <RootNamespace>comexqt</RootNamespace>
     <AssemblyName>comex-qt</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.5.0</ReleaseVersion>
+    <ReleaseVersion>0.1.5.1</ReleaseVersion>
     <Description>QT user interface for comex-project</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -58,10 +58,13 @@
     <Reference Include="qt-dotnet, Version=4.5.0.0, Culture=neutral, PublicKeyToken=194a23ba31c08164">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="comex-base, Version=0.1.7.0, Culture=neutral, PublicKeyToken=10d1fd753689a535">
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="comex-base, Version=0.1.7.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <SpecificVersion>False</SpecificVersion>
       <Package>comex-base</Package>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Src\Qt_Files\MainWindow.ui" />
@@ -73,6 +76,7 @@
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
+    <None Include="readme" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\comex-qt.desktop" />
