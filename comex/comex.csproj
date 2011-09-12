@@ -54,5 +54,6 @@
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
+    <None Include="readme.txt" />
   </ItemGroup>
 </Project>
