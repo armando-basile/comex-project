@@ -10,7 +10,7 @@
     <RootNamespace>comex</RootNamespace>
     <AssemblyName>comex</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.5.0</ReleaseVersion>
+    <ReleaseVersion>0.1.5.1</ReleaseVersion>
     <Description>console interface for comex project</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -37,8 +37,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd" />
-    <Reference Include="comex-base, Version=0.1.7.0, Culture=neutral, PublicKeyToken=10d1fd753689a535">
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="comex-base, Version=0.1.7.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <SpecificVersion>False</SpecificVersion>
       <Package>comex-base</Package>
     </Reference>
   </ItemGroup>

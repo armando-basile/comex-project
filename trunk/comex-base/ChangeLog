@@ -1,5 +1,10 @@
 2011-09-12  Armando Basile  <hmandevteam@gmail.com>
 
+	* comex-base.csproj: - removed specific version requires for
+	log4net and comex-base
+
+2011-09-12  Armando Basile  <hmandevteam@gmail.com>
+
 	* comex-base.dll.config: - removed unused row
 
 2011-09-09  Armando Basile  <hmandevteam@gmail.com>
