@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-base", "comex-base\comex-base.csproj", "{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex", "comex\comex.csproj", "{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}"
 EndProject
 Global
@@ -11,10 +9,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Debug|x86.ActiveCfg = Debug|x86
-		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Debug|x86.Build.0 = Debug|x86
-		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Release|x86.ActiveCfg = Release|x86
-		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Release|x86.Build.0 = Release|x86
 		{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}.Debug|x86.ActiveCfg = Debug|x86
 		{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}.Debug|x86.Build.0 = Debug|x86
 		{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}.Release|x86.ActiveCfg = Release|x86
