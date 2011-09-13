@@ -1,4 +1,6 @@
+#summary how to install Comex components on your os
 #labels Phase-Deploy,Featured
+
 = Introduction =
 
 Before install Comex components you may want to try it, so you need to follow [#Use_binaries Use binaries] section.
