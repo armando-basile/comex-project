@@ -1,7 +1,7 @@
 #labels Phase-Deploy
 = Introduction =
 
-Before install Comex components you may want to try it, so you need to follow [Use_binaries Use binaries] section
+Before install Comex components you may want to try it, so you need to follow [#Use_binaries Use binaries] section
 
 
 = Use binaries =
@@ -33,8 +33,6 @@ Before install Comex components you may want to try it, so you need to follow [U
 <br />
 <br />
 <br />
-
-
 
 
 
