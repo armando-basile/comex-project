@@ -64,19 +64,19 @@ $ mono comex-qt.exe
  To launch *console interface* using:
   <div>_to obtain help message_</div>
 {{{
-$ comex.exe --help 
+C:\...> comex.exe --help 
 }}}
   <div>_to launch without log_</div>
 {{{ 
-$ comex.exe
+C:\...> comex.exe
 }}}
  To launch *GTK user interface* using:
   <div>_to obtain help message_</div>
 {{{ 
-$ mono comex-gtk.exe --help
+C:\...> mono comex-gtk.exe --help
 }}}
   <div>_to launch without log_</div>
 {{{ 
-$ mono comex-gtk.exe
+C:\...> mono comex-gtk.exe
 }}}
   NOTE: _you need to install [http://www.go-mono.com/mono-downloads/download.html Mono for Windows with Gtk#] to use it_
