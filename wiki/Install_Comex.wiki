@@ -24,6 +24,7 @@ work in progress
 
 
 = Use binaries =
+Can find binaries package in [http://code.google.com/p/comex-project/downloads/list Downloads area].
 All Comex interfaces on Linux require *pcsc-lite* and *libpcsclite1*
 
 You can launch *console interface* using:
