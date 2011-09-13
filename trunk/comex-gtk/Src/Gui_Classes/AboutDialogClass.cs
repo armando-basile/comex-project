@@ -12,15 +12,15 @@ namespace comexgtk
 	{
 		
 		
-        [Glade.Widget]  Gtk.Window             AboutDialog;
-        [Glade.Widget]  Gtk.Image              imgLogo;
-        [Glade.Widget]  Gtk.Label              lblTitle;
-		[Glade.Widget]  Gtk.Label              lblAbout;
-		[Glade.Widget]  Gtk.Label              lblThanks;
-        [Glade.Widget]  Gtk.Notebook           tabInfo;
-        [Glade.Widget]  Gtk.Button             btnOk;
-        [Glade.Widget]  Gtk.Viewport           vpTitle;
-        [Glade.Widget]  Gtk.Viewport           vpLogo;
+        [Glade.Widget]  Gtk.Window             AboutDialog = null;
+        [Glade.Widget]  Gtk.Image              imgLogo = null;
+        [Glade.Widget]  Gtk.Label              lblTitle = null;
+		[Glade.Widget]  Gtk.Label              lblAbout = null;
+		[Glade.Widget]  Gtk.Label              lblThanks = null;
+        [Glade.Widget]  Gtk.Notebook           tabInfo = null;
+        [Glade.Widget]  Gtk.Button             btnOk = null;
+        [Glade.Widget]  Gtk.Viewport           vpTitle = null;
+        [Glade.Widget]  Gtk.Viewport           vpLogo = null;
 
 		
 		

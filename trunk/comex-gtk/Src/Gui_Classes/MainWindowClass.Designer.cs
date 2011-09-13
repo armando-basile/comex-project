@@ -17,34 +17,34 @@ namespace comexgtk
 	{
 		
 		
-		[Glade.Widget]  Gtk.Window             MainWindow;
-		[Glade.Widget]  Gtk.ToolButton         TbOpen;
-		[Glade.Widget]  Gtk.ToolButton         TbClose;
-		[Glade.Widget]  Gtk.ToolButton         TbSettings;
-		[Glade.Widget]  Gtk.ToolButton         TbATR;
-		[Glade.Widget]  Gtk.ToolButton         TbAbout;
-		[Glade.Widget]  Gtk.ToolButton         TbExit;		
-		[Glade.Widget]  Gtk.Statusbar          StatusBar;
-		[Glade.Widget]  Gtk.MenuItem       	   MenuFileItem;
-		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileOpen;
-		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileClose;
-		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileSettings;
-		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileExit;
-		[Glade.Widget]  Gtk.Menu       	       MenuReader;
-		[Glade.Widget]  Gtk.MenuItem       	   MenuReaderItem;
-		[Glade.Widget]  Gtk.MenuItem       	   MenuAboutItem;
-		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuAboutInfo;
-		[Glade.Widget]  Gtk.Label              LblATR;
-		[Glade.Widget]  Gtk.Label              LblFile;
-		[Glade.Widget]  Gtk.Entry              TxtATR;
-		[Glade.Widget]  Gtk.Label              LblCommand;
-		[Glade.Widget]  Gtk.Label              LblResponse;
-		[Glade.Widget]  Gtk.Label              LblSend;
-		[Glade.Widget]  Gtk.Label              LblExchange;
-		[Glade.Widget]  Gtk.Entry              TxtCmd;
-		[Glade.Widget]  Gtk.Entry              TxtResp;
-		[Glade.Widget]  Gtk.Button             BtnSend;
-		[Glade.Widget]  Gtk.TreeView           LstCommands;
+		[Glade.Widget]  Gtk.Window             MainWindow = null;
+		[Glade.Widget]  Gtk.ToolButton         TbOpen = null;
+		[Glade.Widget]  Gtk.ToolButton         TbClose = null;
+		[Glade.Widget]  Gtk.ToolButton         TbSettings = null;
+		[Glade.Widget]  Gtk.ToolButton         TbATR = null;
+		[Glade.Widget]  Gtk.ToolButton         TbAbout = null;
+		[Glade.Widget]  Gtk.ToolButton         TbExit = null;
+		[Glade.Widget]  Gtk.Statusbar          StatusBar = null;
+		[Glade.Widget]  Gtk.MenuItem       	   MenuFileItem = null;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileOpen = null;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileClose = null;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileSettings = null;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuFileExit = null;
+		[Glade.Widget]  Gtk.Menu       	       MenuReader = null;
+		[Glade.Widget]  Gtk.MenuItem       	   MenuReaderItem = null;
+		[Glade.Widget]  Gtk.MenuItem       	   MenuAboutItem = null;
+		[Glade.Widget]  Gtk.ImageMenuItem  	   MenuAboutInfo = null;
+		[Glade.Widget]  Gtk.Label              LblATR = null;
+		[Glade.Widget]  Gtk.Label              LblFile = null;
+		[Glade.Widget]  Gtk.Entry              TxtATR = null;
+		[Glade.Widget]  Gtk.Label              LblCommand = null;
+		[Glade.Widget]  Gtk.Label              LblResponse = null;
+		[Glade.Widget]  Gtk.Label              LblSend = null;
+		[Glade.Widget]  Gtk.Label              LblExchange = null;
+		[Glade.Widget]  Gtk.Entry              TxtCmd = null;
+		[Glade.Widget]  Gtk.Entry              TxtResp = null;
+		[Glade.Widget]  Gtk.Button             BtnSend = null;
+		[Glade.Widget]  Gtk.TreeView           LstCommands = null;
 		
 		
 		
