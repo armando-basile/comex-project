@@ -1,3 +1,7 @@
+#labels Phase-Deploy
 = Introduction =
 
-work in progress
+Before install Comex components you may want to try it, so you need to follow [Install_Comex#Use_binaries] section
+
+
+= Use binaries =
