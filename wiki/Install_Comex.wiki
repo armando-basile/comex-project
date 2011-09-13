@@ -20,7 +20,7 @@ work in progress
 
 
 = Install from tarballs =
-Please see [Build_Comex#Build_and_install_from_tarballs]
+Please see [Build_Comex#Build_and_install_from_tarballs Build and install from tarballs]
 
 <br />
 
