@@ -73,10 +73,10 @@ C:\...> comex.exe
  To launch *GTK user interface* using:
   <div>_to obtain help message_</div>
 {{{ 
-C:\...> mono comex-gtk.exe --help
+C:\...> comex-gtk.exe --help
 }}}
   <div>_to launch without log_</div>
 {{{ 
-C:\...> mono comex-gtk.exe
+C:\...> comex-gtk.exe
 }}}
-  NOTE: _you need to install [http://www.go-mono.com/mono-downloads/download.html Mono for Windows with Gtk#] to use it_
+  NOTE: _you need to install [http://www.go-mono.com/mono-downloads/download.html Gtk# for .NET] to use it_
