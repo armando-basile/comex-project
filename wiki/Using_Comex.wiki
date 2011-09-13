@@ -1,4 +1,6 @@
+#summary how to use Comex to exchange data with smartcard
 #labels Featured
+
 = Introduction =
 
 Here you can see simple steps to use Comex
