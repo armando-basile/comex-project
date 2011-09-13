@@ -1,7 +1,44 @@
 #labels Phase-Deploy
 = Introduction =
 
-Before install Comex components you may want to try it, so you need to follow [Install_Comex] section
+Before install Comex components you may want to try it, so you need to follow [Install_Comex#Use binaries] section
 
 
 = Use binaries =
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+= Install from packages in Downloads =
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+= Install from tarball =
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+
+
+
+
+
