@@ -48,19 +48,31 @@ All Comex interfaces on Linux require *pcsc-lite* and *libpcsclite1*
 
 To launch *console interface* using:
  <div>_to obtain help message_</div>
- {{{mono comex.exe --help}}}<br />
+{{{
+$ mono comex.exe --help 
+}}}
  <div>_to launch without log_</div>
- {{{mono comex.exe}}}
+{{{ 
+$ mono comex.exe
+}}}
 To launch *GTK user interface* using:
  <div>_to obtain help message_</div>
- {{{mono comex-gtk.exe --help}}}<br />
+{{{ 
+$ mono comex-gtk.exe --help
+}}}
  <div>_to launch without log_</div>
- {{{mono comex-gtk.exe}}}<br />
+{{{ 
+$ mono comex-gtk.exe
+}}}
  NOTE: _you need to install *gtk-sharp2* and *glade-sharp2* to use it_
 To launch *QT user interface* using:
  <div>_to obtain help message_</div>
- {{{mono comex-qt.exe --help}}}<br />
+{{{ 
+$ mono comex-qt.exe --help
+}}}
  <div>_to launch without log_</div>
- {{{mono comex-qt.exe}}}<br />
+{{{
+$ mono comex-qt.exe
+}}}
  NOTE: _you need to install *qyoto* to use it_
 <br />
