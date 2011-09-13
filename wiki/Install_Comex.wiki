@@ -13,14 +13,8 @@ work in progress
 
 
 
-= Install from packages in Downloads area =
-work in progress
-<br />
-
-
-
 = Install from tarballs =
-Please see [http://code.google.com/p/comex-project/wiki/Build_Comex?ts=1315918290&updated=Build_Comex#Build_and_install_from_tarballs Build and install from tarballs] section
+Please see [http://code.google.com/p/comex-project/wiki/Build_Comex#Build_and_install_from_tarballs Build and install from tarballs] section
 
 <br />
 
