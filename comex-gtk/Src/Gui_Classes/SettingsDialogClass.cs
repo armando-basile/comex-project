@@ -12,15 +12,15 @@ namespace comexgtk
 	{
 		
 		
-        [Glade.Widget]  Gtk.Window             	SettingsDialog;
-        [Glade.Widget]  Gtk.ComboBox            CmbPortSpeed;
-        [Glade.Widget]  Gtk.ComboBox            CmbPortSpeedReset;
-		[Glade.Widget]  Gtk.ComboBox            CmbStopBits;
-		[Glade.Widget]  Gtk.ComboBox            CmbParity;
-        [Glade.Widget]  Gtk.ComboBox           	CmbDataBits;
-        [Glade.Widget]  Gtk.ComboBox            CmbConvention;
-        [Glade.Widget]  Gtk.Button           	BtnCancel;
-        [Glade.Widget]  Gtk.Button           	BtnOk;
+        [Glade.Widget]  Gtk.Window             	SettingsDialog = null;
+        [Glade.Widget]  Gtk.ComboBox            CmbPortSpeed = null;
+        [Glade.Widget]  Gtk.ComboBox            CmbPortSpeedReset = null;
+		[Glade.Widget]  Gtk.ComboBox            CmbStopBits = null;
+		[Glade.Widget]  Gtk.ComboBox            CmbParity = null;
+        [Glade.Widget]  Gtk.ComboBox           	CmbDataBits = null;
+        [Glade.Widget]  Gtk.ComboBox            CmbConvention = null;
+        [Glade.Widget]  Gtk.Button           	BtnCancel = null;
+        [Glade.Widget]  Gtk.Button           	BtnOk = null;
 
 		
 		
