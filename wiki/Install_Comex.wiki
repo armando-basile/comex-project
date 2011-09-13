@@ -18,7 +18,24 @@ work in progress
 
 
 = Install from tarball =
-work in progress
+Can find tarballs in [http://code.google.com/p/comex-project/downloads/list Downloads area].
+
+Dependencies:
+ * mono devel package
+ * log4net devel package
+ * gtk-sharp2 devel package
+ * glade-sharp2
+ * qyoto devel package
+
+To build and install sources can use:
+{{{ 
+ $ ./configure
+ $ make
+ # make install (as root)
+}}}
+
+NOTE: _you need to build and install *comex-base* as first_
+
 <br />
 
 
@@ -27,18 +44,18 @@ work in progress
 Can find binaries package in [http://code.google.com/p/comex-project/downloads/list Downloads area].
 All Comex interfaces on Linux require *pcsc-lite* and *libpcsclite1*
 
-You can launch *console interface* using:
+To launch *console interface* using:
  <div>_to obtain help message_</div>
  {{{mono comex.exe --help}}}<br />
  <div>_to launch without log_</div>
  {{{mono comex.exe}}}
-You can launch *GTK user interface* using:
+To launch *GTK user interface* using:
  <div>_to obtain help message_</div>
  {{{mono comex-gtk.exe --help}}}<br />
  <div>_to launch without log_</div>
  {{{mono comex-gtk.exe}}}<br />
  NOTE: _you need to install *gtk-sharp2* and *glade-sharp2* to use it_
-You can launch *QT user interface* using:
+To launch *QT user interface* using:
  <div>_to obtain help message_</div>
  {{{mono comex-qt.exe --help}}}<br />
  <div>_to launch without log_</div>
