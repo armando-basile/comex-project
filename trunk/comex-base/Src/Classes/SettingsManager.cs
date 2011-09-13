@@ -70,7 +70,7 @@ namespace comexbase
 			doc.AppendChild(doc.CreateXmlDeclaration("1.0", null, null));
 			doc.AppendChild(doc.CreateElement(rootName));
 			
-			WriteString("SERIAL", "PortName", GlobalObj.SerialPortsName[0]);
+
 			WriteInt("SERIAL", "PortSpeed", 9600);
 			WriteInt("SERIAL", "PortSpeedReset", 9600);
 			WriteInt("SERIAL", "DataBits", 8);
