@@ -18,7 +18,7 @@ Dependencies:
  * glade-sharp2
  * qyoto devel package
 
-To build and install sources can use:
+To build and install can use:
 {{{ 
  $ ./configure
  $ make
