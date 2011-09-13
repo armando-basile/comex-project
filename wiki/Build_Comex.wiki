@@ -1,4 +1,4 @@
-#summary how to build Comex on your os
+#summary how to build Comex components on your os
 #labels Phase-Implementation
 
 = Introduction =
