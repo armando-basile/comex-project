@@ -29,3 +29,12 @@ NOTE: _you need to build and install *comex-base* as first_
 
 <br />
 
+
+== Build from sources ==
+
+<br />
+
+
+= Build on Windows =
+
+== Build from sources ==
