@@ -2,3 +2,30 @@
 #labels Phase-Implementation
 
 = Introduction =
+
+This page lists methods to build Comex components on Linux and Windows os.
+
+= Build on Linux =
+
+== Build and install from tarballs ==
+
+Can find tarballs in [http://code.google.com/p/comex-project/downloads/list Downloads area].
+
+Dependencies:
+ * mono devel package
+ * log4net devel package
+ * gtk-sharp2 devel package
+ * glade-sharp2
+ * qyoto devel package
+
+To build and install sources can use:
+{{{ 
+ $ ./configure
+ $ make
+ # make install (as root)
+}}}
+
+NOTE: _you need to build and install *comex-base* as first_
+
+<br />
+
