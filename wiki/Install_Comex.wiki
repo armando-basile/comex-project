@@ -1,40 +1,46 @@
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 = Introduction =
 
-Before install Comex components you may want to try it, so you need to follow [#Use_binaries Use binaries] section
+Before install Comex components you may want to try it, so you need to follow [#Use_binaries Use binaries] section.
+<br />
 
 
-= Use binaries =
-
-<br />
-<br />
-<br />
-<br />
-<br />
+= Install from your package manager =
+work in progress
 <br />
 
 
 
-= Install from packages in Downloads =
+= Install from packages in Downloads area =
+work in progress
+<br />
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 
 
 = Install from tarball =
-
-<br />
-<br />
-<br />
-<br />
-<br />
+work in progress
 <br />
 
 
 
+= Use binaries =
+All Comex interfaces on Linux require *pcsc-lite* and *libpcsclite1*
 
-
+You can launch *console interface* using:
+ <div>_to obtain help message_</div>
+ {{{mono comex.exe --help}}}<br />
+ <div>_to launch without log_</div>
+ {{{mono comex.exe}}}
+You can launch *GTK user interface* using:
+ <div>_to obtain help message_</div>
+ {{{mono comex-gtk.exe --help}}}<br />
+ <div>_to launch without log_</div>
+ {{{mono comex-gtk.exe}}}<br />
+ NOTE: _you need to install *gtk-sharp2* and *glade-sharp2* to use it_
+You can launch *QT user interface* using:
+ <div>_to obtain help message_</div>
+ {{{mono comex-qt.exe --help}}}<br />
+ <div>_to launch without log_</div>
+ {{{mono comex-qt.exe}}}<br />
+ NOTE: _you need to install *qyoto* to use it_
+<br />
