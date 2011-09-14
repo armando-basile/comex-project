@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <ReleaseVersion>0.1.5.1</ReleaseVersion>
     <Description>console interface for comex project</Description>
+    <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,7 +43,6 @@
     </Reference>
     <Reference Include="comex-base, Version=0.1.7.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
       <SpecificVersion>False</SpecificVersion>
-      <Package>comex-base</Package>
     </Reference>
   </ItemGroup>
   <ItemGroup>
