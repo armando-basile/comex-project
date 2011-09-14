@@ -1,3 +1,8 @@
+2011-09-14  Armando Basile  <hmandevteam@gmail.com>
+
+	* Src/Classes/Pcsc.cs: - fix: atrLen SCardStatus parameter on
+	winscard require preset
+
 2011-09-13  Armando Basile  <hmandevteam@gmail.com>
 
 	* comex-base.csproj:

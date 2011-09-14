@@ -523,7 +523,7 @@ namespace Pcsc_Sharp
 
 			byte[] retRName = new byte[64];
 			readerNameLen = new IntPtr(64);			
-			atrLen = new IntPtr(0);
+			atrLen = new IntPtr(33);
 			cardProtocol = 0;
 			int readerState = 0; 
 				
