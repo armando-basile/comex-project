@@ -31,6 +31,10 @@ NOTE: _you need to build and install *comex-base* as first_
 
 
 == Build from sources ==
+Need to obtain sources using checkout instructions contained in [http://code.google.com/p/comex-project/source/checkout Source Tabs].
+
+After can use [http://monodevelop.com/ MonoDevelop IDE] to build all solutions. Note that you need to change reference to comex-base and log4net in other projects (comex, comex-gtk, comex-qt) because default reference is in GAC.
+
 
 <br />
 
@@ -38,3 +42,8 @@ NOTE: _you need to build and install *comex-base* as first_
 = Build on Windows =
 
 == Build from sources ==
+Need to obtain sources using checkout instructions contained in [http://code.google.com/p/comex-project/source/checkout Source Tabs].
+
+
+After can use [http://sharpdevelop.net/opensource/sd/ SharpDevelop IDE] to build all solutions. Note that you need to change reference to comex-base and log4net in other projects (comex, comex-gtk) because default reference is in GAC.
+
