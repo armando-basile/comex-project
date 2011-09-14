@@ -1,5 +1,11 @@
 2011-09-14  Armando Basile  <hmandevteam@gmail.com>
 
+	* Languages/en-US.xml:
+	* Languages/it-IT.xml: - fix: removed <a> tag, on windows
+	there is GTK 2.12 and <a> tag work from GTK 2.18
+
+2011-09-14  Armando Basile  <hmandevteam@gmail.com>
+
 	* Src/Classes/Pcsc.cs: - fix: atrLen SCardStatus parameter on
 	winscard require preset
 
