@@ -39,6 +39,6 @@ Global
 		$6.inheritsScope = text/x-csharp
 		$6.scope = text/x-csharp
 		description = QT ui for comex core component
-		version = 0.1.5.1
+		version = 0.1.5.2
 	EndGlobalSection
 EndGlobal
