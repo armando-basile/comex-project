@@ -25,7 +25,7 @@ To build and install can use:
  # make install (as root)
 }}}
 
-NOTE: _you need to build and install *comex-base* as first. Before build other tarballs need also to register dlls in mono GAC_
+NOTE: _you need to build and install *comex-base* as first. Before build other tarballs need also to register comex-base dll in mono GAC_
 {{{
 # gacutil -i /usr/lib/comex-base/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac
 }}}
