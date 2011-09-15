@@ -25,7 +25,10 @@ To build and install can use:
  # make install (as root)
 }}}
 
-NOTE: _you need to build and install *comex-base* as first_
+NOTE: _you need to build and install *comex-base* as first. Before build other tarballs need also to register dlls in mono GAC_
+{{{
+# gacutil -i /usr/lib/comex-base/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac
+}}}
 
 <br />
 
@@ -46,4 +49,3 @@ Need to obtain sources using checkout instructions contained in [http://code.goo
 
 
 After can use [http://sharpdevelop.net/opensource/sd/ SharpDevelop IDE] to build all solutions. Note that you need to change reference to comex-base and log4net in other projects (comex, comex-gtk) because default reference is in GAC.
-
