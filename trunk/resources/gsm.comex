@@ -1,0 +1,60 @@
+# Name       : gsm.comex
+# Description: comex project file with major gsm commands.
+# Reference  : gsm 11.11 technical specification
+# Author     : Armando Basile
+# Date       : 2011-09-16
+
+
+# ISO COMMANDS FOR GSM CARD
+SELECT MF (ISO IN)             A0 A4 00 00 02 3F 00
+
+# LE = Length to read
+GET RESPONSE (ISO OUT)         A0 C0 00 00 LE
+
+# P1 = Offset High
+# P2 = Offset Low
+# LE = Length to read
+READ BINARY (ISO OUT)          A0 B0 P1 P2 LE
+
+# P1 = Record number
+# P2 = Mode (02=next record; 03=previous record; 04=absolute mode using P1 rec. number)
+# LE = Length to read
+READ RECORD (ISO OUT)          A0 B2 P1 P2 LE
+
+# P2 = Pin number (1=PIN1; 2=PIN2)
+# XX = Pin value
+VERIFY PIN (ISO IN)            A0 20 00 P2 08 XX XX XX XX XX XX XX XX
+
+# P2 = Pin number (1=PIN1; 2=PIN2)
+# XX = Pin value
+DISABLE PIN (ISO IN)           A0 26 00 P2 08 XX XX XX XX XX XX XX XX
+
+# P2 = Pin number (1=PIN1; 2=PIN2)
+# XX = Pin value
+ENABLE PIN (ISO IN)            A0 28 00 P2 08 XX XX XX XX XX XX XX XX
+
+# P2 = Pin number (!!! 0=PIN1; 2=PIN2)
+# XX = Puk value
+# YY = New Pin value
+UNLOCK PIN (ISO IN)            A0 2C 00 P2 10 XX XX XX XX XX XX XX XX YY YY YY YY YY YY YY YY
+
+# P2 = Pin number (1=PIN1; 2=PIN2)
+# XX = Old Pin value
+# YY = New Pin value
+UPDATE PIN (ISO IN)            A0 24 00 P2 10 XX XX XX XX XX XX XX XX YY YY YY YY YY YY YY YY
+
+# P1 = Offset High
+# P2 = Offset Low
+# LN = Length to write
+UPDATE BINARY (ISO IN)         A0 D6 P1 P2 LN ??
+
+# P1 = Record number
+# P2 = Mode (02=next record; 03=previous record; 04=absolute mode using P1 rec. number)
+# LN = Length to write
+UPDATE RECORD (ISO IN)         A0 DC P1 P2 LN ??
+
+
+
+
+
+
