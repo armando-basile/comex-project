@@ -8,7 +8,13 @@ Before install Comex components you may want to try it, so you need to follow [#
 
 
 = Install from your package manager =
-work in progress
+ * *Mandriva/Rosa Linux*
+ work in progress
+ * *Debian/Ubuntu Linux*
+ can find packages [https://launchpad.net/~armando-basile/+archive/stable here]
+ * *OpenSuse Linux*
+ can find packages [http://download.opensuse.org/repositories/home:/hmandevteam:/comex-project/openSUSE_11.4/ here]
+
 <br />
 
 
