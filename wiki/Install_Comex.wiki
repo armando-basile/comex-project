@@ -12,7 +12,7 @@ Before install Comex components you may want to try it, so you need to follow [#
  work in progress
  * *Debian/Ubuntu Linux*
  can find packages [https://launchpad.net/~armando-basile/+archive/stable here]
- * *OpenSuse Linux*
+ * *Opensuse Linux*
  can find packages [http://download.opensuse.org/repositories/home:/hmandevteam:/comex-project/openSUSE_11.4/ here]
 
 <br />
