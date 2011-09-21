@@ -37,7 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd">
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
