@@ -9,7 +9,7 @@ Before install Comex components you may want to try it, so you need to follow [#
 
 = Install from your package manager =
  * *Mandriva/Rosa Linux*
- work in progress
+ from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_
  * *Debian/Ubuntu Linux*
  can find packages [https://launchpad.net/~armando-basile/+archive/stable here]
  * *Opensuse Linux*
