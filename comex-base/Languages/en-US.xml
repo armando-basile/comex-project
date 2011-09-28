@@ -41,6 +41,7 @@
 		<noinitreader>Card in reader not initialized, need ATR</noinitreader>
 
 		<selreader>Selected reader</selreader>
+		<noselreader>No reader selected</noselreader>
 		<nopcscreader>No PCSC reader found</nopcscreader>
 		<readerslist>Available readers list</readerslist>
 		<readersel>Enter reader number to use (write EXIT to exit)</readersel>

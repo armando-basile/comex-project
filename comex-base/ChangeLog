@@ -1,3 +1,15 @@
+2011-09-29  Armando Basile  <hmandevteam@gmail.com>
+
+	* en-US.xml:
+	* it-IT.xml:
+	* GlobalObj.cs:
+	* PcscReader.cs:
+	* IReader.cs:
+	* SmartMouseReader.cs:
+	* GlobalObj.Readers.cs:
+	* PcscReader.IReader.cs:
+	* SmartMouseReader.IReader.cs: - improve reader interface use
+
 2011-09-28  Armando Basile  <hmandevteam@gmail.com>
 
 	* Readers:
