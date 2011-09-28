@@ -42,6 +42,7 @@
 		<noinitreader>Card nel lettore non inizializzata, eseguire prima ATR</noinitreader>
 		
 		<selreader>Lettore selezionato</selreader>
+		<noselreader>Nessun lettore selezionato</noselreader>
 		<nopcscreader>Non è stato trovato nessun lettore PCSC</nopcscreader>
 		<readerslist>Lista dei lettori disponibili</readerslist>
 		<readersel>Inserisci il numero del lettore da usare (scrivi EXIT per uscire)</readersel>

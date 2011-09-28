@@ -10,6 +10,12 @@ namespace comexbase
 	{
 		
 		/// <summary>
+		/// Get or Set reader to use
+		/// </summary>
+		string SelectedReader {get; set;}
+		
+		
+		/// <summary>
 		/// Gets name of readers typology
 		/// </summary>
 		string TypeName {get;}
@@ -19,13 +25,7 @@ namespace comexbase
 		/// Gets readers name list for specific typology
 		/// </summary>
 		List<string> Readers {get;}
-		
-		
-		/// <summary>
-		/// Selects reader to use
-		/// </summary>
-		void SelectReader(string readerName);
-		
+
 		
 		/// <summary>
 		/// Answers to reset get bytes that smartcard send after power on.

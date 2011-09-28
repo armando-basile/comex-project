@@ -20,7 +20,8 @@ namespace comexbase
 		private static string languageFolder = "";
 		private static string languageTag = "";
 		private static string selectedReader = "";
-		private static bool isPowered = false;
+		private static string selectedReaderType = "";
+		//private static bool isPowered = false;
 		private static string ret = "";
 		private static string settingsFilePath = "";
 		private static LanguageManager lMan = null;
@@ -39,30 +40,35 @@ namespace comexbase
 		public static LanguageManager LMan { get { return lMan; } }
 		
 		
+		/// <summary>
+		/// Readers manager dictionary
+		/// </summary>
+		public static Dictionary<string, IReader> ReaderManager = new Dictionary<string, IReader>();
+		
 		
 		/// <summary>
 		/// PCSC reader manager
 		/// </summary>
-		public static Pcsc PCSC { get; set ;}
+		//public static Pcsc PCSC { get; set ;}
 		
 		
 		/// <summary>
 		/// Set/Get if selected reader is a PCSC reader
 		/// </summary>
-		public static bool IsPCSC { get; set; }
+		//public static bool IsPCSC { get; set; }
 		
 		
 		/// <summary>
 		/// Return true if selected reader was powered on
 		/// </summary>
-		public static bool IsPowered { get { return isPowered; } }
+		//public static bool IsPowered { get { return isPowered; } }
 		
 		
 		
 		/// <summary>
 		/// SmartMouse reader manager
 		/// </summary>
-		public static SmartMouse SMouse { get; set ;}
+		//public static SmartMouse SMouse { get; set ;}
 		
 		
 		
@@ -70,7 +76,7 @@ namespace comexbase
 		/// <summary>
 		/// PCSC readers name
 		/// </summary>
-		public static List<string> PCSC_Readers { get; set ;}
+		//public static List<string> PCSC_Readers { get; set ;}
 		
 		
 		
@@ -78,7 +84,7 @@ namespace comexbase
 		/// <summary>
 		/// PC serial port
 		/// </summary>
-		public static List<string> SerialPortsName { get; set;}
+		//public static List<string> SerialPortsName { get; set;}
 		
 		
 		/// <summary>
@@ -89,17 +95,26 @@ namespace comexbase
 			get	{	return selectedReader; }
 			set
 			{
+				// check for actual selected reader
+				if (selectedReader != "")
+				{
+					// close prev. connection
+					ReaderManager[selectedReaderType].CloseConnection();
+				}
+				
+				// set new selected reader
 				selectedReader = value;
-				if (PCSC_Readers.Contains(value))
+				selectedReaderType = "";
+				
+				foreach(IReader rm in ReaderManager.Values)
 				{
-					// pcsc reader
-					IsPCSC = true;
-				}
-				else
-				{
-					// serial reader
-					IsPCSC = false;
-				}
+					if (rm.Readers.Contains(value))
+					{
+						// set new reader name and type to use
+						selectedReaderType = rm.TypeName;
+						rm.SelectedReader = value;
+					}
+				}				
 			}
 		}
 		
@@ -222,7 +237,8 @@ namespace comexbase
 			}
 			
 			
-			FillSerialPorts();
+			InitReadersManagers();
+			
 
 			// init settings file
 			settingsFilePath = Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
@@ -230,17 +246,6 @@ namespace comexbase
 			settingsFilePath += "." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".xml";
 			sMan = new SettingsManager(settingsFilePath);
 			ReadSettings();
-			
-
-			SMouse = new SmartMouse();
-			
-			ret = FillPcscReaders();
-			
-			if (ret != "")
-			{
-				// Nothing, can use serial readers
-				// return ret;
-			}
 			
 			return "";
 			

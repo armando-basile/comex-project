@@ -32,85 +32,68 @@ namespace comexbase
 		/// Power On card
 		/// </summary>
 		public static string AnswerToReset(ref string response)
-		{			
+		{	
 			response = "";
 			
-			if (IsPCSC)
+			if (selectedReaderType == "")
 			{
-				// close other context
-				ClosePCSC();
+				// No reader manager selected
+				return lMan.GetString("noselreader");
 			}
-			else
-			{
-				// close serial port
-				SMouse.Close();	
-			}
-
 			
-			if (IsPCSC)
+			// create alias
+			IReader rSelected = (IReader)ReaderManager[selectedReaderType];
+			
+			// check for smartmouse serial reader
+			if (selectedReaderType == "SmartMouse Serial")
 			{
-				// create new context
-				ret = InitPCSC();
+				// Apply serial port settings
+				((SmartMouseReader)rSelected).PortDataBit = SerialSettings.DataBits;
+				((SmartMouseReader)rSelected).PortName = selectedReader;
+				((SmartMouseReader)rSelected).PortStopBit = SerialSettings.StopBits;
+				((SmartMouseReader)rSelected).PortParity = SerialSettings.Parity;
+				((SmartMouseReader)rSelected).PortSpeed = SerialSettings.PortSpeedReset;
+				((SmartMouseReader)rSelected).IsDirectConvention = SerialSettings.IsDirectConvention;
+				
+				ret = ((SmartMouseReader)rSelected).ApplySettings();
 				
 				if (ret != "")
 				{
+					// Error detected
 					return ret;
 				}
-				
-				// Connect to smartcard
-				ret = PCSC.Connect(selectedReader, ref response,
-			                       Pcsc.SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
-			                       Pcsc.SCARD_SHARE.SCARD_SHARE_EXCLUSIVE);
-				
-				if (ret != "")
-				{
-					// error detected
-					log.Error(ret);
-					return ret;
-				}
-				
-				response = AddSpace(response);
-				
-				isPowered = true;				
+			}
+			
+			
+			// Get ATR
+			ret = rSelected.AnswerToReset(ref response);
+			
+			if (ret != "")
+			{
+				// Error detected
 				return ret;
 			}
-			else
+				
+			response = AddSpace(response);
+			
+			
+			// check for smartmouse serial reader
+			if (selectedReaderType == "SmartMouse Serial")
 			{
-				// SmartMouse serial reader				
-				SMouse.PortDataBit = SerialSettings.DataBits;
-				SMouse.PortName = selectedReader;
-				SMouse.PortStopBit = SerialSettings.StopBits;
-				SMouse.PortParity = SerialSettings.Parity;
-				SMouse.PortSpeed = SerialSettings.PortSpeedReset;
-				SMouse.IsDirectConvention = SerialSettings.IsDirectConvention;
-				
-				ret = SMouse.ApplySettings();
-				ret = SMouse.Open();
-				ret = SMouse.Connect(out response);				
-				
-				log.Debug("response: " + response);
-				
-				if (ret != "")
-				{
-					// error detected
-					return ret;
-				}
-				
-				response = AddSpace(response);
-				
 				// change port speed after reset
-				SMouse.PortSpeed = SerialSettings.PortSpeed;
-				ret = SMouse.ApplySettings();
+				((SmartMouseReader)rSelected).PortSpeed = SerialSettings.PortSpeed;
+				ret = ((SmartMouseReader)rSelected).ApplySettings();
 				
 				if (ret != "")
 				{
 					// error detected
 					return ret;
 				}
-				isPowered = true;		
-				return ret;
-				
 			}
+				
+			return "";
+				
+			
 		}
 		
 		
@@ -122,6 +105,15 @@ namespace comexbase
 		/// </summary>
 		public static string SendReceive(string command, ref string response)
 		{
+			
+			if (selectedReaderType == "")
+			{
+				// No reader manager selected
+				return lMan.GetString("noselreader");
+			}
+			
+			// create alias
+			IReader rSelected = (IReader)ReaderManager[selectedReaderType];
 			
 			command = command.Replace("0x", "");
 			command = command.Replace(" ", "");
@@ -150,28 +142,10 @@ namespace comexbase
 				}
 			}
 			
+			// Exchange data with smartcard in selected reader
+			return rSelected.SendReceive(command, ref response);
 			
-			if (IsPCSC)
-			{
-				// exchange data with smartcard using PCSC
-				return PCSC.Transmit(command, ref response);
-			}
-			else
-			{
-				// SmartMouse serial
-				if (command.Length > 10)
-				{
-					// ISO IN for SmartMouse
-					return ISOIN(command, ref response);
-					
-				}
-				else
-				{
-					// ISO OUT
-					return ISOOUT(command, ref response);
-				}
-
-			}
+			
 		}
 		
 		
@@ -186,27 +160,14 @@ namespace comexbase
 		/// </summary>
 		public static void CloseConnection()
 		{
-			if (selectedReader == "")
+			if (selectedReaderType == "")
 			{
+				// No reader manager selected
 				return;
 			}
 			
-			if (IsPCSC)
-			{
-				ClosePCSC();
-			}
-			else
-			{
-				// check for serial port opened
-				if (SMouse.IsPortOpen)
-				{
-					// close serial port
-					SMouse.Close();
-				}
-			}
-			
+			ReaderManager[selectedReaderType].CloseConnection();
 			selectedReader = "";
-			isPowered = false;
 		}
 		
 		
@@ -230,7 +191,7 @@ namespace comexbase
 		
 		
 
-		
+		/*
 		/// <summary>
 		/// Close PCSC communication
 		/// </summary>
@@ -272,10 +233,32 @@ namespace comexbase
 		}
 
 		
+		*/
 		
 		
 		
-
+		/// <summary>
+		/// Init readers managers
+		/// </summary>
+		private static void InitReadersManagers()
+		{
+			// Add PCSC reader manager
+			IReader pcsc = new PcscReader();
+			ReaderManager.Add(pcsc.TypeName, pcsc);
+			
+			// Add SmartMouse reader manager
+			IReader smouse = new SmartMouseReader();
+			ReaderManager.Add(smouse.TypeName, smouse);
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+/*
 		/// <summary>
 		/// Detect available serial ports
 		/// </summary>
@@ -326,7 +309,7 @@ namespace comexbase
 			ClosePCSC();
 			return "";
 		}
-		
+		*/
 		
 		
 		
@@ -347,7 +330,7 @@ namespace comexbase
 		}
 		
 		
-		
+/*		
 		
 		
 		/// <summary>
@@ -454,7 +437,7 @@ namespace comexbase
 		
 		
 		
-		
+		*/
 		
 		
 		
