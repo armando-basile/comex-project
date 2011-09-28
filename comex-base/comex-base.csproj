@@ -10,7 +10,7 @@
     <RootNamespace>comexbase</RootNamespace>
     <AssemblyName>comex-base</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.7.2</ReleaseVersion>
+    <ReleaseVersion>0.1.7.3</ReleaseVersion>
     <Description>base component for comex project</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -48,6 +48,8 @@
     <Folder Include="Src\" />
     <Folder Include="Src\Classes\" />
     <Folder Include="Src\" />
+    <Folder Include="Src\Interfaces\" />
+    <Folder Include="Src\Readers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs\readme" />
@@ -73,6 +75,11 @@
     <Compile Include="Src\Classes\GlobalObj.Readers.cs" />
     <Compile Include="Src\Classes\SerialSettings.cs" />
     <Compile Include="Src\Classes\SettingsManager.cs" />
+    <Compile Include="Src\Interfaces\IReader.cs" />
+    <Compile Include="Src\Readers\SmartMouseReader.cs" />
+    <Compile Include="Src\Readers\PcscReader.cs" />
+    <Compile Include="Src\Readers\PcscReader.IReader.cs" />
+    <Compile Include="Src\Readers\SmartMouseReader.IReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="comex-base.dll.config">
