@@ -13,7 +13,7 @@ namespace comexqt
 		
 		
 		// Log4Net object
-        // private static readonly ILog log = LogManager.GetLogger(typeof(comexqt.MainClass));
+        private static readonly ILog log = LogManager.GetLogger(typeof(comexqt.MainClass));
 		
 		
 		private static string retStr = "";
@@ -53,6 +53,7 @@ namespace comexqt
 			// Init resource class manager			
 			Q_INIT_RESOURCE("ResManager");
 			
+			
 			// Create new Qyoto Application
 			new QApplication(args);
 
@@ -78,8 +79,6 @@ namespace comexqt
 				
 			}
 			
-
-
 			// Create new Qyoto Desktop Object
 			QDesktopWidget qdw = new QDesktopWidget();
 			

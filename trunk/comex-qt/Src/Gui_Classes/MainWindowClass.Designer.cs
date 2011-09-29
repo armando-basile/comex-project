@@ -58,6 +58,7 @@ namespace comexqt
 		[Q_SLOT]
 		public void ActionExit()
 		{
+			QApplication.CloseAllWindows();			
 			QApplication.Quit();
 		}
 
@@ -226,10 +227,13 @@ namespace comexqt
 			}
 			
 			
-			// Update readers list on gui
-			allReaders.AddRange(GlobalObj.PCSC_Readers);
-			allReaders.AddRange(GlobalObj.SerialPortsName);
+			// loop for each managed readers type
+			foreach(IReader rdr in GlobalObj.ReaderManager.Values)
+			{
+				allReaders.AddRange(rdr.Readers);
+			}
 			
+			// Update readers list on gui			
 			QAction action_Reader;
 			QActionGroup readersGrp = new QActionGroup(this);
 			
@@ -263,13 +267,7 @@ namespace comexqt
 				GlobalObj.SelectedReader = allReaders[0];
 			}
 
-			
-			
-			if (GlobalObj.PCSC_Readers.Count == 0)
-			{
-				mainwindow_Ui.statusbar.ShowMessage(GlobalObj.LMan.GetString("nopcscreader"));
-			}
-			
+
 			// LANGUAGE STATUS TIP
 			// mainwindow_Ui.action_Open.StatusTip = "";  // status bar desc
 				
