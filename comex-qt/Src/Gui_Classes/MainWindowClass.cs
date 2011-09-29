@@ -147,7 +147,7 @@ namespace comexqt
 		/// </summary>
 		private void OpenCommandFile()
 		{
-                        
+            
             // New dialog for select command file 
 			string selectedFile = QFileDialog.GetOpenFileName(this, 
                                                         GlobalObj.LMan.GetString("selectfile"),
