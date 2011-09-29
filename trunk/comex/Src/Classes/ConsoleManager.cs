@@ -33,8 +33,13 @@ namespace comex
 			
 			// create readers list
 			List<string> allreaders = new List<string>();
-			allreaders.AddRange(GlobalObj.PCSC_Readers);
-			allreaders.AddRange(GlobalObj.SerialPortsName);
+			
+			// loop for each managed readers type
+			foreach(IReader rdr in GlobalObj.ReaderManager.Values)
+			{
+				allreaders.AddRange(rdr.Readers);
+			}
+			
 			
 			// display available readers
 			Console.WriteLine("\r\n" + GlobalObj.LMan.GetString("readerslist") + ":");
@@ -60,7 +65,7 @@ namespace comex
 			catch (Exception Ex)
 			{
 				// error detected
-				log.Error(Ex.Message);
+				log.Error("ConsoleManager::StartApp: " + Ex.Message);
 				return;
 			}
 			
@@ -71,7 +76,7 @@ namespace comex
 			if (ret != "")
 			{
 				// error on answer to reset
-				log.Error(ret);
+				log.Error("ConsoleManager::StartApp: " + ret);
 				Console.WriteLine(ret);
 				return;
 			}
@@ -95,7 +100,7 @@ namespace comex
 				if (ret != "")
 				{
 					// error on send command
-					log.Error(ret);
+					log.Error("ConsoleManager::StartApp: " + ret);
 					Console.WriteLine("< " + ret);
 				}
 				else
