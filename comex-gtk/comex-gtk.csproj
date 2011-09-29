@@ -8,7 +8,7 @@
     <ProjectGuid>{8264E480-3956-4B26-9237-D63A0C856206}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>comexgtk</RootNamespace>
-    <ReleaseVersion>0.1.5.2</ReleaseVersion>
+    <ReleaseVersion>0.1.6.0</ReleaseVersion>
     <Description>GTK user interface for comex-project</Description>
     <AssemblyName>comex-gtk</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -55,10 +55,11 @@
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=243860b57ee8afcd">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="comex-base, Version=0.1.7.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>comex-base</Package>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>

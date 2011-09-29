@@ -387,26 +387,38 @@ namespace comexgtk
 			
 			// update gui menu
 			Gtk.RadioMenuItem rmi;
-			// loop for all pcsc readers
-			for (int n=0; n<GlobalObj.PCSC_Readers.Count; n++)
+			// loop for all readers
+			List<string> allReaders = new List<string>();
+			
+			// loop for each managed readers type
+			foreach(IReader rdr in GlobalObj.ReaderManager.Values)
+			{
+				allReaders.AddRange(rdr.Readers);
+			}
+			
+			
+			for (int n=0; n<allReaders.Count; n++)
 			{	
 				// set first as selected
 				if (n==0)
 				{
-					rmi = new Gtk.RadioMenuItem(GlobalObj.PCSC_Readers[n]);
-					GlobalObj.SelectedReader = GlobalObj.PCSC_Readers[n];
-					StatusBar.Push(1, GlobalObj.LMan.GetString("selreader") + ": " + GlobalObj.PCSC_Readers[n]);
+					rmi = new Gtk.RadioMenuItem(allReaders[n]);
+					GlobalObj.SelectedReader = allReaders[n];
+					StatusBar.Push(1, GlobalObj.LMan.GetString("selreader") + ": " + allReaders[n]);
 				}
 				else
 				{
 					// added others
-					rmi = new Gtk.RadioMenuItem((RadioMenuItem)MenuReader.Children[0], GlobalObj.PCSC_Readers[n]);
+					rmi = new Gtk.RadioMenuItem((RadioMenuItem)MenuReader.Children[0], allReaders[n]);
 				}
 				
 				rmi.ButtonReleaseEvent += ActionChangeReader;
 				MenuReader.Add(rmi);
 			}
 			
+			MenuReader.ShowAll();
+			
+/*
 			// loop for all serial port available
 			for (int n=0; n<GlobalObj.SerialPortsName.Count; n++)
 			{
@@ -435,13 +447,14 @@ namespace comexgtk
 				rmi.ButtonReleaseEvent += ActionChangeReader;
 				MenuReader.Add(rmi);
 			}
+
 			
-			MenuReader.ShowAll();
 
 			if (GlobalObj.PCSC_Readers.Count == 0)
 			{
 				StatusBar.Push(1, GlobalObj.LMan.GetString("nopcscreader"));
 			}
+*/
 			
 		}
 		

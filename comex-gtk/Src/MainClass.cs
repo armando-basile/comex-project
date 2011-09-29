@@ -20,7 +20,7 @@ namespace comexgtk
 		
 		
 		// Log4Net object
-        private static readonly ILog log = LogManager.GetLogger(typeof(comexgtk.MainClass));
+        //private static readonly ILog log = LogManager.GetLogger(typeof(comexgtk.MainClass));
 		
 		
 		private static string retStr = "";
