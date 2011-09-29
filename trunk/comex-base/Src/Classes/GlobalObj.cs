@@ -21,7 +21,7 @@ namespace comexbase
 		private static string languageTag = "";
 		private static string selectedReader = "";
 		private static string selectedReaderType = "";
-		//private static bool isPowered = false;
+		private static bool isPowered = false;
 		private static string ret = "";
 		private static string settingsFilePath = "";
 		private static LanguageManager lMan = null;
@@ -61,7 +61,7 @@ namespace comexbase
 		/// <summary>
 		/// Return true if selected reader was powered on
 		/// </summary>
-		//public static bool IsPowered { get { return isPowered; } }
+		public static bool IsPowered { get { return isPowered; } }
 		
 		
 		
@@ -105,6 +105,9 @@ namespace comexbase
 				// set new selected reader
 				selectedReader = value;
 				selectedReaderType = "";
+				
+				// set selected reader unpowered
+				isPowered = false;
 				
 				foreach(IReader rm in ReaderManager.Values)
 				{

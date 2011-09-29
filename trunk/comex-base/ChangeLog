@@ -2,6 +2,13 @@
 
 	* comex-base.csproj:
 	* GlobalObj.cs:
+	* AssemblyInfo.cs:
+	* GlobalObj.Readers.cs: - release 0.1.8.1
+
+2011-09-29  Armando Basile  <hmandevteam@gmail.com>
+
+	* comex-base.csproj:
+	* GlobalObj.cs:
 	* PcscReader.cs:
 	* AssemblyInfo.cs:
 	* SmartMouseReader.cs:

@@ -73,9 +73,11 @@ namespace comexbase
 				// Error detected
 				return ret;
 			}
-				
+			
 			response = AddSpace(response);
 			
+			// set selected reader powered
+			isPowered = true;
 			
 			// check for smartmouse serial reader
 			if (selectedReaderType == "SmartMouse Serial")
