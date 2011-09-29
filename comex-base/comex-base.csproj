@@ -69,9 +69,7 @@
     <Compile Include="Src\Classes\GlobalObj.cs" />
     <Compile Include="Src\Classes\LanguageManager.cs" />
     <Compile Include="Src\Classes\GlobalConst.cs" />
-    <Compile Include="Src\Classes\Pcsc.cs" />
     <Compile Include="Src\Classes\clsEncoding.cs" />
-    <Compile Include="Src\Classes\SmartMouse.cs" />
     <Compile Include="Src\Classes\GlobalObj.Readers.cs" />
     <Compile Include="Src\Classes\SerialSettings.cs" />
     <Compile Include="Src\Classes\SettingsManager.cs" />

@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Reflection;
-using Pcsc_Sharp;
+
 
 using log4net;
 using log4net.Config;

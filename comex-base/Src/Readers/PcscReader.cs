@@ -219,7 +219,7 @@ namespace comexbase
 			{
 				// Error detected
 				nContext = IntPtr.Zero;
-				log.Error("SCardEstablishContext: " + parseError(ret));
+				log.Error("PcscReader::PcscReader: SCardEstablishContext " + parseError(ret));
 				return;
 			}
 			
@@ -274,7 +274,7 @@ namespace comexbase
 			if (ret != 0)
 			{
 				// Error detected
-				log.Error("SCardListReaders: " + parseError(ret));
+				log.Error("PcscReader::UpdateListReaders: SCardListReaders " + parseError(ret));
 				return;
 			}
 			
@@ -432,8 +432,8 @@ namespace comexbase
 			if (ret != 0)
 			{
 				// Error detected
-				log.Error("SCardStatus: " +  parseError(ret));
-				return "SCardStatus: " +  parseError(ret);
+				log.Error("PcscReader::ReaderStatus: SCardStatus " +  parseError(ret));
+				return "PcscReader::ReaderStatus: SCardStatus " +  parseError(ret);
 			}
 			
 			// Extract ATR value
