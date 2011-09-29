@@ -163,7 +163,7 @@ namespace comexbase
 				catch(Exception e)
 				{
 					// Error detected
-					log.Error("SmartMouseReader::CloseConnection: " + e.Message + "\r\n" + e.StackTrace);
+					log.Error("SmartMouseReader.IReader::CloseConnection: " + e.Message + "\r\n" + e.StackTrace);
 				}
 			}
 		}

@@ -1,5 +1,16 @@
 2011-09-29  Armando Basile  <hmandevteam@gmail.com>
 
+	* comex-base.csproj:
+	* GlobalObj.cs:
+	* PcscReader.cs:
+	* AssemblyInfo.cs:
+	* SmartMouseReader.cs:
+	* GlobalObj.Readers.cs:
+	* PcscReader.IReader.cs:
+	* SmartMouseReader.IReader.cs: - release 0.1.8.0
+
+2011-09-29  Armando Basile  <hmandevteam@gmail.com>
+
 	* en-US.xml:
 	* it-IT.xml:
 	* GlobalObj.cs:

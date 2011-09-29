@@ -343,7 +343,7 @@ namespace comexbase
 			
 			if (tmpInString.Trim() == "" )
 			{
-				return "no data to write";
+				return "SmartMouseReader::WriteData: no data to write";
 			}
 			
 			

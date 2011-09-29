@@ -83,6 +83,9 @@ namespace comexbase
 			if (nCard.ToInt64() != 0)
 			{
 				CloseConnection();
+				
+				// delay before power on
+				System.Threading.Thread.Sleep(50);
 			}
 			
 			// Connect to smartcard
@@ -94,8 +97,8 @@ namespace comexbase
 			if (ret != 0)
 			{
 				// Error detected
-				log.Error("SCardConnect: " + parseError(ret));
-				return "SCardConnect: " + parseError(ret);
+				log.Error("PcScReader.IReader::AnswerToReset: SCardConnect " + parseError(ret));
+				return "PcScReader.IReader::AnswerToReset: SCardConnect " + parseError(ret);
 			}
 			
 			
@@ -162,8 +165,8 @@ namespace comexbase
 			if (ret != 0)
 			{	
 				// Error detected
-				log.Error("SCardTransmit: " + parseError(ret));
-				return "SCardTransmit: " + parseError(ret);
+				log.Error("PcScReader.IReader::SendReceive: SCardTransmit " + parseError(ret));
+				return "PcScReader.IReader::SendReceive: SCardTransmit " + parseError(ret);
 			}
 			
 			// Extract response
