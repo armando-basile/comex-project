@@ -36,4 +36,4 @@ Opening .comex file you can see content in command file area as follow
 
 http://comex-project.googlecode.com/svn/wiki/gtk_6.png
 
-to send immediately a command you need to select row and press _*F6*_ key function, instead if you want only copy command from row to command filed, you need to select row and press _*F5*_ key function or double click with mouse
+can find an example of comex file here: [http://comex-project.googlecode.com/svn/trunk/resources/gsm.comex gsm.comex]. To send immediately a command you need to select row and press _*F6*_ key function, instead if you want only copy command from row to command filed, you need to select row and press _*F5*_ key function or double click with mouse
