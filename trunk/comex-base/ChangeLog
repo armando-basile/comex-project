@@ -1,5 +1,11 @@
 2011-10-04  Armando Basile  <hmandevteam@gmail.com>
 
+	* PcscReader.cs:
+	* PcscReader.IReader.cs: - fix: SCardConnect parameters
+	(share, protocol)
+
+2011-10-04  Armando Basile  <hmandevteam@gmail.com>
+
 	* comex-base.csproj:
 	* GlobalObj.cs:
 	* PcscReader.cs:

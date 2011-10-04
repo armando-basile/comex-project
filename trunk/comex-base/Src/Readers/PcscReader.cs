@@ -459,7 +459,8 @@ namespace comexbase
 			if (nContext.ToInt64() != 0)
 			{
 				// Release PCSC context
-				SCardReleaseContext(nContext);
+				ret = SCardReleaseContext(nContext);
+				log.Error("PcscReader::ReleaseContext: SCardReleaseContext " + parseError(ret));
 				nContext = IntPtr.Zero;
 			}
 		}
@@ -479,10 +480,11 @@ namespace comexbase
 			{
 				// Error detected
 				nContext = IntPtr.Zero;
-				log.Error("PcscReader::PcscReader: SCardEstablishContext " + parseError(ret));
+				log.Error("PcscReader::CreateContext: SCardEstablishContext " + parseError(ret));
 				return parseError(ret);
 			}
 			
+			log.Debug("PcscReader::CreateContext: SCardEstablishContext " + parseError(ret));
 			return "";
 		}
 		
