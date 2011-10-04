@@ -460,7 +460,7 @@ namespace comexbase
 			{
 				// Release PCSC context
 				ret = SCardReleaseContext(nContext);
-				log.Error("PcscReader::ReleaseContext: SCardReleaseContext " + parseError(ret));
+				log.Debug("PcscReader::ReleaseContext: SCardReleaseContext " + parseError(ret));
 				nContext = IntPtr.Zero;
 			}
 		}
