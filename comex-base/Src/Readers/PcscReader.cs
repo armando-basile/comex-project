@@ -54,7 +54,7 @@ namespace comexbase
 		
 		[DllImport("winscard")]
 		private static extern int SCardDisconnect(IntPtr hCard, 
-		                                         int Disposition);
+		                                         uint Disposition);
 	
 		
 	
@@ -62,7 +62,7 @@ namespace comexbase
 		private static extern int SCardStatus(IntPtr hCard, 
 		                                      byte[] ReaderName, 
 		                                  ref IntPtr RLen, 
-		                                  out int State, 
+		                                  out uint State, 
 		                                  out int Protocol, 
 		                                      byte[] ATR, 
 		                                  ref IntPtr ATRLen);
@@ -159,21 +159,32 @@ namespace comexbase
 		private const int SCARD_SCOPE_TERMINAL = 1;
 		private const int SCARD_SCOPE_SYSTEM = 2;
 		
+		private enum SCARD_DISPOSITION: uint
+		{
+			SCARD_LEAVE_CARD = 0,
+			SCARD_RESET_CARD = 1,
+			SCARD_UNPOWER_CARD = 2,
+			SCARD_EJECT_CARD = 3,			
+		}
+		
 		private const int SCARD_LEAVE_CARD = 0;
 		private const int SCARD_UNPOWER_CARD = 2;
 	
-		public const uint SCARD_STATE_UNAWARE = 0x0;
-	    public const uint SCARD_STATE_IGNORE = 0x1;
-		public const uint SCARD_STATE_CHANGED = 0x2;
-		public const uint SCARD_STATE_UNKNOWN = 0x4;
-		public const uint SCARD_STATE_UNAVAILABLE = 0x8;
-		public const uint SCARD_STATE_EMPTY = 0x10;
-		public const uint SCARD_STATE_PRESENT = 0x20;
-		public const uint SCARD_STATE_ATRMATCH = 0x40;
-		public const uint SCARD_STATE_EXCLUSIVE = 0x80;
-		public const uint SCARD_STATE_INUSE = 0x100;
-		public const uint SCARD_STATE_MUTE = 0x200;
-		public const uint SCARD_STATE_UNPOWERED = 0x400;
+		private enum SCARD_STATE: uint
+		{
+			SCARD_STATE_UNAWARE = 0x0,
+		    SCARD_STATE_IGNORE = 0x1,
+			SCARD_STATE_CHANGED = 0x2,
+			SCARD_STATE_UNKNOWN = 0x4,
+			SCARD_STATE_UNAVAILABLE = 0x8,
+			SCARD_STATE_EMPTY = 0x10,
+			SCARD_STATE_PRESENT = 0x20,
+			SCARD_STATE_ATRMATCH = 0x40,
+			SCARD_STATE_EXCLUSIVE = 0x80,
+			SCARD_STATE_INUSE = 0x100,
+			SCARD_STATE_MUTE = 0x200,
+			SCARD_STATE_UNPOWERED = 0x400,
+		}
 		
 		
 		#endregion SCARD Constants
@@ -196,6 +207,7 @@ namespace comexbase
 		private byte[] atrValue;						// ATR content
 		private IntPtr atrLen = new IntPtr(33);			// ATR length
 		private int ret = 0;
+		
 		
 		private cEncoding utilityObj = new cEncoding();	
 			
@@ -412,7 +424,7 @@ namespace comexbase
 			readerNameLen = new IntPtr(64);			
 			atrLen = new IntPtr(33);
 			cardProtocol = 0;
-			int readerState = 0; 
+			uint readerState = 0; 
 			
 			// firts time to set sizes
 			ret = SCardStatus(nCard, retRName, ref readerNameLen, out readerState, 
