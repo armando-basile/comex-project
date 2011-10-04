@@ -2,12 +2,12 @@
 Encoding=UTF-8
 Name=comex-qt
 GenericName=comex-qt
-Comment=QT gui for comex core component
+Comment=Qt application to exchange commands to smartcard
 Icon=comex-qt
 Exec=comex-qt
 Categories=Office;Qt;KDE;
 Name[it_IT]=comex-qt
-Comment[it_IT]=QT gui for comex core component
+Comment[it_IT]=Applicazione Qt per inviare comandi ad una smartcard
 Terminal=false
 Type=Application
 StartupNotify=true
