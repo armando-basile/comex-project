@@ -72,6 +72,8 @@ namespace comexbase
 		/// </returns>
 		public string AnswerToReset (ref string response)
 		{
+			string retContext = "";
+			
 			// check for selected reader
 			if (selectedReader == "")
 			{
@@ -79,14 +81,22 @@ namespace comexbase
 				return GlobalObj.LMan.GetString("noselreader");
 			}
 			
-			// check for prev. connection
-			if (nCard.ToInt64() != 0)
-			{
-				CloseConnection();
+			// close connection and context
+			CloseConnection();
+			ReleaseContext();
 				
-				// delay before power on
-				System.Threading.Thread.Sleep(50);
+			// delay before power on
+			System.Threading.Thread.Sleep(50);
+			
+			// Try to create new context
+			retContext = CreateContext();
+			if (retContext != "")
+			{
+				// error detected
+				return retContext;
 			}
+			
+			
 			
 			// Connect to smartcard
 			int ret = SCardConnect(nContext, selectedReader, 
@@ -186,16 +196,13 @@ namespace comexbase
 		/// </summary>
 		public void CloseConnection ()
 		{
-			// Get status:
-			//string retStatusResp = "";
-			//string retStatus = ReaderStatus(ref retStatusResp);
-			
-			//log.Debug("READER_STATE: " + readerState.ToString("X4"));
-			
-			// Disconnect from smartcard
-			//SCardDisconnect(nCard, SCARD_UNPOWER_CARD);
-			SCardDisconnect(nCard, (uint)SCARD_DISPOSITION.SCARD_RESET_CARD);
-			nCard = IntPtr.Zero;
+			// check for card context
+			if (nCard.ToInt64() != 0)
+			{
+				// disconnect
+				SCardDisconnect(nCard, (uint)SCARD_DISPOSITION.SCARD_UNPOWER_CARD);
+				nCard = IntPtr.Zero;
+			}
 		}
 		
 

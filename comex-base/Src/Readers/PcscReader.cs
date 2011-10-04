@@ -223,15 +223,10 @@ namespace comexbase
 		/// </summary>
 		public PcscReader ()
 		{
-			
-			// Create PCSC context
-			int ret = SCardEstablishContext(SCARD_SCOPE_SYSTEM, nNotUsed1, nNotUsed2, ref nContext);
-			
-			if (ret != 0)
+			// Try to create PCSC context
+			if (CreateContext() != "")
 			{
 				// Error detected
-				nContext = IntPtr.Zero;
-				log.Error("PcscReader::PcscReader: SCardEstablishContext " + parseError(ret));
 				return;
 			}
 			
@@ -248,9 +243,7 @@ namespace comexbase
 		public void Dispose ()
 		{
 			// Release PCSC context
-			SCardReleaseContext(nContext);
-			
-			nContext = IntPtr.Zero;
+			ReleaseContext();
 		}		
 		
 		#endregion IDisposable interface
@@ -455,6 +448,43 @@ namespace comexbase
 		}
 		
 		
+		
+		
+		
+		/// <summary>
+		/// Release PCSC context
+		/// </summary>
+		private void ReleaseContext()
+		{
+			if (nContext.ToInt64() != 0)
+			{
+				// Release PCSC context
+				SCardReleaseContext(nContext);
+				nContext = IntPtr.Zero;
+			}
+		}
+		
+		
+		
+		
+		/// <summary>
+		/// Create PCSC context
+		/// </summary>
+		private string CreateContext()
+		{
+			// Create PCSC context
+			int ret = SCardEstablishContext(SCARD_SCOPE_SYSTEM, nNotUsed1, nNotUsed2, ref nContext);
+			
+			if (ret != 0)
+			{
+				// Error detected
+				nContext = IntPtr.Zero;
+				log.Error("PcscReader::PcscReader: SCardEstablishContext " + parseError(ret));
+				return parseError(ret);
+			}
+			
+			return "";
+		}
 		
 		
 		#endregion Private methods

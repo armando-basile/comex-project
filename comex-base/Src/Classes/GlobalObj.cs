@@ -46,16 +46,8 @@ namespace comexbase
 		public static Dictionary<string, IReader> ReaderManager = new Dictionary<string, IReader>();
 		
 		
-		/// <summary>
-		/// PCSC reader manager
-		/// </summary>
-		//public static Pcsc PCSC { get; set ;}
 		
 		
-		/// <summary>
-		/// Set/Get if selected reader is a PCSC reader
-		/// </summary>
-		//public static bool IsPCSC { get; set; }
 		
 		
 		/// <summary>
@@ -65,26 +57,10 @@ namespace comexbase
 		
 		
 		
-		/// <summary>
-		/// SmartMouse reader manager
-		/// </summary>
-		//public static SmartMouse SMouse { get; set ;}
 		
 		
 		
 		
-		/// <summary>
-		/// PCSC readers name
-		/// </summary>
-		//public static List<string> PCSC_Readers { get; set ;}
-		
-		
-		
-		
-		/// <summary>
-		/// PC serial port
-		/// </summary>
-		//public static List<string> SerialPortsName { get; set;}
 		
 		
 		/// <summary>
@@ -184,18 +160,6 @@ namespace comexbase
 		#region Public Methods
 		
 		
-/*		
-		/// <summary>
-		/// Wait for gui processes
-		/// </summary>
-		public static void GtkWait()
-		{
-			while (Gtk.Application.EventsPending ())
-			{
-                Gtk.Application.RunIteration ();
-			}
-		}
-*/
 		
 		
 
