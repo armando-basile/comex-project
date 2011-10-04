@@ -83,10 +83,11 @@ namespace comexbase
 			
 			// close connection and context
 			CloseConnection();
+			System.Threading.Thread.Sleep(20);
 			ReleaseContext();
 				
 			// delay before power on
-			System.Threading.Thread.Sleep(50);
+			System.Threading.Thread.Sleep(200);
 			
 			// Try to create new context
 			retContext = CreateContext();
@@ -96,12 +97,13 @@ namespace comexbase
 				return retContext;
 			}
 			
-			
+			System.Threading.Thread.Sleep(20);
 			
 			// Connect to smartcard
 			int ret = SCardConnect(nContext, selectedReader, 
-								   (uint)SCARD_PROTOCOL.SCARD_PROTOCOL_ANY,
-			                       (uint)SCARD_SHARE.SCARD_SHARE_EXCLUSIVE,
+								   (uint)SCARD_SHARE.SCARD_SHARE_SHARED,
+								   (uint)SCARD_PROTOCOL.SCARD_PROTOCOL_T0 |
+								   (uint)SCARD_PROTOCOL.SCARD_PROTOCOL_T1,			                       
 			                   ref nCard, ref nActiveProtocol);
 			
 			if (ret != 0)
@@ -200,7 +202,8 @@ namespace comexbase
 			if (nCard.ToInt64() != 0)
 			{
 				// disconnect
-				SCardDisconnect(nCard, (uint)SCARD_DISPOSITION.SCARD_UNPOWER_CARD);
+				ret = SCardDisconnect(nCard, (uint)SCARD_DISPOSITION.SCARD_UNPOWER_CARD);
+				log.Debug("PcScReader.IReader::CloseConnection: SCardDisconnect " + ret.ToString());
 				nCard = IntPtr.Zero;
 			}
 		}
