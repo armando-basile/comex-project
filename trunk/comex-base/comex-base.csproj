@@ -10,7 +10,7 @@
     <RootNamespace>comexbase</RootNamespace>
     <AssemblyName>comex-base</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.8.1</ReleaseVersion>
+    <ReleaseVersion>0.1.8.3</ReleaseVersion>
     <Description>base component for comex project</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">

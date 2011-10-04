@@ -1,5 +1,15 @@
 2011-10-04  Armando Basile  <hmandevteam@gmail.com>
 
+	* comex-base.csproj:
+	* GlobalObj.cs:
+	* PcscReader.cs:
+	* AssemblyInfo.cs:
+	* GlobalObj.Readers.cs:
+	* PcscReader.IReader.cs: - removed unused old code
+	- renew context each ATR request for PCSC
+
+2011-10-04  Armando Basile  <hmandevteam@gmail.com>
+
 	* PcscReader.cs:
 	* AssemblyInfo.cs:
 	* PcscReader.IReader.cs: - changed PCSC Disconnect action from
