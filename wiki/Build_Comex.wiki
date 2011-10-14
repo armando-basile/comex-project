@@ -20,9 +20,9 @@ Dependencies:
 
 To build and install can use:
 {{{ 
- $ ./configure
+ $ ./configure --libdir=/usr/lib
  $ make
- # make install (as root)
+ # make linuxpkgconfigdir=/usr/share/pkgconfig install (as root)
 }}}
 
 NOTE: _you need to build and install *comex-base* as first. Before build other tarballs need also to register comex-base dll in Mono GAC_
