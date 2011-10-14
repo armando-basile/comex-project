@@ -11,7 +11,7 @@ This page lists methods to build Comex components on Linux and Windows os.
 
 Can find tarballs in [http://code.google.com/p/comex-project/downloads/list Downloads area].
 
-For *comex-base*
+=== For comex-base ===
 
 Build Dependencies:
  * mono devel package
@@ -30,7 +30,7 @@ NOTE: Before build other tarballs need also to register comex-base dll in Mono G
 }}}
 ----
 
-For *comex*
+=== For comex ===
 
 Build Dependencies:
  * mono devel package
@@ -45,7 +45,7 @@ To build and install can use:
 }}}
 ----
 
-For *comex-gtk*
+=== For comex-gtk ===
 
 Build Dependencies:
  * mono devel package
@@ -62,7 +62,7 @@ To build and install can use:
 }}}
 ----
 
-For *comex-qt*
+=== For comex-qt ===
 
 Build Dependencies:
  * mono devel package
