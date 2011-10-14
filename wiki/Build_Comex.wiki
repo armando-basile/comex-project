@@ -11,12 +11,11 @@ This page lists methods to build Comex components on Linux and Windows os.
 
 Can find tarballs in [http://code.google.com/p/comex-project/downloads/list Downloads area].
 
-Dependencies:
+For *comex-base*
+
+Build Dependencies:
  * mono devel package
  * log4net devel package
- * gtk-sharp2 devel package
- * glade-sharp2
- * qyoto devel package
 
 To build and install can use:
 {{{ 
@@ -25,10 +24,59 @@ To build and install can use:
  # make linuxpkgconfigdir=/usr/share/pkgconfig install (as root)
 }}}
 
-NOTE: _you need to build and install *comex-base* as first. Before build other tarballs need also to register comex-base dll in Mono GAC_
+NOTE: Before build other tarballs need also to register comex-base dll in Mono GAC_
 {{{
 # gacutil -i /usr/lib/comex-base/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac
 }}}
+----
+
+For *comex*
+
+Build Dependencies:
+ * mono devel package
+ * log4net devel package
+ * comex-base devel package (or tarball install)
+
+To build and install can use:
+{{{ 
+ $ ./configure
+ $ make
+ # make install (as root)
+}}}
+----
+
+For *comex-gtk*
+
+Build Dependencies:
+ * mono devel package
+ * log4net devel package
+ * comex-base devel package (or tarball install)
+ * gtk-sharp2 devel package
+ * glade-sharp2
+
+To build and install can use:
+{{{ 
+ $ ./configure
+ $ make
+ # make install (as root)
+}}}
+----
+
+For *comex-qt*
+
+Build Dependencies:
+ * mono devel package
+ * log4net devel package
+ * comex-base devel package (or tarball install)
+ * qyoto devel package
+
+To build and install can use:
+{{{ 
+ $ ./configure
+ $ make
+ # make install (as root)
+}}}
+
 
 <br />
 
