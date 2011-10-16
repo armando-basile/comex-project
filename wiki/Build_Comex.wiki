@@ -19,7 +19,7 @@ Build Dependencies:
 
 To build and install can use:
 {{{ 
- $ ./configure --libdir=/usr/lib
+ $ ./configure --prefix=/usr --libdir=/usr/lib
  $ make
  # make linuxpkgconfigdir=/usr/share/pkgconfig install (as root)
 }}}
