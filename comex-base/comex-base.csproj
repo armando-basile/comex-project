@@ -63,6 +63,9 @@
       <Link>copying.gpl</Link>
     </None>
     <None Include="comex-base.snk" />
+    <None Include="Languages\es-ES.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
