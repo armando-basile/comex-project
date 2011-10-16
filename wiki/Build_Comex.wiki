@@ -84,7 +84,7 @@ To build and install can use:
 == Build from sources ==
 Need to obtain sources using checkout instructions contained in [http://code.google.com/p/comex-project/source/checkout Source Tabs].
 
-=== For comex-base ===
+=== For svn comex-base ===
 
 Build Dependencies:
  * mono devel package
@@ -112,7 +112,7 @@ You need also to create file /usr/share/pkgconfig/comex-base.pc as follow:
 }}}
 ----
 
-=== For comex ===
+=== For svn comex ===
 
 Build Dependencies:
  * mono devel package
@@ -126,7 +126,7 @@ To build can use build script:
 build output will be generated in comex/bin/Debug folder
 ----
 
-=== For comex-gtk ===
+=== For svn comex-gtk ===
 
 Build Dependencies:
  * mono devel package
@@ -142,7 +142,7 @@ To build can use build script:
 build output will be generated in comex-gtk/bin/Debug folder
 ----
 
-=== For comex-qt ===
+=== For svn comex-qt ===
 
 Build Dependencies:
  * mono devel package
@@ -162,7 +162,7 @@ build output will be generated in comex-qt/bin/Debug folder
 
 = Build on Windows =
 
-== Build from sources ==
+== Build from sources on Win ==
 Need to obtain sources using checkout instructions contained in [http://code.google.com/p/comex-project/source/checkout Source Tabs].
 
 
