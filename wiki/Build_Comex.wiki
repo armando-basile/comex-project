@@ -26,7 +26,7 @@ To build and install can use:
 
 NOTE: Before build other tarballs need also to register comex-base dll in Mono GAC_
 {{{
-# gacutil -i /usr/lib/comex-base/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac
+# gacutil -i /usr/lib/comex-base/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac --root /usr/lib
 }}}
 ----
 
@@ -98,7 +98,7 @@ build output will be generated in comex-base/bin/Debug folder
 
 After you need to register in GAC generated file using:
 {{{ 
- # gacutil -i comex-base/bin/Debug/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac
+ # gacutil -i comex-base/bin/Debug/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac --root /usr/lib
 }}}
 
 You need also to create file /usr/share/pkgconfig/comex-base.pc as follow:
