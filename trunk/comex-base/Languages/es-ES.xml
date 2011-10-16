@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>Acerca de</about>
+		<thanks>Agradecimientos</thanks>
+		<frmabout>Información sobre...</frmabout>
+		<frmset>Ajustes del puerto serie</frmset>
+		<description>Intercambiador de comandos de tarjeta para lectores PC/SC y serie</description>
+		<notimplemented>Característica aún no implementada</notimplemented>
+		
+		<openact>Abrir archivo de comandos</openact>
+		<infoact>Ver ventana de información</infoact>
+		<exitact>Salir de la aplicación</exitact>
+		<atract>Respuesta de la tarjeta en la puesta en marcha</atract>
+
+		<filemenulbl>_Archivo</filemenulbl>
+		<openmenulbl>A_brir archivo de comandos</openmenulbl>
+		<closemenulbl>_Cerrar archivo de comandos</closemenulbl>
+		<settingsmenulbl>Ajustes del puerto serie</settingsmenulbl>
+		<exitmenulbl>_Salir</exitmenulbl>
+		<readermenulbl>_Lector</readermenulbl>
+		<helpmenulbl>A_yuda</helpmenulbl>
+		<infomenulbl>_Información</infomenulbl>
+		
+		
+		<openlbl>Abrir</openlbl>
+		<cancellbl>Cancelar</cancellbl>		
+		<closelbl>Cerrar</closelbl>		
+		<infolbl>Información</infolbl>
+		<exitlbl>Salir</exitlbl>
+		<settingslbl>Ajustes</settingslbl>
+		<atrlbl>ATR</atrlbl>
+		<cmdlbl>comando</cmdlbl>
+		<resplbl>respuesta</resplbl>
+		<sendlbl>enviar</sendlbl>
+		
+		<atrframelbl>Respuesta al reset</atrframelbl>
+		<cardframelbl>Tarjeta de comunicación</cardframelbl>
+		<commandfilelbl>Archivo de commandos</commandfilelbl>
+		<selectfile>Seleccione el archivo de comandos a abrir</selectfile>
+		<noinitreader>Tarjeta en lector no inicializada, necesita ATR</noinitreader>
+
+		<selreader>Lector seleccionado</selreader>
+		<noselreader>No hay seleccionado ningún lector</noselreader>
+		<nopcscreader>No se encuentra ningún lector PCSC</nopcscreader>
+		<readerslist>Lista de lectores disponibles</readerslist>
+		<readersel>Introduzca el número del lector a usar (escriba EXIT para salir)</readersel>
+		<cmdtosend>Introduzca el comando a enviar (escriba EXIT para salir)</cmdtosend>
+		<wrongcmd>formato de comando incorrecto (puede usar: 0x11 0x22 0x33... etc, o 11 22 33.. etc, o 112233)</wrongcmd>
+
+		<infodesc><![CDATA[Aplicación C# multiplataforma para enviar/recibir datos con un lector estándar smartcard PC/SC.<br> 
+		- Multilanguage (using xml language files in <i>Language</i> folder)<br> 
+		- Múltiples idiomas (usando archivos de idioma xml en carpeta <i>Languages</i>)<br> 
+		- Interfaz gráfica (usando enlace GTK# para las bibliotecas gráficas GTK y enlace Qyoto para las bibliotecas gráficas QT)<br> 
+		- Depuración/Trazado (puede ser enviado a la consola y también a un archivo de registro que puede ser leído posteriormente)<br> 
+<br> 
+		<b>Atajos de teclado en la fila del área del archivo de comandos:</b><br> 
+		&nbsp;&nbsp;&nbsp;F5: copia el comando de la fila al campo de comando<br> 
+		&nbsp;&nbsp;&nbsp;F6: envia inmediatamente el comando de la fila seleccionada<br> 
+		&nbsp;&nbsp;&nbsp;doble click: igual que F5<br> 
+<br> 
+		<b>Autor:</b><br> 
+		&nbsp;&nbsp;&nbsp;Armando Basile (hmandevteam@gmail.com)<br> 
+<br> 
+		<b>Página Web:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://comex-project.googlecode.com<br> 
+<br> 
+		<b>Seguimiento de incidencias:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://code.google.com/p/comex-project/issues/list<br> 
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Agradecemos a los desarrolladores, probadores, traductores, diseñadores web y 
+		a todos los que han colaborado de cualquier forma al proyecto.
+		]]></thanksdesc>
+		
+	</language>
+</Settings>

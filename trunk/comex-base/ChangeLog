@@ -1,3 +1,10 @@
+2011-10-16  Armando Basile  <hmandevteam@gmail.com>
+
+	* comex-base.csproj:
+	* es-ES.xml:
+	* GlobalConst.cs: - added spanish language file thanks to Juan
+	Pablo González Riopedre
+
 2011-10-04  Armando Basile  <hmandevteam@gmail.com>
 
 	* comex-base.csproj:
