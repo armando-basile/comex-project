@@ -117,7 +117,7 @@ You need also to create file /usr/share/pkgconfig/comex-base.pc as follow:
 Build Dependencies:
  * mono devel package
  * log4net devel package
- * comex-base devel (see [For comex-base])
+ * comex-base devel (see [For_comex-base])
 
 To build can use build script:
 {{{ 
@@ -131,7 +131,7 @@ build output will be generated in comex/bin/Debug folder
 Build Dependencies:
  * mono devel package
  * log4net devel package
- * comex-base devel (see [For comex-base])
+ * comex-base devel (see [For_comex-base])
  * gtk-sharp2 devel package
  * glade-sharp2
 
@@ -147,7 +147,7 @@ build output will be generated in comex-gtk/bin/Debug folder
 Build Dependencies:
  * mono devel package
  * log4net devel package
- * comex-base devel (see [For comex-base])
+ * comex-base devel (see [For_comex-base])
  * qyoto devel devel package
 
 To build can use build script:
