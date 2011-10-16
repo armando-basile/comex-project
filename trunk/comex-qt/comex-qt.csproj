@@ -59,11 +59,11 @@
     <Reference Include="qt-dotnet, Version=4.5.0.0, Culture=neutral, PublicKeyToken=194a23ba31c08164">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="comex-base, Version=0.1.7.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+    <Reference Include="comex-base">
       <SpecificVersion>False</SpecificVersion>
       <Package>comex-base</Package>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
+    <Reference Include="log4net">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
