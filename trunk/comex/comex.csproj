@@ -41,7 +41,7 @@
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="comex-base, Version=0.1.8.0, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
+    <Reference Include="comex-base, Version=0.1.7.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
       <Package>comex-base</Package>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
