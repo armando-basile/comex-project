@@ -22,7 +22,7 @@ BUILD AND RUN ON LINUX FROM SVN CHECKOUT
   3. build output will be generated in comex-base/bin/Debug folder
   4. If you want build also other that require comex-base, you need to 
      register in GAC generated file use: 
-     # gacutil -i comex-base/bin/Debug/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac
+     # gacutil -i <path of svn checkout>/comex-base/bin/Debug/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac -root /usr/lib
      and also create /usr/share/pkgconfig/comex-base.pc file as follow:
      # ----------------------------------------------------------------
      Name: comex-base
