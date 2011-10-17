@@ -98,7 +98,7 @@ build output will be generated in comex-base/bin/Debug folder
 
 After you need to register in GAC generated file using:
 {{{ 
- # gacutil -i comex-base/bin/Debug/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac -root /usr/lib
+ # gacutil -i <path of svn checkout>/comex-base/bin/Debug/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac -root /usr/lib
 }}}
 
 You need also to create file /usr/share/pkgconfig/comex-base.pc as follow:
