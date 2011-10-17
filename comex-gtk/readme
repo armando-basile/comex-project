@@ -11,7 +11,29 @@ comex-gtk is distributed under the terms of the GNU General Public License (GPLv
 See the file COPYING for more information
 
 
+DEPENDENCIES
+-----------------------------------------------------------------------------------------
+ mono with devel package
+ log4net with devel package 
+ comex-base with devel package
+ gtk-sharp2 with devel package
+ glade-sharp2
+ 
+
+BUILD FROM TARBALL
+-----------------------------------------------------------------------------------------
+ $ ./configure
+ $ make
+ # make install (as root)
+
+ 
 RUN GTK APPLICATION 
+-----------------------------------------------------------------------------------------
  $ mono comex-gtk.exe --help                    (for help message)
  $ mono comex-gtk.exe                           (to run without log)
+ 
+
+Can find updates on comex official website:
+http://comex-project.googlecode.com
+
 

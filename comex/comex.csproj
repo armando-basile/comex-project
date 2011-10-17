@@ -10,7 +10,7 @@
     <RootNamespace>comex</RootNamespace>
     <AssemblyName>comex</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.6.0</ReleaseVersion>
+    <ReleaseVersion>0.1.6.1</ReleaseVersion>
     <Description>console interface for comex project</Description>
     <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>
   </PropertyGroup>
