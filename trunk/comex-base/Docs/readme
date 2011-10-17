@@ -12,21 +12,23 @@ comex-base is distributed under the terms of the GNU General Public License (GPL
 See the file COPYING for more information
 
 
+DEPENDENCIES
+-----------------------------------------------------------------------------------------
+ mono with devel package
+ log4net with devel package 
+
+
+BUILD FROM TARBALL
+-----------------------------------------------------------------------------------------
+ $ ./configure --prefix=/usr --libdir=/usr/lib
+ $ make
+ # make linuxpkgconfigdir=/usr/share/pkgconfig install (as root)
+
+ NOTE: Need also to register comex-base dll in Mono GAC
+ # gacutil -i /usr/lib/comex-base/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac -root /usr/lib
 
 
 
+Can find updates on comex official website:
+http://comex-project.googlecode.com
 
-RUN CONSOLE APPLICATION 
- $ mono comex.exe --help                    (for help message)
- $ mono comex.exe                           (to run without log)
-
-
-RUN GTK GUI APPLICATION (required gtk-sharp)
- $ mono comex-gtk.exe --help                (for help message)
- $ mono comex-gtk.exe                       (to run without log)
-
-
-
-RUN QT GUI APPLICATION (required qyoto)
- $ mono comex-qt.exe --help                 (for help message)
- $ mono comex-qt.exe                        (to run without log)

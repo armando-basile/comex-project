@@ -32,6 +32,6 @@ Global
 		$4.LineAlign = 0
 		$3.inheritsSet = Mono
 		description = GTK user interface for comex-project
-		version = 0.1.6.0
+		version = 0.1.6.1
 	EndGlobalSection
 EndGlobal
