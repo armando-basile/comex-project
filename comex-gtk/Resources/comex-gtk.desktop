@@ -1,13 +1,13 @@
 [Desktop Entry]
-Encoding=UTF-8
-Name=comex-gtk
-GenericName=comex-gtk
-Comment=GTK application to exchange commands to smartcard
-Icon=comex-gtk
-Exec=comex-gtk
 Categories=Office;GTK;GNOME;
-Name[it_IT]=comex-gtk
+Comment=GTK application to exchange commands to smartcard
 Comment[it_IT]=Applicazione GTK per inviare comandi ad una smartcard
+Encoding=UTF-8
+Exec=comex-gtk
+GenericName=comex-gtk
+Icon=comex-gtk
+Name=comex-gtk
+Name[it_IT]=comex-gtk
+StartupNotify=true
 Terminal=false
 Type=Application
-StartupNotify=true
