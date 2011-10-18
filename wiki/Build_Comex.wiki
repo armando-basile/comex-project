@@ -123,7 +123,10 @@ To build can use build script:
 {{{ 
  $ ./build-lnx-comex.sh
 }}}
-build output will be generated in comex/bin/Debug folder
+build output will be generated in comex/bin/Debug folder. Can run using
+{{{ 
+ $ mono --debug comex.exe --log-console
+}}}
 ----
 
 === For svn comex-gtk ===
@@ -139,7 +142,10 @@ To build can use build script:
 {{{ 
  $ ./build-lnx-comex-gtk.sh
 }}}
-build output will be generated in comex-gtk/bin/Debug folder
+build output will be generated in comex-gtk/bin/Debug folder. Can run using
+{{{ 
+ $ mono --debug comex-gtk.exe --log-console
+}}}
 ----
 
 === For svn comex-qt ===
@@ -154,7 +160,10 @@ To build can use build script:
 {{{ 
  $ ./build-lnx-comex-qt.sh
 }}}
-build output will be generated in comex-qt/bin/Debug folder
+build output will be generated in comex-qt/bin/Debug folder. Can run using
+{{{ 
+ $ mono --debug comex-qt.exe --log-console
+}}}
 
 
 <br />
