@@ -9,11 +9,24 @@ Before install Comex components you may want to try it, so you need to follow [#
 
 = Install from your package manager =
  * *Mandriva/Rosa Linux*
- from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_
+ <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/mandriva_mini.png" /></td>
+ <td valign="middle" align="left">from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_</td></tr></table>
+ 
  * *Debian/Ubuntu Linux*
- can find packages [https://launchpad.net/~armando-basile/+archive/stable here]
+ <table><tr><td valign="top" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/ubuntu_mini.png" /></td>
+ <td valign="top" align="left">can find latest packages on [http://launchpad.net/~armando-basile/+archive/stable launchpad ppa]<br />
+<a href="http://launchpad.net/~armando-basile/+archive/stable/+files/libcomex-base-cil-dev_0.1.8.5-1~ppa1_all.deb">libcomex-base-cil-dev_0.1.8.5-1~ppa1_all.deb</a><br />
+<a href="http://launchpad.net/~armando-basile/+archive/stable/+files/libcomex-base0.1-cil_0.1.8.5-1~ppa1_all.deb">libcomex-base0.1-cil_0.1.8.5-1~ppa1_all.deb</a><br />
+<a href="http://launchpad.net/~armando-basile/+archive/stable/+files/comex_0.1.6.1-1~ppa1_all.deb">comex_0.1.6.1-1~ppa1_all.deb</a><br />
+<a href="http://launchpad.net/~armando-basile/+archive/stable/+files/comex-gtk_0.1.6.1-1~ppa1_all.deb">comex-gtk_0.1.6.1-1~ppa1_all.deb</a><br />
+<a href="https://launchpad.net/~armando-basile/+archive/stable/+files/comex-qt_0.1.6.1-1~ppa1_all.deb">comex-qt_0.1.6.1-1~ppa1_all.deb</a><br />
+</td></tr></table>
+
  * *Opensuse Linux*
- can find packages [http://download.opensuse.org/repositories/home:/hmandevteam:/comex-project/openSUSE_11.4/ here]
+ <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/suse_mini.png" /></td>
+ <td valign="middle" align="left">can find packages on [http://download.opensuse.org/repositories/home:/hmandevteam:/comex-project/openSUSE_11.4/ OpenSUSE Build System]</td></tr></table>
+
+  
 
 <br />
 
@@ -70,13 +83,6 @@ C:\...> comex.exe --help
 {{{ 
 C:\...> comex.exe
 }}}
- To launch *GTK user interface* using:
-  <div>_to obtain help message_</div>
-{{{ 
-C:\...> comex-gtk.exe --help
-}}}
-  <div>_to launch without log_</div>
-{{{ 
-C:\...> comex-gtk.exe
-}}}
-  NOTE: _you need to install [http://www.go-mono.com/mono-downloads/download.html Gtk# for .NET] to use it_
+ To launch *GTK user interface* using:<br />
+ double click on monosim-gtk.exe <br />
+ _*NOTE*_: _you need to install [http://www.go-mono.com/mono-downloads/download.html Gtk# for .NET] to use it_
