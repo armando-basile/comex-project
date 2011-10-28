@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'SettingsDialog.ui'
 **
-** Created: lun set 5 16:52:45 2011
-**      by: Qt User Interface Compiler for C# version 4.6.3
+** Created: ven ott 28 22:52:39 2011
+**      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
