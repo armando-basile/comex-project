@@ -418,44 +418,7 @@ namespace comexgtk
 			
 			MenuReader.ShowAll();
 			
-/*
-			// loop for all serial port available
-			for (int n=0; n<GlobalObj.SerialPortsName.Count; n++)
-			{
-				// detect if there are pcsc reader
-				if (MenuReader.Children.Length > 0)
-				{
-					// added all serial port after pcsc readers
-					rmi = new Gtk.RadioMenuItem((RadioMenuItem)MenuReader.Children[0], GlobalObj.SerialPortsName[n]);
-				}
-				else
-				{
-					// if there aren't pcsc reader, add and select first serial port reader
-					if (n==0)
-					{
-						rmi = new Gtk.RadioMenuItem(GlobalObj.SerialPortsName[n]);
-						GlobalObj.SelectedReader = GlobalObj.SerialPortsName[n];
-						StatusBar.Push(1, GlobalObj.LMan.GetString("selreader") + ": " + GlobalObj.SerialPortsName[n]);
-					}
-					else
-					{
-						// added other serial port reader
-						rmi = new Gtk.RadioMenuItem((RadioMenuItem)MenuReader.Children[0], GlobalObj.SerialPortsName[n]);
-					}					
-				}
-				
-				rmi.ButtonReleaseEvent += ActionChangeReader;
-				MenuReader.Add(rmi);
-			}
-
-			
-
-			if (GlobalObj.PCSC_Readers.Count == 0)
-			{
-				StatusBar.Push(1, GlobalObj.LMan.GetString("nopcscreader"));
-			}
-*/
-			
+		
 		}
 		
 		

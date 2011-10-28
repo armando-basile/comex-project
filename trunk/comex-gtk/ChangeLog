@@ -1,3 +1,12 @@
+2011-10-28  Armando Basile  <hmandevteam@gmail.com>
+
+	* MainWindow.glade:
+	* MainWindowClass.Designer.cs: - changed accelerator for close
+	file
+
+	* comex-gtk.csproj:
+	* AssemblyInfo.cs: - update release to 0.1.6.2
+
 2011-09-29  Armando Basile  <hmandevteam@gmail.com>
 
 	* comex-gtk.csproj:

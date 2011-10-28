@@ -13,7 +13,7 @@ namespace comexqt
 		
 		
 		// Log4Net object
-        private static readonly ILog log = LogManager.GetLogger(typeof(comexqt.MainClass));
+        //private static readonly ILog log = LogManager.GetLogger(typeof(comexqt.MainClass));
 		
 		
 		private static string retStr = "";
