@@ -78,8 +78,6 @@
       <Link>copying.gpl</Link>
     </None>
     <None Include="readme" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\comex-qt.desktop" />
+    <None Include="Resources\comex-qt.desktop" />
   </ItemGroup>
 </Project>
