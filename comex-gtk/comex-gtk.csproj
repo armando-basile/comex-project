@@ -103,12 +103,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Content Include="Resources\comex-gtk.desktop" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
     <None Include="readme" />
+    <None Include="Resources\comex-gtk.desktop" />
   </ItemGroup>
 </Project>
