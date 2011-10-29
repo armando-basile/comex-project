@@ -1,3 +1,8 @@
+2011-10-29  Armando Basile  <hmandevteam@gmail.com>
+
+	* comex-gtk.csproj:
+	* comex-gtk.desktop: - set nothing action for desktop file
+
 2011-10-28  Armando Basile  <hmandevteam@gmail.com>
 
 	* MainWindow.glade:
