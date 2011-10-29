@@ -50,7 +50,7 @@
 		<wrongcmd>formato del comando errato (puoi usare: 0x11 0x22 0x33... etc, oppure 11 22 33.. etc, oppure 112233)</wrongcmd>
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per inviare/ricevere dati ad un lettore PC/SC standard.<br> 
-		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)<br> 
+		- Multilanguage (usando files di lingua xml nella cartella <i>Languages</i>)<br> 
 		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)<br> 
 		- Supportata anche l'interfaccia Console<br> 
 		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)<br> 

@@ -1,3 +1,14 @@
+2011-10-29  Armando Basile  <hmandevteam@gmail.com>
+
+	* es-ES.xml:
+	* en-US.xml:
+	* it-IT.xml: - fix: languages folder name on about window
+
+
+	* comex-qt.csproj:
+	* comex-qt:
+	* comex-qt.desktop: - (qt) renamed desktop file
+
 2011-10-28  Armando Basile  <hmandevteam@gmail.com>
 
 	* comex-qt.sln:

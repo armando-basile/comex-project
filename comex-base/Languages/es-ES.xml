@@ -49,7 +49,7 @@
 		<wrongcmd>formato de comando incorrecto (puede usar: 0x11 0x22 0x33... etc, o 11 22 33.. etc, o 112233)</wrongcmd>
 
 		<infodesc><![CDATA[Aplicación C# multiplataforma para enviar/recibir datos con un lector estándar smartcard PC/SC.<br> 
-		- Multilanguage (using xml language files in <i>Language</i> folder)<br> 
+		- Multilanguage (using xml language files in <i>Languages</i> folder)<br> 
 		- Múltiples idiomas (usando archivos de idioma xml en carpeta <i>Languages</i>)<br> 
 		- Interfaz gráfica (usando enlace GTK# para las bibliotecas gráficas GTK y enlace Qyoto para las bibliotecas gráficas QT)<br> 
 		- Depuración/Trazado (puede ser enviado a la consola y también a un archivo de registro que puede ser leído posteriormente)<br> 
