@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Resource object code
 **
-** Created: ven ott 28 22:52:39 2011
+** Created: sab ott 29 22:41:08 2011
 **      by: The C# Qyoto Resource Compiler for Qt version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost!
