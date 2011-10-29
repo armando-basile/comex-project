@@ -107,6 +107,6 @@
       <Link>copying.gpl</Link>
     </None>
     <None Include="readme" />
-    <None Include="Resources\comex-gtk.desktop" />
+    <None Include="Resources\comex-gtk" />
   </ItemGroup>
 </Project>

@@ -49,7 +49,7 @@
 		<wrongcmd>wrong command format (can use: 0x11 0x22 0x33... etc, or 11 22 33.. etc, or 112233)</wrongcmd>
 
 		<infodesc><![CDATA[Cross platform C# application to send/receive data with a standard PC/SC smartcard reader.<br> 
-		- Multilanguage (using xml language files in <i>Language</i> folder)<br> 
+		- Multilanguage (using xml language files in <i>Languages</i> folder)<br> 
 		- Gui (using GTK# binding for GTK graphic libraries and Qyoto binding for QT graphic libraries)<br> 
 		- Console interface also supported<br> 
 		- Debug/Trace (can be sended to console and also to a log file to read after)<br> 

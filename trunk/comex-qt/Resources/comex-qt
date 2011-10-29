@@ -1,16 +1,17 @@
 [Desktop Entry]
 Categories=Office;Qt;KDE;
-Comment[it]=Qt application to exchange commands to smartcard
 Comment=Qt application to exchange commands to smartcard
+Comment[it]=Applicazione Qt per inviare comandi ad una smartcard
 Comment[it_IT]=Applicazione Qt per inviare comandi ad una smartcard
 Encoding=UTF-8
 Exec=comex-qt
-GenericName[it]=comex-qt
 GenericName=comex-qt
+GenericName[it]=comex-qt
+GenericName[it_IT]=comex-qt
 Icon=comex-qt
 MimeType=
-Name[it]=comex-qt
 Name=comex-qt
+Name[it]=comex-qt
 Name[it_IT]=comex-qt
 Path=
 StartupNotify=true
