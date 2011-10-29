@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'MainWindow.ui'
 **
-** Created: ven ott 28 22:52:39 2011
+** Created: sab ott 29 22:41:09 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -197,7 +197,7 @@ public class Ui_MainWindow
     action_Open.Shortcut = QApplication.Translate("MainWindow", "Ctrl+O", null, QApplication.Encoding.UnicodeUTF8);
     action_Close.Text = QApplication.Translate("MainWindow", "&Chiudi file comandi", null, QApplication.Encoding.UnicodeUTF8);
     action_Close.IconText = QApplication.Translate("MainWindow", "Chiudi", null, QApplication.Encoding.UnicodeUTF8);
-    action_Close.Shortcut = QApplication.Translate("MainWindow", "Ctrl+E", null, QApplication.Encoding.UnicodeUTF8);
+    action_Close.Shortcut = QApplication.Translate("MainWindow", "Ctrl+W", null, QApplication.Encoding.UnicodeUTF8);
     action_Exit.Text = QApplication.Translate("MainWindow", "&Esci", null, QApplication.Encoding.UnicodeUTF8);
     action_Exit.Shortcut = QApplication.Translate("MainWindow", "Ctrl+Q", null, QApplication.Encoding.UnicodeUTF8);
     action_Info.Text = QApplication.Translate("MainWindow", "&Informazioni", null, QApplication.Encoding.UnicodeUTF8);
