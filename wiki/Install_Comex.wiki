@@ -18,8 +18,8 @@ Before install Comex components you may want to try it, so you need to follow [#
 <a href="http://launchpad.net/~armando-basile/+archive/stable/+files/libcomex-base-cil-dev_0.1.8.5-1~ppa1_all.deb">libcomex-base-cil-dev_0.1.8.5-1~ppa1_all.deb</a><br />
 <a href="http://launchpad.net/~armando-basile/+archive/stable/+files/libcomex-base0.1-cil_0.1.8.5-1~ppa1_all.deb">libcomex-base0.1-cil_0.1.8.5-1~ppa1_all.deb</a><br />
 <a href="http://launchpad.net/~armando-basile/+archive/stable/+files/comex_0.1.6.1-1~ppa1_all.deb">comex_0.1.6.1-1~ppa1_all.deb</a><br />
-<a href="http://launchpad.net/~armando-basile/+archive/stable/+files/comex-gtk_0.1.6.1-1~ppa1_all.deb">comex-gtk_0.1.6.1-1~ppa1_all.deb</a><br />
-<a href="https://launchpad.net/~armando-basile/+archive/stable/+files/comex-qt_0.1.6.1-1~ppa1_all.deb">comex-qt_0.1.6.1-1~ppa1_all.deb</a><br />
+<a href="http://launchpad.net/~armando-basile/+archive/stable/+files/comex-gtk_0.1.6.2-1~ppa1_all.deb">comex-gtk_0.1.6.2-1~ppa1_all.deb</a><br />
+<a href="https://launchpad.net/~armando-basile/+archive/stable/+files/comex-qt_0.1.6.2-1~ppa1_all.deb">comex-qt_0.1.6.2-1~ppa1_all.deb</a><br />
 </td></tr></table>
 
  * *Opensuse Linux*
