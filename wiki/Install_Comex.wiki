@@ -13,9 +13,8 @@ Before install Comex components you may want to try it, so you need to follow [#
  <td valign="middle" align="left">from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_</td></tr></table>
  
  * *Debian/Ubuntu Linux*
- <table><tr><td valign="top" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/ubuntu_mini.png" /></td>
- <td valign="top" align="left">can find latest packages on [http://launchpad.net/~armando-basile/+archive/stable launchpad ppa]
-</td></tr></table>
+ <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/ubuntu_mini.png" /></td>
+ <td valign="top" align="left">can find latest packages on [http://launchpad.net/~armando-basile/+archive/stable launchpad ppa]</td></tr></table>
 
  * *Opensuse Linux*
  <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/suse_mini.png" /></td>
