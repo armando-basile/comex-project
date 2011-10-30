@@ -14,7 +14,7 @@ Before install Comex components you may want to try it, so you need to follow [#
  
  * *Debian/Ubuntu Linux*
  <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/ubuntu_mini.png" /></td>
- <td valign="top" align="left">can find latest packages on [http://launchpad.net/~armando-basile/+archive/stable launchpad ppa]</td></tr></table>
+ <td valign="middle" align="left">can find latest packages on [http://launchpad.net/~armando-basile/+archive/stable launchpad ppa]</td></tr></table>
 
  * *Opensuse Linux*
  <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/suse_mini.png" /></td>
