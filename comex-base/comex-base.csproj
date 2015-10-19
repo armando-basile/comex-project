@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>comexbase</RootNamespace>
     <AssemblyName>comex-base</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.8.5</ReleaseVersion>
+    <ReleaseVersion>0.1.9</ReleaseVersion>
     <Description>base component for comex project</Description>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,9 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="log4net">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="log4net" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Docs\" />
@@ -47,7 +43,6 @@
     <Folder Include="Properties\" />
     <Folder Include="Src\" />
     <Folder Include="Src\Classes\" />
-    <Folder Include="Src\" />
     <Folder Include="Src\Interfaces\" />
     <Folder Include="Src\Readers\" />
   </ItemGroup>
@@ -62,7 +57,6 @@
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
-    <None Include="comex-base.snk" />
     <None Include="Languages\es-ES.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
