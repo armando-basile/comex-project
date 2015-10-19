@@ -1,4 +1,4 @@
-== Comex Project ==
+# Comex Project
 Comex Project is a cross platform suite to exchange commands 
 with smartcard using PC/SC standard readers and serial reader. 
 
@@ -6,56 +6,14 @@ Thank you for using ( or at least trying out :) ) comex-project
 
 comex-project is distributed under the terms of the GNU General Public License (GPLv2)
 
-comex-base - Base component
-comex      - Console interface
-comex-gtk  - GTK user interface
-comex-qt   - Qt user interface
+*comex-base* - Base component
+*comex*      - Console interface
+*comex-gtk*  - GTK user interface
+*comex-qt*   - Qt user interface
+
+for build and run see Wiki pages
+
 
 Copyright (c) 2011-2015, Armando Basile
-
-
-BUILD AND RUN ON LINUX FROM SVN CHECKOUT
----------------------------------------------------------------------
-
-- comex-base
-  1. you need to install: log4net, log4net-devel, mono
-  2. use build script in main svn folder: $ ./build-lnx-comex-base.sh
-  3. build output will be generated in comex-base/bin/Debug folder
-  4. If you want build also other that require comex-base, you need to 
-     register in GAC generated file use: 
-     # gacutil -i <path of svn checkout>/comex-base/bin/Debug/comex-base.dll -package comex-base -gacdir /usr/lib/mono/gac -root /usr/lib
-     and also create /usr/share/pkgconfig/comex-base.pc file as follow:
-     # ----------------------------------------------------------------
-     Name: comex-base
-     Description: base component for comex project
-     Version: 0.1.8.4
-
-     Requires: 
-     Libs: -r:<path of svn checkout>/comex-base/bin/Debug/comex-base.dll
-     # -----------------------------------------------------------------
-
-
-- comex
-  1. you need to install: log4net, log4net-devel, comex-base, 
-     comex-base-devel, mono, monodevelop
-  2. use build script in main svn folder: $ ./build-lnx-comex.sh
-  3. build output will be generated in comex/bin/Debug folder
-  4. to run generated file use: $ mono --debug comex.exe --log-console
-
-
-- comex-gtk
-  1. you need to install: log4net, log4net-devel, comex-base, comex-base-devel
-     gtk-sharp2, gtk-sharp2-devel, glade-sharp2, mono, monodevelop
-  2. use build script in main svn folder: $ ./build-lnx-comex-gtk.sh
-  3. build output will be generated in comex-gtk/bin/Debug folder
-  4. to run generated file use: $ mono --debug comex-gtk.exe --log-console
-
-
-- comex-qt
-  1. you need to install: log4net, log4net-devel, comex-base, comex-base-devel
-     qyoto, qyoto-devel, mono, monodevelop
-  2. use build script in main svn folder: $ ./build-lnx-comex-qt.sh
-  3. build output will be generated in comex-qt/bin/Debug folder
-  4. to run generated file use: $ mono --debug comex-qt.exe --log-console
 
 
