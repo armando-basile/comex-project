@@ -9,7 +9,6 @@
     <AssemblyName>comex-base</AssemblyName>
     <ReleaseVersion>0.1.9</ReleaseVersion>
     <Description>base component for comex project</Description>
-    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,6 +74,9 @@
     <Compile Include="Src\Readers\PcscReader.cs" />
     <Compile Include="Src\Readers\PcscReader.IReader.cs" />
     <Compile Include="Src\Readers\SmartMouseReader.IReader.cs" />
+    <Compile Include="..\SolutionAssemblyInfo.cs">
+      <Link>Properties\SolutionAssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="comex-base.dll.config">

@@ -49,6 +49,9 @@
     <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
     <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
     <Compile Include="Src\Qt_Classes\SettingsDialog.cs" />
+    <Compile Include="..\SolutionAssemblyInfo.cs">
+      <Link>Properties\SolutionAssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
