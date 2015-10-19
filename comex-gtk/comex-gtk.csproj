@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8264E480-3956-4B26-9237-D63A0C856206}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>comexgtk</RootNamespace>
-    <ReleaseVersion>0.1.6.2</ReleaseVersion>
+    <ReleaseVersion>0.1.7</ReleaseVersion>
     <Description>GTK user interface for comex-project</Description>
     <AssemblyName>comex-gtk</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -55,13 +52,7 @@
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="log4net">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="comex-base">
-      <Package>comex-base</Package>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="log4net" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Src\" />
@@ -108,5 +99,11 @@
     </None>
     <None Include="readme" />
     <None Include="Resources\comex-gtk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\comex-base\comex-base.csproj">
+      <Project>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</Project>
+      <Name>comex-base</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
