@@ -130,7 +130,7 @@ namespace comexbase
 			get 
 			{
 				return Assembly.GetExecutingAssembly().GetName().Name + " " +
-					Assembly.GetExecutingAssembly().GetName().Version.ToString();
+					Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
 			}
 		}
 		
