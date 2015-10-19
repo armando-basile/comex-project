@@ -19,10 +19,6 @@ Global
 		{8264E480-3956-4B26-9237-D63A0C856206}.Debug|x86.Build.0 = Debug|x86
 		{8264E480-3956-4B26-9237-D63A0C856206}.Release|x86.ActiveCfg = Release|x86
 		{8264E480-3956-4B26-9237-D63A0C856206}.Release|x86.Build.0 = Release|x86
-		{E52A7737-09A0-41F6-AA8A-5952EFAC78DA}.Debug|x86.ActiveCfg = Debug|x86
-		{E52A7737-09A0-41F6-AA8A-5952EFAC78DA}.Debug|x86.Build.0 = Debug|x86
-		{E52A7737-09A0-41F6-AA8A-5952EFAC78DA}.Release|x86.ActiveCfg = Release|x86
-		{E52A7737-09A0-41F6-AA8A-5952EFAC78DA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
