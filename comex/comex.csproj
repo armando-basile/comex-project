@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{32300E9F-A88D-4823-ADBA-E8A7EE02B5C4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>comex</RootNamespace>
     <AssemblyName>comex</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.1.6.1</ReleaseVersion>
+    <ReleaseVersion>0.1.7</ReleaseVersion>
     <Description>console interface for comex project</Description>
     <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>
   </PropertyGroup>
@@ -38,13 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="log4net">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="comex-base">
-      <Package>comex-base</Package>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="log4net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\MainClass.cs" />
@@ -56,5 +47,11 @@
       <Link>copying.gpl</Link>
     </None>
     <None Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\comex-base\comex-base.csproj">
+      <Project>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</Project>
+      <Name>comex-base</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
