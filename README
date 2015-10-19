@@ -1,3 +1,4 @@
+== Comex Project ==
 Comex Project is a cross platform suite to exchange commands 
 with smartcard using PC/SC standard readers and serial reader. 
 
@@ -5,19 +6,19 @@ Thank you for using ( or at least trying out :) ) comex-project
 
 comex-project is distributed under the terms of the GNU General Public License (GPLv2)
 
-comex-base - Base component for comex project, suite to exchange commands with smartcard
-comex      - Console interface for comex project, suite to exchange commands with smartcard
-comex-gtk  - GTK user interface for comex project, suite to exchange commands with smartcard
-comex-qt   - Qt user interface for comex project, suite to exchange commands with smartcard
+comex-base - Base component
+comex      - Console interface
+comex-gtk  - GTK user interface
+comex-qt   - Qt user interface
 
-Copyright (c) 2011, Armando Basile
+Copyright (c) 2011-2015, Armando Basile
 
 
 BUILD AND RUN ON LINUX FROM SVN CHECKOUT
 ---------------------------------------------------------------------
 
 - comex-base
-  1. you need to install: log4net, log4net-devel, mono, monodevelop
+  1. you need to install: log4net, log4net-devel, mono
   2. use build script in main svn folder: $ ./build-lnx-comex-base.sh
   3. build output will be generated in comex-base/bin/Debug folder
   4. If you want build also other that require comex-base, you need to 
