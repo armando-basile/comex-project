@@ -6,7 +6,7 @@
     <ProjectGuid>{8264E480-3956-4B26-9237-D63A0C856206}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>comexgtk</RootNamespace>
-    <ReleaseVersion>0.1.7</ReleaseVersion>
+    <ReleaseVersion>0.1.9</ReleaseVersion>
     <Description>GTK user interface for comex-project</Description>
     <AssemblyName>comex-gtk</AssemblyName>
     <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>

@@ -7,7 +7,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>comexqt</RootNamespace>
     <AssemblyName>comex-qt</AssemblyName>
-    <ReleaseVersion>0.1.7</ReleaseVersion>
+    <ReleaseVersion>0.1.9</ReleaseVersion>
     <Description>QT user interface for comex-project</Description>
     <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>
   </PropertyGroup>

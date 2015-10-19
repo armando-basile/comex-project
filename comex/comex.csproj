@@ -7,7 +7,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>comex</RootNamespace>
     <AssemblyName>comex</AssemblyName>
-    <ReleaseVersion>0.1.7</ReleaseVersion>
+    <ReleaseVersion>0.1.9</ReleaseVersion>
     <Description>console interface for comex project</Description>
     <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>
   </PropertyGroup>

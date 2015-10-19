@@ -40,7 +40,7 @@ namespace comexqt
 		public static void Main (string[] args)
 		{
 			AppNameVer = Assembly.GetExecutingAssembly().GetName().Name + " " +
-					     Assembly.GetExecutingAssembly().GetName().Version.ToString();
+					     Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
 			
 			// check for help request
 			if (new List<string>(args).Contains("--help"))

@@ -36,6 +36,6 @@ Global
 		$5.DirectoryNamespaceAssociation = None
 		$5.ResourceNamePolicy = FileFormatDefault
 		description = console interface for comex project
-		version = 0.1.7
+		version = 0.1.9
 	EndGlobalSection
 EndGlobal
