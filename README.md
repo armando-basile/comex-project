@@ -13,10 +13,10 @@ comex-project is distributed under the terms of the GNU General Public License (
 
 Cross platform is possible by:
 
-[Mono framework](http://www.mono-project.com/Main_Page) / .Net framework Runtime
-[Pcsc-lite framework](http://pcsclite.alioth.debian.org/) / Winscard Middleware for PC/SC smartcard readers communication
-[Gtk-sharp](http://www.mono-project.com/GtkSharp) C# bindings for GTK libraries
-[Qyoto](http://techbase.kde.org/Development/Languages/Qyoto) C# bindings for QT libraries
+* [Mono framework](http://www.mono-project.com/Main_Page) / .Net framework Runtime
+* [Pcsc-lite framework](http://pcsclite.alioth.debian.org/) / Winscard Middleware for PC/SC smartcard readers communication
+* [Gtk-sharp](http://www.mono-project.com/GtkSharp) C# bindings for GTK libraries
+* [Qyoto](http://techbase.kde.org/Development/Languages/Qyoto) C# bindings for QT libraries
 
 for build and run see [Wiki pages](https://github.com/armando-basile/comex-project/wiki)
 
