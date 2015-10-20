@@ -9,4 +9,4 @@ IF NOT "%1"=="" (
 )
 
 REM Clean and Build 
-msbuild /t:Rebuild /p:Configuration=%TARGET%  ../comex-base.sln
+msbuild /t:Rebuild /p:Configuration=%TARGET%  ../solutions/comex-base.sln
