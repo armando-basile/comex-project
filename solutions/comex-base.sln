@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-base", "comex-base\comex-base.csproj", "{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-base", "..\comex-base\comex-base.csproj", "{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

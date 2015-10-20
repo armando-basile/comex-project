@@ -8,5 +8,5 @@ if [ $# -gt 0 ] ; then
 fi
 
 # Clean and Build
-xbuild /t:Rebuild /p:Configuration=$TARGET  ../comex-qt.sln
+xbuild /t:Rebuild /p:Configuration=$TARGET  ../solutions/comex-qt.sln
 
