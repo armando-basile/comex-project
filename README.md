@@ -18,7 +18,7 @@ Cross platform is possible by:
 * [Gtk-sharp](http://www.mono-project.com/GtkSharp) C# bindings for GTK libraries
 * [Qyoto](http://techbase.kde.org/Development/Languages/Qyoto) C# bindings for QT libraries
 
-for build and run see [Wiki pages](https://github.com/armando-basile/comex-project/wiki)
+for build, run and guide see [Wiki pages](https://github.com/armando-basile/comex-project/wiki)
 
 
 ---
