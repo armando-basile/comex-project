@@ -1,5 +1,5 @@
 
-## Comex Project <img src='https://travis-ci.org/armando-basile/comex-project.svg?branch=master' border='0' />
+## Comex Project    <img src='https://travis-ci.org/armando-basile/comex-project.svg?branch=master' border='0' />
 Comex Project is a cross platform suite to exchange commands 
 with smartcard using [PC/SC](http://www.pcscworkgroup.com/) standard readers and serial reader. 
 
