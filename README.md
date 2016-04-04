@@ -64,6 +64,6 @@ for build, run and guide see [Wiki pages](https://github.com/armando-basile/come
 
 
 
-Copyright (c) 2011-2015, Armando Basile
+Copyright (c) 2011-2016, Armando Basile
 
 

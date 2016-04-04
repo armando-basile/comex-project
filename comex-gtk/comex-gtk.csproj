@@ -10,6 +10,7 @@
     <Description>GTK user interface for comex-project</Description>
     <AssemblyName>comex-gtk</AssemblyName>
     <ApplicationIcon>..\resources\comex.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
